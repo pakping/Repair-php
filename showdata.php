@@ -21,27 +21,50 @@
     <table class="table table-striped">
       </thead>
       <tr>
-        <th>รหัสเมนู</th>
-        <th>ชื่อเมนู</th>
-        <th>ประเภทอาหาร</th>
-        <th>ราคา</th>
+        <th>งานที่</th>
+        <th>ห้อง</th>
+        <th>ประเภทของปัญหา</th>
+        <th>ปัญหา</th>
+        <th>ชื่อ</th>
+        <th>เวลา</th>
+        <th>วันที่</th>
+        <th>สถานะ</th>
+        <th>งาน</th>
       </tr>
       </thead>
       <?php
       require 'connect.php';
-      $result = mysqli_query($con, "SELECT * FROM menu");
+      $result = mysqli_query($con, "SELECT * FROM report");
 
       if ($result) {
+        
         while ($row = mysqli_fetch_array($result)) {
+          
           echo "<tr>";
-          echo "<td>" . $row["menu_ID"] . "</td>";
-          echo "<td>" . $row["menu_Name"] . "</td>";
-          echo "<td>" . $row["menu_Type"] . "</td>";
-          echo "<td>" . $row["menu_price"] . "</td>";
+          echo "<td>" . $row["Case_ID"] . "</td>";
+          echo "<td>" . $row["Location"] . "</td>";
+          echo "<td>" . $row["Problem"] . "</td>";
+          echo "<td>" . $row["Description"] . "</td>";
+          echo "<td>" . $row["Name"] . "</td>";
+          echo "<td>" . $row["Time"] . "</td>";
+          echo "<td>" . $row["Date"] . "</td>";
+          echo "<td>" . $row["Stat"] . "</td>";
+          echo '<td><input name= "" type="button" value = "accept"></td>';
+          
+          
+          
+          
           echo "</tr>";
         }
       }
       ?>
+      <?php
+    require 'connect.php';
+    $id = filter_input(INPUT_POST, 'keydel');
+    $del = " DELETE FROM menu WHERE menu_ID = '$id'";
+    $result = mysqli_query($con, $del);
+    ?>
+
     </table>
   </div>
 

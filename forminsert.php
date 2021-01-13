@@ -17,22 +17,24 @@
 
 <?php
 require 'connect.php';
-    $id = $_POST['txt_id'];
-    $name = $_POST['txt_name'];
-    $type = $_POST['lst_type'];
-    $price = $_POST['price'];
+    $desc = $_POST['desc'];
+    $room = $_POST['room'];
+    $name = $_POST['uname'];
+    $type = $_POST['type'];
     
 
-    $adddat = "INSERT INTO menu VALUE ('$id','$name','$type','$price') ";
+    $adddat = "INSERT INTO report (Location,Problem,Description,name,Time,Date,Stat) VALUE ('$room','$type','$desc','$name',CURRENT_TIME(),CURRENT_DATE(),'waiting') ";
     $result = mysqli_query($con, $adddat);
 if ($result)
 {
     echo "เพิ่มข้อมูลสำเร็จ" . "<br>";
     echo '<a href="showdata.php">show data</a>';
+    header("Location: index.php");
 }
 else
 {
     echo 'เพิ่มข้อมูลไม่สำเร็จ';
+    header("Location: index.php");
 }
 ?>
 
