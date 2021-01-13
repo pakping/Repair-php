@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2021 at 10:04 AM
+-- Generation Time: Jan 13, 2021 at 10:17 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -89,6 +89,28 @@ INSERT INTO `spare_request` (`Request_ID`, `Case_ID`, `Engineer_ID`, `Req.Descri
 (1, 1, 3, 'MainBoard ไหม้', 'MainBoard (1155) AFOX IH61-MA5', '2020-12-03'),
 (2, 1, 3, 'การ์ดจอไหม้', 'GT 950', '2020-12-03');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
+  `Password` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
+  `Tels.` int(10) NOT NULL,
+  `LoginStatus` int(1) NOT NULL,
+  `LastUpdate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`Username`, `Password`, `Tels.`, `LoginStatus`, `LastUpdate`) VALUES
+('Jeerachon', '123456', 889943216, 0, '0000-00-00 00:00:00'),
+('Sirichai', '654321', 215148148, 0, '0000-00-00 00:00:00');
+
 --
 -- Indexes for dumped tables
 --
@@ -110,6 +132,12 @@ ALTER TABLE `report`
 --
 ALTER TABLE `spare_request`
   ADD PRIMARY KEY (`Request_ID`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`Username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
