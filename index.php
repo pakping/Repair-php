@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
-  <title>หน้าเพิ่มข้อมูล</title>
-  <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
-  <?php
-  include 'css/bootstrap.php'
-  ?>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./css/style.css" rel="stylesheet">
 </head>
-
 <body>
   <?php
-  include 'navbar.php'
+  include '.\css\bootstrap.php';
   ?>
-  <hr>
-  <div class="wrap-form">
-    <form action="forminsert.php" method="post" name="F1">
-      <fieldset style="width:50%">
-        <legend>แจ้งซ่อม</legend>
-        <form>
-          <div class="form-group">
-            <table>
-            </tr>
-              <tr>
-                <td> ประเภทอาหาร : </td>
-                <td>
-                  <select name="type" required>
-                    <option value="Computer">1 : คอมพิวเตอร์</option>
-                    <option value="Printer">2 : เครื่องพิมพ์</option>
-                    <option value="Other">3 : อื่นๆ</option>
-                  </select>
-            </tr>
-              <tr>
-                <td> ระบุปัญหา </td>
-                <td>
-                  <input type="text" name="desc"  title="กรุณาระบุปัญหา" required>
-                </td>
-              </tr>
-              <tr>
-                <td>ห้อง :</td>
-                <td>
-                  <input type="text" name="room" pattern="{50}" title="ข้อความไม่เกิน 50 ตัว" required>
-                </td>
-              <tr>
-                <td> ชื่อ : </td>
-                <td>
-                  <input type="text" name="uname" pattern="{24}" title="ราคาอาหาร" required>
-                </td>
-              </tr>
-          </div>
-        </form>
-        </table>
-        <br>
-        <button type="submit" class="btn btn-primary">ยืนยัน</button>
-        <button type="reset" class="btn btn-warning">รีเซ็ต</button>
-      </fieldset>
-    </form>
-  </div>
-</body>
+<h2>Modal Login Form</h2>
 
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+<!-- <div id="id01" class="modal"> -->
+  
+  <form class="container" action="check_login.php" method="post">
+    <!-- <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div> -->
+
+    <div class="card p-5">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <!-- <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div> -->
+  </form>
+<!-- </div> -->
+
+<script>
+// Get the modal
+// var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
+</script>
+
+</body>
 </html>

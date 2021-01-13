@@ -27,6 +27,9 @@
         <li class="nav-item">
         <a class="nav-link" href="deletedata.php">ลบข้อมูล</a>
         </li>
+        <li class="nav-item">
+        <a class="nav-link" href="logout.php">ออกจากระบบ</a>
+        </li>
       </ul>
       <span class="navbar-text">
       โรงพยาบาลมหาวิทยาลัยพะเยา
