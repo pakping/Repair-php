@@ -4,11 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
 <link href="./css/style.css" rel="stylesheet">
-</head>
-<body>
-  <?php
+<?php
   include '.\css\bootstrap.php';
   ?>
+</head>
+<body>
+
   <div class="wrap-form">
 <!-- <h2>Modal Login Form</h2> -->
 
