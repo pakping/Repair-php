@@ -29,12 +29,13 @@
         <th>เวลา</th>
         <th>วันที่</th>
         <th>สถานะ</th>
-        <th>งาน</th>
+        <th>รับงาน</th>
+        <th>เสร็จ</th>
       </tr>
       </thead>
       <?php
       require 'connect.php';
-      $result = mysqli_query($con, "SELECT * FROM report");
+      $result = mysqli_query($con, "SELECT * FROM report Where stat != 'Done'");
       
       if ($result) {
         
@@ -50,21 +51,12 @@
           echo "<td>" . $row["Date"] . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
           //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
-          echo "<td><form action='accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td></tr>";
-          
-          
-          
+          echo "<td><form action='accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td>";
+          echo "<td><form action='movetodone.php' method='POST'><input type='hidden' name='tempId2' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Done' /></form></td>";
           echo "</tr>";
         }
       }
       ?>
-      <?php
-    require 'connect.php';
-    $id = filter_input(INPUT_POST, 'keydel');
-    $del = " DELETE FROM menu WHERE menu_ID = '$id'";
-    $result = mysqli_query($con, $del);
-    ?>
-
     </table>
   </div>
 
