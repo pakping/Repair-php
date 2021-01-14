@@ -6,14 +6,14 @@
   <title>หน้าเพิ่มข้อมูล</title>
   <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
   <?php
-  include 'css/bootstrap.php'
+  include '../css/bootstrap.php'
   ?>
 </head>
 
 <body>
-  <?php
-  include 'components/navbar.php'
-  ?>
+<?php
+  include '../components/navbar.php'
+?>
 
   <br>
   <div class="wrap-form">

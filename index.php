@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
 <link href="./css/style.css" rel="stylesheet">
 <?php
-  include '.\css\bootstrap.php';
+  include 'css/bootstrap.php'
   ?>
 </head>
 <body>
@@ -17,7 +17,7 @@
 
 <!-- <div id="id01" class="modal"> -->
   
-  <form class="container " action="check_login.php" method="post">
+  <form class="container " action="auth/checkLogin.php" method="post">
     <!-- <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">

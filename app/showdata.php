@@ -6,14 +6,14 @@
   <title>หน้าแสดงข้อมูล</title>
   <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
   <?php
-  include 'css/bootstrap.php'
+  include '../css/bootstrap.php'
   ?>
 </head>
 
 <body>
 
 <?php
-  include 'components/navbar.php'
+  include '../components/navbar.php'
   ?>
 
   <br>
@@ -35,7 +35,7 @@
       </tr>
       </thead>
       <?php
-      require 'connect.php';
+      require '../DB/connect.php';
       $result = mysqli_query($con, "SELECT * FROM report Where stat != 'Done'");
       
       if ($result) {
@@ -54,9 +54,9 @@
           //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
           
           if ($row["Stat"] == 'Working'){
-            echo "<td><form action='movetodone.php' method='POST'><input type='hidden' name='tempId2' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Done' /></form></td>";
+            echo "<td><form action='../components/movetodone.php' method='POST'><input type='hidden' name='tempId2' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Done' /></form></td>";
           }else{
-            echo "<td><form action='accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td>";
+            echo "<td><form action='../components/accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td>";
           }
           echo "</tr>";
 

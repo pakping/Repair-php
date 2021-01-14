@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
     <?php
-  include 'bootstrap.php';
+  include '../css/bootstrap.php';
   ?>
 </head>
 <body class="font-mali vh-100 d-flex justify-content-center align-items-center">

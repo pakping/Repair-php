@@ -16,7 +16,7 @@
 
 
 <?php
-require 'connect.php';
+require '../DB/connect.php';
     $desc = $_POST['desc'];
     $room = $_POST['room'];
     $name = $_POST['uname'];

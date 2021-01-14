@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	require_once("connect.php");
+	require_once("../DB/connect.php");
 	
 	$strUsername = $_POST['uname'];
 	$strPassword = $_POST['psw'];
@@ -33,7 +33,7 @@
 			
 
 			//*** Go to Main page
-			header("location:home.php");
+			header("location:../app/home.php");
 		}
 			
 	}
