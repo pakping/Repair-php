@@ -50,7 +50,7 @@
                 <tr>
                   <td> <label class="input-group-text" >ห้อง</label>  </td>
                   <td>
-                    <select name="type" class="form-select" required>
+                    <select name="room" class="form-select" required>
                       <option value="OPD1">1 : OPD1</option>
                       <option value="OPD2">2 : OPD2</option>
                       <option value="IPD1">3 : IPD1</option>
