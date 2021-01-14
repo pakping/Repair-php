@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>หน้าแสดงข้อมูล</title>
-  <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
+  <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
   <?php
   include '../css/bootstrap.php'
   ?>
