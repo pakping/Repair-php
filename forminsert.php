@@ -34,7 +34,7 @@ if ($result)
 else
 {
     echo 'เพิ่มข้อมูลไม่สำเร็จ';
-    header("Location: index.php");
+    header("Location: home.php");
 }
 ?>
 

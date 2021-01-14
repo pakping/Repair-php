@@ -69,7 +69,7 @@
                 <tr>
                   <td><label class="input-group-text" >ชื่อ</label>  </td>
                   <td>
-                    <input type="text" class="form-control" aria-label="Sizing example input" name="uname" pattern="{24}" title="ชื่อผู้แจ้ง" required>
+                    <input type="text" class="form-control" aria-label="Sizing example input"name="uname" pattern="{24}" title="ชื่อผู้แจ้ง" required>
                   </td>
                 </tr>
             </div>
