@@ -12,9 +12,10 @@
 
 <body>
 
-  <?php
-  include 'navbar.php'
+<?php
+  include 'components/navbar.php'
   ?>
+
   <br>
   <br>
   <div class="wrap-form">
