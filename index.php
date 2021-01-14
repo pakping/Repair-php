@@ -2,12 +2,14 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/wrap-form.css">
 <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
   <?php
   include '.\css\bootstrap.php';
   ?>
+  <div class="wrap-form">
 <!-- <h2>Modal Login Form</h2> -->
 
 <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
@@ -39,7 +41,7 @@
     </div> -->
   </form>
 <!-- </div> -->
-
+  </div>
 <script>
 // Get the modal
 // var modal = document.getElementById('id01');
