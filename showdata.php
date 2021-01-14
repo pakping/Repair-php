@@ -35,7 +35,7 @@
       <?php
       require 'connect.php';
       $result = mysqli_query($con, "SELECT * FROM report");
-
+      
       if ($result) {
         
         while ($row = mysqli_fetch_array($result)) {
@@ -49,8 +49,8 @@
           echo "<td>" . $row["Time"] . "</td>";
           echo "<td>" . $row["Date"] . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
-          echo '<td><input name= "" type="button" value = "accept"></td>';
-          
+          //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
+          echo "<td><form action='accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td></tr>";
           
           
           
