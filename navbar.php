@@ -13,7 +13,7 @@
          <!--  <a class="nav-link active" aria-current="page" href="#">Home</a> -->
         </li>
         <li class="nav-item">
-        <a class="nav-link active" href="index.php">แบบฟอร์มแจ้งซ่อม</a>
+        <a class="nav-link active" href="home.php">แบบฟอร์มแจ้งซ่อม</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="showdata.php">แสดงคำร้องข้อมูลแจ้ง</a>

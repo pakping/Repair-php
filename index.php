@@ -8,13 +8,13 @@
   <?php
   include '.\css\bootstrap.php';
   ?>
-<h2>Modal Login Form</h2>
+<!-- <h2>Modal Login Form</h2> -->
 
 <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
 
 <!-- <div id="id01" class="modal"> -->
   
-  <form class="container" action="check_login.php" method="post">
+  <form class="container " action="check_login.php" method="post">
     <!-- <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -28,10 +28,10 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
-      <label>
+    <!--   <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
-    </div>
+    </div> -->
 
     <!-- <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
