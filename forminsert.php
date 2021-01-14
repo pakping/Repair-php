@@ -29,7 +29,7 @@ if ($result)
 {
     echo "เพิ่มข้อมูลสำเร็จ" . "<br>";
     echo '<a href="showdata.php">show data</a>';
-    header("Location: index.php");
+    header("Location: home.php");
 }
 else
 {
