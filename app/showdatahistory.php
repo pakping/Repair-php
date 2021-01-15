@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100">
 
 <head>
   <meta charset="utf-8">
   <title>หน้าแสดงข้อมูล</title>
   <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
-  <?php
-  include '../css/bootstrap.php'
-  ?>
 </head>
 
-<body>
+<?php
+  include '../css/bootstrap.php'
+?>
 
+<body class="d-flex flex-column h-100">
   <?php
   include '../components/navbaradmin.php'
   ?>
   <div class="container p-5">
-  
-  <div class="wrap-form">
-    <table class="table table-striped">
-      </thead>
-      <tr>
-        <th>งานที่</th>
-        <th>ห้อง</th>
-        <th>ประเภทของปัญหา</th>
-        <th>ปัญหา</th>
-        <th>ชื่อ</th>
-        <th>เวลา</th>
-        <th>วันที่</th>
-        <th>สถานะ</th>
-        <th>ลบ</th>
 
-      </tr>
-      </thead>
-      <?php
+    <div class="wrap-form">
+      <table class="table table-striped">
+        <tr>
+          <th>งานที่</th>
+          <th>ห้อง</th>
+          <th>ประเภทของปัญหา</th>
+          <th>ปัญหา</th>
+          <th>ชื่อ</th>
+          <th>เวลา</th>
+          <th>วันที่</th>
+          <th>สถานะ</th>
+          <th>ลบ</th>
+        </tr>
+        
+        <?php
       require '../DB/connect.php';
       $result = mysqli_query($con, "SELECT * FROM report WHERE stat = 'Done' ");
       
@@ -57,9 +55,13 @@
         }
       }
       ?>
-    </table>
+      </table>
+    </div>
   </div>
-</div>
+<?php
+  include '../components/footer.php'
+?>
 </body>
+
 
 </html>

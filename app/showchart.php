@@ -1,45 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100">
 <head>
-<title>Chart</title>
-<link rel="stylesheet" href="../css/Chart.css">
-<link rel="stylesheet" href="../css/wrap-form.css">
-<?php
-  include '../css/bootstrap.php'
-  ?>
-
+  <meta charset="utf-8">
+  <title>Chart</title>
+  <link rel="stylesheet" href="../css/Chart.css">
+  <link rel="stylesheet" href="../css/wrap-form.css">
 </head>
 
-<body>
-    <?php
+<?php
+  include '../css/bootstrap.php'
+?>
+
+<body class="d-flex flex-column h-100">
+  <?php
   include '../components/navbaradmin.php'
-  
   ?>
-<br>
-  <div class="container">
-  <div class="wrap-form">
-  <div class="card text-center">
-  <div class="card-header">
-    <ul class="nav nav-tabs card-header-tabs">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="true" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Disabled</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-  </div>
-      <div class="row">
-          <div class="col-md-6">
-          <canvas id="myChart" width="200" height="200"></canvas>
-          </div>
+
+  <div class="container p-3">
+    <div class="wrap-form">
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="true" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Disabled</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+            <div class="row">
+              <div class="col-md-6">
+                <canvas id="myChart" width="200" height="200"></canvas>
+              </div>
+            </div>
       </div>
+    </div>
   </div>
-  </div>
-  </div>
+  <?php
+  include '../components/footer.php'
+?>
     <?php 
 require("../DB/connect.php");
 $data = $con->query("select count(problem) as sum_problem, problem from report group by problem");

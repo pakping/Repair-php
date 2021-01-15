@@ -10,15 +10,12 @@
 <?php
 include '../css/bootstrap.php'
 ?>
-</head>
 
 <body class="d-flex flex-column h-100">
 
   <?php
   include '../components/navbar.php'
   ?>
-
-
 
   <div class="container">
     <div class="wrap-form">

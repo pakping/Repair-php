@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="h-100">
 
 <head>
   <meta charset="utf-8">
@@ -10,7 +10,7 @@
   ?>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
 
   <?php
   include '../components/navbar.php';
@@ -60,6 +60,9 @@
     </table>
   </div>
 </div>
+<?php
+  include '../components/footer.php'
+?>
 </body>
 
 </html>
