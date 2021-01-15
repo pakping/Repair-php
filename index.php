@@ -29,7 +29,7 @@
         
       </div>
       <br>
-      <h2 class="text-center">ระบบแจ้งซ้อม</h2>
+      <h2 class="text-center">ระบบแจ้งซ่อม</h2>
       
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
