@@ -57,8 +57,8 @@ include '../css/bootstrap.php'
                 <option value="Office 8">10 : Office 8</option>
                 <option value="Emergency">11 : Emergency</option>
                 <option value="Labor">12 : Labor</option>
-                <option value="Surgical">11 : Surgical</option>
-                <option value="Lab">12 : Lab</option>
+                <option value="Surgical">13 : Surgical</option>
+                <option value="Lab">14 : Lab</option>
               </select>
             </div>
             <br>
