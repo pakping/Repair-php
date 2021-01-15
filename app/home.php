@@ -1,20 +1,23 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <title>หน้าเพิ่มข้อมูล</title>
-  <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+  
   <?php
-  include '../css/bootstrap.php'
+  include '../components/meta-title.php'
   ?>
 </head>
 
-<body>
-  <?php
+<?php
+  include '../css/bootstrap.php'
+  ?>
+</head>
+<body class="d-flex flex-column h-100">
+
+<?php
   include '../components/navbar.php'
 ?>
-  <div class="container">
+
+<div class="container">
     <div class="wrap-form">
       <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <form action="forminsert.php" method="post" name="F1">
@@ -22,7 +25,6 @@
             <legend>แจ้งซ่อม</legend>
             <form>
               <div class="form-group">
-
                 <table>
                   </tr>
                   <tr>
@@ -33,7 +35,6 @@
                         <option value="Printer">2 : เครื่องพิมพ์</option>
                         <option value="Other">3 : อื่นๆ</option>
                       </select>
-
                   </tr>
                   <tr>
                     <td> <label class="input-group-text">ระบุปัญหา</label> </td>
@@ -82,6 +83,11 @@
       </div>
     </div>
   </div>
-</body>
 
+
+
+  <?php
+  include '../components/footer.php'
+?>
+  </body>
 </html>

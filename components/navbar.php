@@ -34,7 +34,7 @@ require_once("../DB/connect.php");
         <a class="nav-link" href="deletedata.php">ลบข้อมูล</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="../app/showchart.php">chart</a>
+        <a class="nav-link" href="../app/showchart.php">กราฟแสดงความสถิติ</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
