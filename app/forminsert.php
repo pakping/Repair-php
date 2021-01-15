@@ -32,12 +32,12 @@ require '../DB/connect.php';
         echo "เพิ่มข้อมูลสำเร็จ" . "<br>";
         echo '<a href="showdata.php">show data</a>';
         
-        header("Location: home.php"); */
+        header("Location: home.php"); 
     }
     else
     {
         echo 'เพิ่มข้อมูลไม่สำเร็จ';
-        header("Location: home.php"); */
+        header("Location: home.php");
     }
 ?>
 
