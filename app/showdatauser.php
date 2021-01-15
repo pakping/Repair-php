@@ -1,14 +1,11 @@
-<<<<<<< HEAD
 <?php
 $content ="user";
 require "../auth/sessionpersist.php"
 ?>
 <!DOCTYPE html>
 <html>
-=======
 <!doctype html>
 <html lang="en" class="h-100">
->>>>>>> 038bee53d2e80271bf5e86c66fb93524142a9e3a
 
 <head>
 <?php
