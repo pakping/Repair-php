@@ -26,57 +26,50 @@ include '../css/bootstrap.php'
       <form action="forminsert.php" method="post" name="F1">
         <fieldset>
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
-            <legend>แจ้งซ่อม</legend>
+            <legend>
+              <h1>แจ้งซ่อม</h1>
+            </legend>
             <div class="form-group" class="mb-3">
-
               <div class="mb-3">
-                <td> <label class="input-group-text">อุปกรณ์ที่เสีย</label> </td>
-                <td>
-                  <select name="type" class="form-select" aria-label="Default select example" required>
-                    <option value="Computer">1 : คอมพิวเตอร์</option>
-                    <option value="Printer">2 : เครื่องพิมพ์</option>
-                    <option value="Other">3 : อื่นๆ</option>
-                  </select>
+                <label class="p-3">อุปกรณ์ที่เสีย</label>
+                <select name="type" class="form-select" aria-label="Default select example" required>
+                  <option selected value="">Choose...</option>
+                  <option value="Computer">1 : คอมพิวเตอร์</option>
+                  <option value="Printer">2 : เครื่องพิมพ์</option>
+                  <option value="Other">3 : อื่นๆ</option>
+                </select>
               </div>
               <div class="mb-3">
-                <tr>
-                  <td> <label class="input-group-text">ระบุปัญหา</label> </td>
-                  <td><textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" title="กรุณาระบุปัญหา" required>
-                    </textarea>
-                  </td>
-                </tr>
-
+                <label class="p-3">ระบุปัญหา</label>
+                <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc"
+                  title="กรุณาระบุปัญหา" required></textarea>
               </div>
-              <tr>
-                <td> <label class="input-group-text">ห้อง</label> </td>
-                <td>
-                  <select name="room" class="form-select" aria-label="Default select example" required>
-                    <option value="OPD1">1 : OPD1</option>
-                    <option value="OPD2">2 : OPD2</option>
-                    <option value="IPD1">3 : IPD1</option>
-                    <option value="IPD2">4 : IPD2</option>
-                    <option value="Pharmacy">5 : Pharmacy</option>
-                    <option value="Cashier">6 : Cashier</option>
-                    <option value="Office 5">7 : Office 5</option>
-                    <option value="Office 6">8 : Office 6</option>
-                    <option value="Office 7">9 : Office 7</option>
-                    <option value="Office 8">10 : Office 8</option>
-                    <option value="Emergency">11 : Emergency</option>
-                    <option value="Labor">12 : Labor</option>
-                    <option value="Surgical">11 : Surgical</option>
-                    <option value="Lab">12 : Lab</option>
-                  </select>
-                </td>
-              </tr>
+              <label class="p-3">ห้อง</label>
+              <select name="room" class="form-select" aria-label="Default select example" required>
+                <option selected value="">Choose...</option>
+                <option value="OPD1">1 : OPD1</option>
+                <option value="OPD2">2 : OPD2</option>
+                <option value="IPD1">3 : IPD1</option>
+                <option value="IPD2">4 : IPD2</option>
+                <option value="Pharmacy">5 : Pharmacy</option>
+                <option value="Cashier">6 : Cashier</option>
+                <option value="Office 5">7 : Office 5</option>
+                <option value="Office 6">8 : Office 6</option>
+                <option value="Office 7">9 : Office 7</option>
+                <option value="Office 8">10 : Office 8</option>
+                <option value="Emergency">11 : Emergency</option>
+                <option value="Labor">12 : Labor</option>
+                <option value="Surgical">11 : Surgical</option>
+                <option value="Lab">12 : Lab</option>
+              </select>
             </div>
             <br>
             <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
           </div>
+        </fieldset>
+      </form>
     </div>
-    </fieldset>
-    </form>
-  </div>
   </div>
   <?php
   include '../components/footer.php'
