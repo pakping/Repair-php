@@ -5,8 +5,6 @@
   <?php
   include '../components/meta-title.php'
   ?>
-</head>
-
 <?php
 include '../css/bootstrap.php'
 ?>
