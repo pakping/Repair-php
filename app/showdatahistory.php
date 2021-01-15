@@ -51,7 +51,7 @@
           echo "<td>" . $row["Date"] . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
           echo "<td><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
-          echo "<td><form action='../app/Editreportpage.php' method='POST'><input type='hidden' name='ref' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='add note' /></form></td>";
+          echo "<td><form action='../app/selectdata.php' method='POST'><input type='hidden' name='ref' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Add Note' /></form></td>";
           echo "</tr>";
 
         }
