@@ -1,4 +1,5 @@
 <?php
+session_start()
 require '../DB/connect.php';
 if (isset($_POST['tempId2'])) {
   $idupd2 = $_POST['tempId2'];

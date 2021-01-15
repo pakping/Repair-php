@@ -16,7 +16,6 @@
 
 <body>
  -->
-
 <?php
 session_start();
 require '../DB/connect.php';

@@ -33,10 +33,11 @@
 			
 			if ($objResult["Access"] == "user")
 			{
-				//*** Go to Main page
+				$_SESSION['type'] = 'user';
 				header("location:../app/home.php");
 			}
 			elseif ($objResult["Access"] == "admin") {
+				$_SESSION['type'] = 'admin';
 				header("location:../app/showdata.php");
 			}
 		}

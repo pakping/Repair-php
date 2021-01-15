@@ -1,3 +1,7 @@
+<?php
+$content ="admin";
+require "../auth/sessionpersist.php"
+?>
 <!DOCTYPE html>
 <html>
 <head>

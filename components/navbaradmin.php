@@ -1,5 +1,4 @@
-<?php session_start();
-
+<?php 
 require_once("../DB/connect.php");
 ?>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">

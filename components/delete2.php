@@ -1,4 +1,5 @@
 <?php
+session_start()
 require '../DB/connect.php';
 if (isset($_POST['delete'])) {
   $idd = $_POST['delete'];
