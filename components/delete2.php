@@ -6,7 +6,7 @@ if (isset($_POST['delete'])) {
   $result = mysqli_query($con, $del);
   if ($result) {
     
-    header('Location: ../app/showdata.php');
+    header('Location: ../app/showdatauser.php');
   } else {
     echo 'แก้ไขข้อมูลไม่สำเร็จ';
   }
