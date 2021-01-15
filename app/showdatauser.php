@@ -53,7 +53,7 @@
           echo "<td>" . $row["Stat"] . "</td>";
           echo "<td><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
           echo "</tr>";
-
+          echo $uname;
         }
       }
       ?>
