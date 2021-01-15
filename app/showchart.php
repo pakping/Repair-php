@@ -20,8 +20,8 @@ require "../auth/sessionpersist.php"
   include '../components/navbaradmin.php'
   ?>
 
-  <div class="container p-3">
-    <div class="wrap-form">
+  <div class="container">
+    <div class="">
       <div class="card text-center">
         <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">

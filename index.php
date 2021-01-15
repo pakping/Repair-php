@@ -10,14 +10,14 @@
 </head>
 <body>
 
-<div class="wrap-form p-5">
+<div class="p-5">
 <!-- <h2>Modal Login Form</h2> -->
 
 <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
 
 <!-- <div id="id01" class="modal"> -->
   
-  <form class="container " action="auth/checkLogin.php" method="post">
+  <form class="container" action="auth/checkLogin.php" method="post">
     <!-- <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">

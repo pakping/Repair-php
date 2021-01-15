@@ -20,25 +20,22 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/navbaradmin.php'
   ?>
-  
-  <div class="container p-5">
-    <div class="wrap-form">
-      <table class="table table-striped">
-        </thead>
-        <tr>
-          <th>งานที่</th>
-          <th>ห้อง</th>
-          <th>ประเภทของปัญหา</th>
-          <th>ปัญหา</th>
-          <th>ชื่อ</th>
-          <th>เวลา</th>
-          <th>วันที่</th>
-          <th>สถานะ</th>
-          <th>งาน</th>
-          <th>ลบ</th>
 
+  <div class="container">
+    <div class="">
+      <table class="table table-striped">
+        <tr>
+          <th scope="col">งานที่</th>
+          <th scope="col">ห้อง</th>
+          <th scope="col">ประเภทของปัญหา</th>
+          <th scope="col">ปัญหา</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">เวลา</th>
+          <th scope="col">วันที่</th>
+          <th scope="col">สถานะ</th>
+          <th scope="col">งาน</th>
+          <th scope="col">ลบ</th>
         </tr>
-        </thead>
         <?php
       require '../DB/connect.php';
       $result = mysqli_query($con, "SELECT * FROM report Where stat != 'Done'");

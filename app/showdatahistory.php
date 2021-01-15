@@ -19,9 +19,8 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/navbaradmin.php'
   ?>
-  <div class="container p-5">
-
-    <div class="wrap-form">
+  <div class="container">
+    
       <table class="table table-striped">
         <tr>
           <th>งานที่</th>
@@ -33,6 +32,7 @@ require "../auth/sessionpersist.php"
           <th>วันที่</th>
           <th>สถานะ</th>
           <th>ลบ</th>
+          <th>หมายเหตุ</th>
         </tr>
         
         <?php
@@ -60,7 +60,6 @@ require "../auth/sessionpersist.php"
       }
       ?>
       </table>
-    </div>
   </div>
 <?php
   include '../components/footer.php'

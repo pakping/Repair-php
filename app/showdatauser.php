@@ -3,18 +3,13 @@ $content ="user";
 require "../auth/sessionpersist.php"
 ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
-=======
-<html>
-<!doctype html>
->>>>>>> 5d03558a351c74035917ac34cb89771f2dd97c35
 <html lang="en" class="h-100">
 
 <head>
-<?php
+  <?php
   include '../components/meta-title.php'
   ?>
-<?php
+  <?php
 include '../css/bootstrap.php'
 ?>
 </head>
@@ -25,24 +20,23 @@ include '../css/bootstrap.php'
   include '../components/navbar.php';
   $uname = $_SESSION["Username"];
   ?>
-  <div class="container p-5">
-  <div class="wrap-form">
-    <table class="table table-bordered border-primary">
-      </thead>
-      <tr>
-        <th>งานที่</th>
-        <th>ห้อง</th>
-        <th>ประเภทของปัญหา</th>
-        <th>ปัญหา</th>
-        <th>ชื่อ</th>
-        <th>เวลา</th>
-        <th>วันที่</th>
-        <th>สถานะ</th>
-        <th>ลบ</th>
+  <div class="container">
+    <!-- <div class="wrap-form"> -->
+      <table class="table table-bordered border-primary">
+       
+        <tr>
+          <th>งานที่</th>
+          <th>ห้อง</th>
+          <th>ประเภทของปัญหา</th>
+          <th>ปัญหา</th>
+          <th>ชื่อ</th>
+          <th>เวลา</th>
+          <th>วันที่</th>
+          <th>สถานะ</th>
+          <th>ลบ</th>
+        </tr>
 
-      </tr>
-      </thead>
-      <?php
+        <?php
       require '../DB/connect.php';
       $result = mysqli_query($con, "SELECT * FROM report Where Username = '$uname' and stat != 'Done' ");
       
@@ -65,16 +59,12 @@ include '../css/bootstrap.php'
         }
       }
       ?>
-    </table>
+      </table>
+    <!-- </div> -->
   </div>
-</div>
-<?php
+  <?php
   include '../components/footer.php'
-<<<<<<< HEAD
 ?>
-=======
-  ?>
->>>>>>> 5d03558a351c74035917ac34cb89771f2dd97c35
 </body>
 
 </html>
