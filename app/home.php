@@ -1,36 +1,38 @@
 <!doctype html>
 <html lang="en" class="h-100">
-  <head>
-  
+
+<head>
   <?php
   include '../components/meta-title.php'
   ?>
 </head>
 
 <?php
-  include '../css/bootstrap.php'
-  ?>
+include '../css/bootstrap.php'
+?>
 </head>
+
 <body class="d-flex flex-column h-100">
 
-<?php
+  <?php
   include '../components/navbar.php'
-?>
+  ?>
 
-<div class="container">
+
+
+  <div class="container">
     <div class="wrap-form">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
-        <form action="forminsert.php" method="post" name="F1">
-          <fieldset style="width:50%">
-            <legend>แจ้งซ่อม</legend>
-            <form>
-              <div class="form-group">
-                <table>
-                  </tr>
+      <br>
+      <form action="forminsert.php" method="post" name="F1">
+        <fieldset>
+          <div class="shadow-lg p-3 mb-5 bg-white rounded">
+          <legend>แจ้งซ่อม</legend>
+            <div class="form-group" class="mb-3">
+                 </tr>
                   <tr>
                     <td> <label class="input-group-text">อุปกรณ์ที่เสีย</label> </td>
                     <td>
-                      <select name="type" class="form-select" required>
+                      <select name="type" class="form-select"aria-label="Default select example" required>
                         <option value="Computer">1 : คอมพิวเตอร์</option>
                         <option value="Printer">2 : เครื่องพิมพ์</option>
                         <option value="Other">3 : อื่นๆ</option>
@@ -38,8 +40,7 @@
                   </tr>
                   <tr>
                     <td> <label class="input-group-text">ระบุปัญหา</label> </td>
-                    <td><textarea class="form-control" aria-label="With textarea" type="text" name="desc"
-                        title="กรุณาระบุปัญหา" required>
+                    <td><textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" title="กรุณาระบุปัญหา" required>
                     </textarea>
                     </td>
                   </tr>
@@ -49,7 +50,7 @@
                   <tr>
                     <td> <label class="input-group-text">ห้อง</label> </td>
                     <td>
-                      <select name="room" class="form-select" required>
+                      <select name="room" class="form-select" aria-label="Default select example" required>
                         <option value="OPD1">1 : OPD1</option>
                         <option value="OPD2">2 : OPD2</option>
                         <option value="IPD1">3 : IPD1</option>
@@ -68,26 +69,21 @@
                   <tr>
                     <td><label class="input-group-text">ชื่อ</label> </td>
                     <td>
-                      <input type="text" class="form-control" aria-label="Sizing example input" name="uname"
-                        pattern="{24}" title="ชื่อผู้แจ้ง" required>
+                      <input type="text" class="form-control" aria-label="Sizing example input" name="uname" pattern="{24}" title="ชื่อผู้แจ้ง" required>
                     </td>
                   </tr>
               </div>
-            </form>
-            </table>
-            <br>
-            <button type="submit" class="btn btn-primary">ยืนยัน</button>
-            <button type="reset" class="btn btn-warning">รีเซ็ต</button>
-          </fieldset>
-        </form>
-      </div>
+          <br>
+          <button type="submit" class="btn btn-primary">ยืนยัน</button>
+          <button type="reset" class="btn btn-warning">รีเซ็ต</button>
+          </div>
+        </fieldset>
+      </form>
     </div>
   </div>
-
-
-
   <?php
   include '../components/footer.php'
-?>
-  </body>
+  ?>
+</body>
+
 </html>
