@@ -28,7 +28,6 @@ include '../css/bootstrap.php'
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <legend>
               <h1>แจ้งซ่อม</h1>
-              <h1>dadadsd</h1>
             </legend>
               <div class="mb-3">
                 <label class="p-3">ระบุปัญหา</label>
