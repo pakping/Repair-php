@@ -1,4 +1,5 @@
 <?php
+    session_start()
     require '../DB/connect.php';
     if (isset($_POST['ref'])) {
       $ref = $_POST['ref'];
