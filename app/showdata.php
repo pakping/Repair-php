@@ -12,12 +12,11 @@
 
 <body>
 
-<?php
+  <?php
   include '../components/navbar.php'
   ?>
-
-  <br>
-  <br>
+  <div class="container p-5">
+  
   <div class="wrap-form">
     <table class="table table-striped">
       </thead>
@@ -31,7 +30,7 @@
         <th>วันที่</th>
         <th>สถานะ</th>
         <th>งาน</th>
-        
+
       </tr>
       </thead>
       <?php
@@ -65,7 +64,7 @@
       ?>
     </table>
   </div>
-
+</div>
 </body>
 
 </html>
