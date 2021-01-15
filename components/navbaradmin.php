@@ -1,3 +1,7 @@
+<?php session_start();
+
+require_once("../DB/connect.php");
+?>
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
@@ -11,14 +15,12 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
          <!--  <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-        </li>
+        <!-- </li>
         <li class="nav-item">
         <a class="nav-link active" href="home.php">แบบฟอร์มแจ้งซ่อม</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="../app/showdata.php">แสดงคำร้องข้อมูลแจ้ง</a>
-        </li>
-         <li class="nav-item">
+        </li> -->
+         
+         <!-- <li class="nav-item">
         <a class="nav-link" href="../searchdata.php">ค้นหาข้อมูล</a>
         </li>
         <li class="nav-item">
@@ -26,10 +28,17 @@
         </li>
         <li class="nav-item">
         <a class="nav-link" href="../app/deletedata.php">ลบข้อมูล</a>
-        </li>
+        </li> -->
         <li class="nav-item">
+        <a class="nav-link" href="../app/showdata.php">แสดงคำร้องข้อมูลแจ้งซ่อม</a>
+         </li>
+         <li class="nav-item">
+        <a class="nav-link" href="../app/showdatahistory.php">แสดงประวัติการซ่อมแจ้งซ่อม</a>
+         </li>
+        <li class="nav-item"> 
         <a class="nav-link" href="../app/showchart.php">chart</a>
         </li>
+
         <li class="nav-item">
         <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
         </li>

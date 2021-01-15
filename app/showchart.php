@@ -12,7 +12,8 @@
 
 <body>
     <?php
-  include '../components/navbar.php'
+  include '../components/navbaradmin.php'
+  
   ?>
 <br>
   <div class="container">

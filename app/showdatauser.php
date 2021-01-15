@@ -13,7 +13,8 @@
 <body>
 
   <?php
-  include '../components/navbaradmin.php'
+  include '../components/navbar.php';
+  $uname = $_SESSION["Username"];
   ?>
   <div class="container p-5">
   
@@ -29,14 +30,13 @@
         <th>เวลา</th>
         <th>วันที่</th>
         <th>สถานะ</th>
-        <th>งาน</th>
         <th>ลบ</th>
 
       </tr>
       </thead>
       <?php
       require '../DB/connect.php';
-      $result = mysqli_query($con, "SELECT * FROM report Where stat != 'Done'");
+      $result = mysqli_query($con, "SELECT * FROM report Where Username = '$uname' and stat != 'Done' ");
       
       if ($result) {
         
@@ -51,13 +51,6 @@
           echo "<td>" . $row["Time"] . "</td>";
           echo "<td>" . $row["Date"] . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
-          //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
-          
-          if ($row["Stat"] == 'Working'){
-            echo "<td><form action='../components/movetodone.php' method='POST'><input type='hidden' name='tempId2' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Done' /></form></td>";
-          }else{
-            echo "<td><form action='../components/accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td>";
-          }
           echo "<td><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
           echo "</tr>";
 

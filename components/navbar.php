@@ -22,9 +22,9 @@ require_once("../DB/connect.php");
         <a class="nav-link active" href="home.php">แบบฟอร์มแจ้งซ่อม</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="../app/showdata.php">แสดงคำร้องข้อมูลแจ้ง</a>
+        <a class="nav-link" href="../app/showdatauser.php">แสดงคำร้องข้อมูลแจ้ง</a>
         </li>
-        <li class="nav-item">
+<!--         <li class="nav-item">
         <a class="nav-link" href="searchdata.php">ค้นหาข้อมูล</a>
         </li>
         <li class="nav-item">
@@ -35,7 +35,7 @@ require_once("../DB/connect.php");
         </li>
         <li class="nav-item">
         <a class="nav-link" href="../app/showchart.php">กราฟแสดงความสถิติ</a>
-        </li>
+        </li> -->
         <li class="nav-item">
         <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
         </li>
