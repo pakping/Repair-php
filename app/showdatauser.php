@@ -1,17 +1,22 @@
+<<<<<<< HEAD
 <?php
 $content ="user";
 require "../auth/sessionpersist.php"
 ?>
 <!DOCTYPE html>
 <html>
+=======
+<!doctype html>
+<html lang="en" class="h-100">
+>>>>>>> 038bee53d2e80271bf5e86c66fb93524142a9e3a
 
 <head>
-  <meta charset="utf-8">
-  <title>หน้าแสดงข้อมูล</title>
-  <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
-  <?php
-  include '../css/bootstrap.php'
+<?php
+  include '../components/meta-title.php'
   ?>
+<?php
+include '../css/bootstrap.php'
+?>
 </head>
 
 <body>
@@ -21,9 +26,8 @@ require "../auth/sessionpersist.php"
   $uname = $_SESSION["Username"];
   ?>
   <div class="container p-5">
-  
   <div class="wrap-form">
-    <table class="table table-striped">
+    <table class="table table-bordered border-primary">
       </thead>
       <tr>
         <th>งานที่</th>
@@ -54,8 +58,8 @@ require "../auth/sessionpersist.php"
           echo "<td>" . $row["Username"] . "</td>";
           echo "<td>" . $row["Time"] . "</td>";
           echo "<td>" . $row["Date"] . "</td>";
-          echo "<td>" . $row["Stat"] . "</td>";
-          echo "<td><form action='../components/delete2.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
+          echo "<td>" . $row[ "Stat"] . "</td>";
+          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'  class='btn btn-danger'name='submit-btn' value='Delete' /></form></td>";
           echo "</tr>";
           
         }
@@ -64,6 +68,9 @@ require "../auth/sessionpersist.php"
     </table>
   </div>
 </div>
+<?php
+  include '../components/footer.php'
+  ?>
 </body>
 
 </html>

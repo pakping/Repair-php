@@ -9,8 +9,6 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/meta-title.php'
   ?>
-</head>
-
 <?php
 include '../css/bootstrap.php'
 ?>
