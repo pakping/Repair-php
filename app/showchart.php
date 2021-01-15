@@ -3,6 +3,7 @@
 <head>
 <title>Chart</title>
 <link rel="stylesheet" href="../css/Chart.css">
+<link rel="stylesheet" href="../css/wrap-form.css">
 <?php
   include '../css/bootstrap.php'
   ?>
@@ -13,12 +14,30 @@
     <?php
   include '../components/navbar.php'
   ?>
+<br>
   <div class="container">
+  <div class="wrap-form">
+  <div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="true" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Disabled</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
       <div class="row">
           <div class="col-md-6">
           <canvas id="myChart" width="200" height="200"></canvas>
           </div>
       </div>
+  </div>
+  </div>
   </div>
     <?php 
 require("../DB/connect.php");
@@ -36,7 +55,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: <?=json_encode($label)?>,
         datasets: [{
-            label: 'Number of case',
+            label: 'อุปรกรณ์ที่แจ้งเสีย',
             data: <?=json_encode($datax)?>,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -68,5 +87,7 @@ var myChart = new Chart(ctx, {
     }
 });
 </script>
+
 </body>
+
 </html>
