@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <title>หน้าเพิ่มข้อมูล</title>
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-
+ -->
 
 <?php
 session_start();
@@ -29,17 +29,27 @@ require '../DB/connect.php';
     
     if ($result)
     {
-        echo "เพิ่มข้อมูลสำเร็จ" . "<br>";
-        echo '<a href="showdata.php">show data</a>';
+        // echo "เพิ่มข้อมูลสำเร็จ" . "<br>";
+        // echo '<a href="showdata.php">show data</a>';
         
-        header("Location: home.php"); 
+        echo "<script type=\"text/javascript\">";
+        echo "alert(\"เพิ่มข้อมูลสำเร็จ\");";
+        echo "window.history.back();";
+        echo "</script>";
+        header("Location: ../app/home.php"); 
     }
     else
     {
-        echo 'เพิ่มข้อมูลไม่สำเร็จ';
-        header("Location: home.php");
+        
+        echo "<script type=\"text/javascript\">";
+        echo "alert(\"เพิ่มข้อมูลไม่สำเร็จ\");";
+        echo "window.history.back();";
+        echo "</script>";
+        // header("Location: home.php"); 
+        // echo 'เพิ่มข้อมูลไม่สำเร็จ';
+        // header("Location: ../app/home.php");
     }
 ?>
-
+<!-- 
 </body>
-</html>
+</html> -->
