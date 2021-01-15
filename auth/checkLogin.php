@@ -31,9 +31,14 @@
 			//*** Session
 			$_SESSION["Username"] = $objResult["Username"];
 			
-
-			//*** Go to Main page
-			header("location:../app/home.php");
+			if ($objResult["Access"] == "user")
+			{
+				//*** Go to Main page
+				header("location:../app/home.php");
+			}
+			elseif ($objResult["Access"] == "admin") {
+				header("location:../app/showdata.php");
+			}
 		}
 			
 	}

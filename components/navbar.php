@@ -1,3 +1,9 @@
+<?php 
+session_start();
+
+require_once("../DB/connect.php");
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
@@ -18,7 +24,7 @@
         <li class="nav-item">
         <a class="nav-link" href="../app/showdata.php">แสดงคำร้องข้อมูลแจ้ง</a>
         </li>
-        <!-- <li class="nav-item">
+        <li class="nav-item">
         <a class="nav-link" href="searchdata.php">ค้นหาข้อมูล</a>
         </li>
         <li class="nav-item">
@@ -26,7 +32,7 @@
         </li>
         <li class="nav-item">
         <a class="nav-link" href="deletedata.php">ลบข้อมูล</a>
-        </li> -->
+        </li>
         <li class="nav-item">
         <a class="nav-link" href="../app/showchart.php">chart</a>
         </li>

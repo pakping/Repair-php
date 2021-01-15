@@ -36,7 +36,7 @@
       </thead>
       <?php
       require '../DB/connect.php';
-      $result = mysqli_query($con, "SELECT * FROM report Where stat != 'Done'");
+      $result = mysqli_query($con, "SELECT * FROM report Where Username == ''");
       
       if ($result) {
         
