@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2021 at 04:51 AM
+-- Generation Time: Jan 18, 2021 at 10:34 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -43,6 +43,26 @@ INSERT INTO `engineer` (`Engineer_ID`, `Engineer_Name`, `Tels.`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `note`
+--
+
+CREATE TABLE `note` (
+  `Case_ID` int(8) NOT NULL,
+  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
+  `Note` varchar(300) COLLATE utf32_thai_520_w2 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
+
+--
+-- Dumping data for table `note`
+--
+
+INSERT INTO `note` (`Case_ID`, `Username`, `Note`) VALUES
+(63, 'Sirichai', 'ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd'),
+(60, 'Sirichai', 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaawwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `report`
 --
 
@@ -51,23 +71,39 @@ CREATE TABLE `report` (
   `Location` char(10) CHARACTER SET utf8 NOT NULL,
   `Problem` char(13) CHARACTER SET utf8 NOT NULL,
   `Description` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `Name` char(24) CHARACTER SET utf8 NOT NULL,
   `Time` time NOT NULL,
   `Date` date NOT NULL,
-  `Engineer_ID` int(3) NOT NULL,
+  `Editby` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
   `Stat` char(10) CHARACTER SET utf8 NOT NULL,
-  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL
+  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
+  `noted` char(10) COLLATE utf32_thai_520_w2 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
 
 --
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`Case_ID`, `Location`, `Problem`, `Description`, `Name`, `Time`, `Date`, `Engineer_ID`, `Stat`, `Username`) VALUES
-(27, 'Pharmacy', 'Printer', '                aqq    ', 'Jeerachon', '14:14:08', '2021-01-14', 0, 'Done', 'Sirichai'),
-(28, 'Surgical', 'Other', '              tttttttt      ', 'Sirichai', '14:14:20', '2021-01-14', 0, 'Working', 'Sirichai'),
-(29, 'Lab', 'Other', '                    ', 'aaaaa', '14:14:31', '2021-01-14', 0, 'waiting', 'Jeerachon'),
-(30, 'Surgical', 'Computer', '                    sadsad', 'Jeerachon', '14:14:42', '2021-01-14', 0, 'waiting', 'Jeerachon');
+INSERT INTO `report` (`Case_ID`, `Location`, `Problem`, `Description`, `Time`, `Date`, `Editby`, `Stat`, `Username`, `noted`) VALUES
+(27, 'Pharmacy', 'Printer', '                aqq    ', '14:14:08', '2021-01-14', '0', 'Done', 'Sirichai', ''),
+(28, 'Surgical', 'Other', '              tttttttt      ', '14:14:20', '2021-01-14', '0', 'Done', 'Sirichai', ''),
+(29, 'Lab', 'Other', '                    ', '14:14:31', '2021-01-14', '0', 'Done', 'Jeerachon', ''),
+(30, 'Surgical', 'Computer', '                    sadsad', '14:14:42', '2021-01-14', '0', 'Done', 'Jeerachon', ''),
+(49, 'OPD1', 'Printer', 'aaac', '11:35:55', '2021-01-15', '', 'Done', 'Sirichai', ''),
+(51, 'OPD1', 'Printer', '                    sdds', '11:44:37', '2021-01-15', '', 'Done', 'Sirichai', ''),
+(52, 'OPD1', 'Computer', '                    jghj', '11:48:21', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
+(53, 'IPD1', 'Printer', '                      sadsad', '11:54:17', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
+(54, 'IPD1', 'Printer', '                      sadsad', '11:55:32', '2021-01-15', '', 'Working', 'Sirichai', ''),
+(55, 'IPD1', 'Printer', ' asfaf', '11:56:51', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
+(57, 'Lab', 'Computer', 'คอมลุ๊', '13:08:50', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(58, 'OPD2', 'Printer', 'cxz', '13:39:19', '2021-01-15', '', 'Working', 'Jeerachon', ''),
+(59, 'OPD2', 'Printer', 'cxz', '13:39:37', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(60, 'OPD1', 'Printer', 'sdad', '13:40:48', '2021-01-15', '', 'Done', 'Jeerachon', ''),
+(62, 'OPD1', 'Printer', 'dsa', '13:41:23', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(63, 'IPD1', 'Printer', 'dsa', '13:41:35', '2021-01-15', '', 'Working', 'Jeerachon', ''),
+(64, 'IPD1', 'Printer', 'dsa', '13:41:45', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(65, 'IPD1', 'Printer', 'dsa', '13:42:01', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(66, 'OPD2', 'Printer', 'dsdsadasdasdas', '14:59:47', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
+(67, 'OPD1', 'Computer', 'fass', '08:47:40', '2021-01-18', '', 'Waiting', 'Jeerachon', '');
 
 -- --------------------------------------------------------
 
@@ -112,8 +148,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Username`, `Password`, `Tels.`, `LoginStatus`, `LastUpdate`, `Access`) VALUES
-('Jeerachon', '123456', 889943216, 1, '2021-01-15 10:51:13', 'user'),
-('Sirichai', '654321', 215148148, 0, '0000-00-00 00:00:00', 'admin');
+('Jeerachon', '123456', 889943216, 0, '0000-00-00 00:00:00', 'user'),
+('Sirichai', '654321', 215148148, 1, '2021-01-18 16:31:53', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -124,6 +160,13 @@ INSERT INTO `user` (`Username`, `Password`, `Tels.`, `LoginStatus`, `LastUpdate`
 --
 ALTER TABLE `engineer`
   ADD PRIMARY KEY (`Engineer_ID`);
+
+--
+-- Indexes for table `note`
+--
+ALTER TABLE `note`
+  ADD KEY `Case_ID` (`Case_ID`),
+  ADD KEY `Username` (`Username`);
 
 --
 -- Indexes for table `report`
@@ -152,7 +195,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `spare_request`
@@ -163,6 +206,12 @@ ALTER TABLE `spare_request`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `note`
+--
+ALTER TABLE `note`
+  ADD CONSTRAINT `fk_Case_ID` FOREIGN KEY (`Case_ID`) REFERENCES `report` (`Case_ID`) ON DELETE NO ACTION;
 
 --
 -- Constraints for table `report`
