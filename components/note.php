@@ -1,15 +1,16 @@
 <?php
-    session_start()
+    session_start();
+    $ref = $_SESSION['ref'];
     require '../DB/connect.php';
-    if (isset($_POST['ref'])) {
-      $ref = $_POST['ref'];
-      $input = $_POST[]
-      $upd = " UPDATE Report SET note = '$input' WHERE Case_ID = '$idupd'";
+    $input = $_POST['desc'];
+    $upd = " UPDATE Report SET note = '$input' WHERE Case_ID = '$ref' ";
+    if (isset($ref)) {
       $result = mysqli_query($con, $upd);
       if ($result) {
-        header('Location: ../app/showdata.php');
+        header('Location:../app/showdatahistory.php');
       } else {
         echo 'แก้ไขข้อมูลไม่สำเร็จ';
+        
       }
     }
 ?>

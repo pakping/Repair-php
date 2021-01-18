@@ -30,7 +30,7 @@
 
 			//*** Session
 			$_SESSION["Username"] = $objResult["Username"];
-			
+			require_once ("../auth/setcookie.php")
 			if ($objResult["Access"] == "user")
 			{
 				$_SESSION['type'] = 'user';

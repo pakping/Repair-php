@@ -33,6 +33,7 @@ require "../auth/sessionpersist.php"
           <th>สถานะ</th>
           <th>ลบ</th>
           <th>หมายเหตุ</th>
+          <th>เพิ่มหมายเหตุ</th>
         </tr>
         
         <?php
@@ -53,7 +54,9 @@ require "../auth/sessionpersist.php"
           echo "<td>" . $row["Date"] . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
           echo "<td><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
+          echo "<td><form action='../app/seenote.php' method='POST'><input type='hidden' name='displaynote' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Note' /></form></td>";
           echo "<td><form action='../app/addnote.php' method='POST'><input type='hidden' name='ref' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Add Note' /></form></td>";
+          
           echo "</tr>";
 
         }

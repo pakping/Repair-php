@@ -1,7 +1,8 @@
 <?php
 $content ="admin";
 require "../auth/sessionpersist.php";
-$_SESSION['ref'] = $_POST['ref'];
+$_SESSION['note'] = $_POST['displaynote'];
+require ""
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
