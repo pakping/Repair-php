@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 require("../DB/connect.php");
 $data = $con->query("select count(problem) as sum_problem, problem from report group by problem");
 $label = [];

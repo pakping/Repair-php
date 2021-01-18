@@ -1,6 +1,7 @@
 <?php
 $content ="admin";
-require "../auth/sessionpersist.php"
+require "../auth/sessionpersist.php";
+$_SESSION['ref'] = $_POST['ref'];
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
@@ -34,7 +35,7 @@ include '../css/bootstrap.php'
               <h1>แจ้งซ่อม</h1>
             </legend>
               <div class="mb-3">
-                <label class="p-3">ระบุปัญหา</label>
+                <label class="p-3">กรอกบันทึก</label>
                 <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc"
                   title="กรุณาระบุปัญหา" required></textarea>
               </div>

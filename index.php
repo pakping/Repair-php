@@ -5,7 +5,16 @@
 <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
 <link href="./css/style.css" rel="stylesheet">
 <?php
-  include 'css/bootstrap.php'
+  session_start();
+  if (!isset($_SESSION['type'])){
+    $_SESSION['type'] = 'none';
+  }
+  if ($_SESSION['type'] == 'user'){
+    header("location:app/home.php");
+  }elseif($_SESSION['type'] == 'admin'){
+    header("location:app/showdata.php");
+  }
+  include 'css/bootstrap.php';
 ?>
 </head>
 <body>
