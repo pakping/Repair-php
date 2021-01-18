@@ -20,6 +20,9 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/navbaradmin.php'
   ?>
+  <div class="p-3 ">
+    <h1>รายการแจ้งซ้อม</h1>
+  </div>
 
   <div class="container">
     <div class="">
@@ -73,5 +76,8 @@ require "../auth/sessionpersist.php"
   include '../components/footer.php'
   ?>
 </body>
+<script>
+
+</script>
 
 </html>
