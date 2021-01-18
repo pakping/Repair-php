@@ -34,6 +34,7 @@ require "../auth/sessionpersist.php"
           <th scope="col">วันที่</th>
           <th scope="col">สถานะ</th>
           <th scope="col">งาน</th>
+          <th scope="col">รายละเอียด</th>
           <th scope="col">ลบ</th>
         </tr>
         <?php
@@ -60,6 +61,7 @@ require "../auth/sessionpersist.php"
           }else{
             echo "<td><form action='../components/accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Accept' /></form></td>";
           }
+          echo "<td><form action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Detail' /></form></td>";
           echo "<td><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' name='submit-btn' value='Delete' /></form></td>";
           echo "</tr>";
 

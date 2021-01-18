@@ -1,9 +1,10 @@
 <?php
     session_start();
     $ref = $_SESSION['ref'];
+    $nameq = $_SESSION['Username'];
     require '../DB/connect.php';
     $input = $_POST['desc'];
-    $upd = " UPDATE Report SET note = '$input' WHERE Case_ID = '$ref' ";
+    $upd = " INSERT INTO note (Case_ID,Username,Note) Value ('$ref','$nameq','$input')";
     if (isset($ref)) {
       $result = mysqli_query($con, $upd);
       if ($result) {

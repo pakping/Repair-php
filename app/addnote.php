@@ -35,7 +35,7 @@ include '../css/bootstrap.php'
               <h1>แจ้งซ่อม</h1>
             </legend>
               <div class="mb-3">
-                <label class="p-3">ระบุปัญหา</label>
+                <label class="p-3">กรอกบันทึก</label>
                 <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc"
                   title="กรุณาระบุปัญหา" required></textarea>
               </div>
