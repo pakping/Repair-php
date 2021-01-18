@@ -19,7 +19,7 @@ include '../css/bootstrap.php'
   include '../components/navbar.php';
   $uname = $_SESSION["Username"];
   ?>
-
+  <br>
   <div class="container">
     <fieldset>
       <div class="shadow-lg p-3 mb-5 bg-white rounded" >
@@ -50,13 +50,13 @@ include '../css/bootstrap.php'
           echo "<tr>";
           echo "<td>" . $row["Case_ID"] . "</td>";
           echo "<td>" . $row["Location"] . "</td>";
-          echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" . $row["Description"] . "</td>";
+          echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" ."<p class='text-break'>". $row["Description"] ."</p>". "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row["Username"] . "</td>";
           echo "<td>" . $row["Date"] ."<br>" .  $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row[ "Stat"] . "</td>";
-          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'  class='btn btn-danger'name='submit-btn' value='Delete' /></form></td>";
+          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='Delete' /></form></td>";
           echo "</tr>";
           
         }
@@ -65,6 +65,9 @@ include '../css/bootstrap.php'
         </table>
         <!-- </div> -->
       </div>
+      <!-- <?php
+      include '../components/pagination.php'
+      ?> -->
     </fieldset>
   </div>
 

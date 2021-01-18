@@ -2,7 +2,7 @@
 require_once("../DB/connect.php");
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #6f42c1;">
   <div class="container-fluid">
   <a class="navbar-brand" href="#">
       <img src="..\img\1200px-UPHosLogo.svg.png" alt="" width="30" height="24">
@@ -17,7 +17,7 @@ require_once("../DB/connect.php");
          <!--  <a class="nav-link active" aria-current="page" href="#">Home</a> -->
         </li>
         <li class="nav-item">
-        <a class="nav-link active" href="home.php">แบบฟอร์มแจ้งซ่อม</a>
+        <a class="nav-link " href="home.php">แบบฟอร์มแจ้งซ่อม</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="../app/showdatauser.php">แสดงคำร้องข้อมูลแจ้ง</a>
