@@ -58,7 +58,7 @@ require "../auth/sessionpersist.php"
           //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
           echo "<td>" . $row["Worker"] . "</td>";
           echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-danger' name='submit-btn' value='ลบ' /></form>";
-          echo "<form action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด' /></form>";
+          echo "<form href='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด' /></form>";
           echo "<form action='../app/addnote.php' method='POST'><input type='hidden' name='ref' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' /></form> </div></td>";
           
           echo "</tr>";
