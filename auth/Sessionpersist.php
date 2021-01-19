@@ -11,7 +11,7 @@
         elseif($_SESSION['type']=='user'){
             echo 'user content';
             if ($content == 'admin'){
-                header("location:../app/home.php");
+                header("location:../app/showdatauser.php");
             }
         }else{
             header("location:../index.php");

@@ -1,6 +1,6 @@
 <?php
 $content ="admin";
-require "../auth/sessionpersist.php";
+session_start();
 $target = $_POST['job'];
 ?>
 <!doctype html>
@@ -42,6 +42,7 @@ $target = $_POST['job'];
               ?>
               </div>
             <button type="submit" class="btn btn-primary">กลับ</button>
+            <input type="button" class="btn btn-warning" name="print" value="พิมพ์จ้า" onclick="window.print()">
           </div>
         </fieldset>
       </form>
