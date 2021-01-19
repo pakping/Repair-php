@@ -1,6 +1,6 @@
 <?php
 $content ="admin";
-require "../auth/sessionpersist.php";
+session_start();
 $target = $_POST['job'];
 ?>
 <!doctype html>

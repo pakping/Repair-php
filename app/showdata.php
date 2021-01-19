@@ -56,13 +56,13 @@ require "../auth/sessionpersist.php"
           // echo "<td>" . "</td>";
           echo "<td>" . $row["Stat"] . "</td>";
           //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
-          echo "<td>ผู้รับงาน</td>";
+          echo "<td>" . $row["Worker"] . "</td>";
           if ($row["Stat"] == 'กำลังดำเนินการ'){
             echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/movetodone.php' method='POST'><input type='hidden' name='tempId2' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ' /></form>";
           }else{
             echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/accept.php' method='POST'><input type='hidden' name='tempId' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-success' name='submit-btn' value='รับงาน' /></form>";
           }
-          echo "<form action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-warning' name='submit-btn' value='ลายระเอียด' /></form>";
+          echo "<form action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-warning' name='submit-btn' value='รายระเอียด' /></form>";
           echo "<form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit' class='btn btn-danger' name='submit-btn' value='ลบ' /></form> </div></td>";
           
           echo "</tr>";

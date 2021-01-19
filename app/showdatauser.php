@@ -54,8 +54,8 @@ require "../auth/sessionpersist.php"
           echo "<td>" . $row["Date"] ."<br>" .  $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row[ "Stat"] . "</td>";
-          echo "<td>ผู้รับงาน</td>";
-          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></td>";       
+          echo "<td>" . $row["Worker"] . "</td>";
+          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><form action='../app/jobdetail.php' method='POST'><input  type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></form></td>";       
           
           echo "</tr>";
           
