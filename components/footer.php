@@ -1,6 +1,7 @@
 
-<footer class="footer mt-auto py-3 bg-light">
-  <div class="container">
-    <span class="text-muted">โรงพยาบาลมหาวิทยาลัยพะเยา</span>
+<footer  class="footer mt-auto py-4 bg-dark text-white-50" >
+  <div class="container" >
+  <small> &copy; โรงพยาบาลมหาวิทยาลัยพะเยา คณะแพทยศาสตร์ 2561</small>
+    
   </div>
 </footer>
