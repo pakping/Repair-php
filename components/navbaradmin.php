@@ -37,10 +37,6 @@ require_once("../DB/connect.php");
         <li class="nav-item"> 
         <a class="nav-link" href="../app/showchart.php">สถิติ</a>
         </li>
-
-        <li class="nav-item">
-        
-        </li>
       </ul>
       <span class="navbar-text">
       <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
