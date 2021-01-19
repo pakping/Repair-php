@@ -38,9 +38,21 @@ require_once("../DB/connect.php");
         <a class="nav-link" href="../app/showchart.php">สถิติ</a>
         </li>
       </ul>
-      <span class="navbar-text">
-      <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
-      </span>
+      <div class="nav-item">
+        <!-- <span class="navbar-text"> -->
+        <div class="dropdown">
+          <button class="dropstart btn btn-secondary btn-sm dropdown-toggle " type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <?php
+             echo "<p>". $_SESSION['Username'] . "</p>";
+            ?>
+          </button>
+          <ul class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="../auth/logout.php">ออกจากระบบ</a></li>
+          </ul>
+        </div>
+        <!-- </span> -->
+      </div>
     </div>
   </div>
 </nav>

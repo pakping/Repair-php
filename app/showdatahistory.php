@@ -7,7 +7,7 @@ require "../auth/sessionpersist.php"
 
 <head>
   <meta charset="utf-8">
-  <title>หน้าแสดงข้อมูล</title>
+  <title>หน้าแสดงข้อมูลรายการที่สำเร็จแล้ว</title>
   <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
   <?php
   include '../components/meta-title.php'

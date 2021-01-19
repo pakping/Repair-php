@@ -5,7 +5,6 @@ $_SESSION['ref'] = $_POST['ref'];
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
-
 <head>
   <?php
   include '../components/meta-title.php'
@@ -16,9 +15,6 @@ $_SESSION['ref'] = $_POST['ref'];
   <?php
   include '../components/navbar.php'
   ?>
-
-
-
   <div class="container">
     <div class="wrap-form">
       <br>

@@ -19,7 +19,7 @@ require "../auth/sessionpersist.php"
   <div class="container">
     <fieldset>
       <div class="shadow-lg p-3 mb-5 bg-white rounded" >
-        <h1 class="p-3">รายการแจ้งซ้อม</h1>
+        <h1 class="p-3">รายการแจ้งซ่อม</h1>
         <!-- <div class="wrap-form"> -->
         <table class="table ">
           <thead>
