@@ -35,15 +35,15 @@ require_once("../DB/connect.php");
         <a class="nav-link" href="../app/showdatahistory.php">แสดงประวัติการซ่อมแจ้งซ่อม</a>
          </li>
         <li class="nav-item"> 
-        <a class="nav-link" href="../app/showchart.php">chart</a>
+        <a class="nav-link" href="../app/showchart.php">สถิติ</a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
+        
         </li>
       </ul>
       <span class="navbar-text">
-      โรงพยาบาลมหาวิทยาลัยพะเยา
+      <a class="nav-link" href="../auth/logout.php">ออกจากระบบ</a>
       </span>
     </div>
   </div>
