@@ -9,6 +9,7 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/meta-title.php'
   ?>
+
 <?php
 include '../css/bootstrap.php'
 ?>
@@ -70,6 +71,7 @@ include '../css/bootstrap.php'
       </form>
     </div>
   </div>
+
   <?php
   include '../components/footer.php'
   ?>
