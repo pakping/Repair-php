@@ -11,12 +11,6 @@ $_SESSION['ref'] = $_POST['ref'];
   include '../components/meta-title.php'
   ?>
 </head>
-
-<?php
-include '../css/bootstrap.php'
-?>
-</head>
-
 <body class="d-flex flex-column h-100">
 
   <?php

@@ -5,26 +5,15 @@ $target = $_POST['job'];
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
-
 <head>
   <?php
   include '../components/meta-title.php'
   ?>
 </head>
-
-<?php
-include '../css/bootstrap.php'
-?>
-</head>
-
 <body class="d-flex flex-column h-100">
-
   <?php
   include '../components/navbar.php'
   ?>
-
-
-
   <div class="container">
     <div class="wrap-form">
       <br>
@@ -37,10 +26,8 @@ include '../css/bootstrap.php'
               <div class="mb-3">
                 <?php
                   require '../DB/connect.php';
-                  $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");
-                  
-                  if ($result) {
-                      
+                  $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");                
+                  if ($result) {                 
                     while ($row = mysqli_fetch_array($result)) {
                       echo "<br>งานที่  ". $row["Case_ID"] . "</br>";
                       echo "<br>สถานที่  " . $row["Location"] . "</br>";
@@ -50,7 +37,6 @@ include '../css/bootstrap.php'
                       echo "<br>เวลา   " . $row["Time"] . "</br>";
                       echo "<br>วันที่    " . $row["Date"] . "</br>";
                       echo "<br>สถานะ   " . $row["Stat"] . "</br>";
-
                     }
                   }
               ?>

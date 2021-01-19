@@ -3,8 +3,9 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="css/wrap-form.css">
   <link href="./css/style.css" rel="stylesheet">
+  <link href="./bootstrap-5/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <script src="./bootstrap-5/js/bootstrap.min.js" crossorigin="anonymous"></script>
   <?php
   session_start();
   if (!isset($_SESSION['type'])){
@@ -15,7 +16,7 @@
   }elseif($_SESSION['type'] == 'admin'){
     header("location:app/showdata.php");
   }
-  include 'css/bootstrap.php';
+  
 ?>
 </head>
 

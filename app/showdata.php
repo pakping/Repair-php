@@ -9,14 +9,11 @@ require "../auth/sessionpersist.php"
   <meta charset="utf-8">
   <title>หน้าแสดงข้อมูล</title>
   <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
-</head>
-
-<?php
-  include '../css/bootstrap.php'
+  <?php
+  include '../components/meta-title.php'
   ?>
-
+</head>
 <body class="d-flex flex-column h-100">
-
   <?php
   include '../components/navbaradmin.php'
   ?>

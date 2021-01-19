@@ -5,15 +5,15 @@ require "../auth/sessionpersist.php"
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-  <meta charset="utf-8">
   <title>Chart</title>
   <link rel="stylesheet" href="../css/Chart.css">
   <link rel="stylesheet" href="../css/wrap-form.css">
+  <?php
+  include '../components/meta-title.php'
+  ?>
 </head>
 
-<?php
-  include '../css/bootstrap.php'
-?>
+
 
 <body class="d-flex flex-column h-100">
   <?php
