@@ -1,16 +1,18 @@
 <?php
-$content ="user";
+$content = "user";
 require "../auth/sessionpersist.php"
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
 
 <head>
-<title>หน้าหลัก</title>
+  <title>หน้าหลัก</title>
   <?php
   include '../components/meta-title.php'
   ?>
+
 </head>
+
 <body class="d-flex flex-column h-100">
   <?php
   include '../components/navbar.php'
@@ -36,8 +38,7 @@ require "../auth/sessionpersist.php"
               </div>
               <div class="mb-3">
                 <label class="p-3">ระบุปัญหา</label>
-                <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc"
-                  title="กรุณาระบุปัญหา" required></textarea>
+                <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" title="กรุณาระบุปัญหา" required></textarea>
               </div>
               <label class="p-3">ห้อง</label>
               <select name="room" class="form-select" aria-label="Default select example" required>
