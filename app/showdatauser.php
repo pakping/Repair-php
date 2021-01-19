@@ -32,7 +32,9 @@ require "../auth/sessionpersist.php"
               <th scope="col">เวลา</th>
               <!-- <th scope="col">วันที่</th> -->
               <th scope="col">สถานะ</th>
+              <th scope="col">ผู้รับงาน</th>
               <th scope="col">คำสั่ง</th>
+              
             </tr>
           </thead>
           <tbody>
@@ -52,7 +54,9 @@ require "../auth/sessionpersist.php"
           echo "<td>" . $row["Date"] ."<br>" .  $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row[ "Stat"] . "</td>";
-          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='Delete' /></form></td>";
+          echo "<td>ผู้รับงาน</td>";
+          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></td>";       
+          
           echo "</tr>";
           
         }

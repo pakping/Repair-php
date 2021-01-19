@@ -13,6 +13,7 @@
 	if(!$objResult)
 	{
 		echo "Username and Password Incorrect!";
+		header("location:../app/home.php");
 		exit();
 	}
 	else

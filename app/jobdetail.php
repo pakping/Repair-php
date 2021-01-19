@@ -42,6 +42,7 @@ $target = $_POST['job'];
               ?>
               </div>
             <button type="submit" class="btn btn-primary">กลับ</button>
+            <input type="button" class="btn btn-warning" name="print" value="พิมพ์จ้า" onclick="window.print()">
           </div>
         </fieldset>
       </form>

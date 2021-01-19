@@ -23,7 +23,7 @@ require '../DB/connect.php';
     $room = $_POST['room'];
     $type = $_POST['type'];
     $uname =$_SESSION["Username"];
-    $adddat = "INSERT INTO report (Location,Problem,Description,Time,Date,Stat,Username) VALUE ('$room','$type','$desc',CURRENT_TIME(),CURRENT_DATE(),'Waiting','$uname')";
+    $adddat = "INSERT INTO report (Location,Problem,Description,Time,Date,Stat,Username) VALUE ('$room','$type','$desc',CURRENT_TIME(),CURRENT_DATE(),'รอดำเนินการ','$uname')";
     $result = mysqli_query($con,$adddat);
     
     if ($result)

@@ -4,7 +4,7 @@ require '../DB/connect.php';
 if (isset($_POST['tempId'])) {
   $idupd = $_POST['tempId'];
 
-  $upd = " UPDATE Report SET stat = 'Working' WHERE Case_ID = '$idupd'";
+  $upd = " UPDATE Report SET stat = 'กำลังดำเนินการ' WHERE Case_ID = '$idupd'";
   $result = mysqli_query($con, $upd);
   if ($result) {
     header('Location: ../app/showdata.php');
