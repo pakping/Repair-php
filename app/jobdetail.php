@@ -2,6 +2,7 @@
 $content ="admin";
 session_start();
 $target = $_POST['job'];
+$_SESSION['target'] = $target;
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
@@ -17,7 +18,7 @@ $target = $_POST['job'];
   <div class="container">
     <div class="wrap-form">
       <br>
-      <form action="../app/showdatahistory.php" method="post" name="F1">
+      <form action="../components/print.php" target="_blank"method="post" name="F1">
         <fieldset>
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <legend>
@@ -41,8 +42,7 @@ $target = $_POST['job'];
                   }
               ?>
               </div>
-            <button type="submit" class="btn btn-primary">กลับ</button>
-            <input type="button" class="btn btn-warning" name="print" value="พิมพ์จ้า" onclick="window.print()">
+            <button type="print" class="btn btn-primary">print</button>
           </div>
         </fieldset>
       </form>
