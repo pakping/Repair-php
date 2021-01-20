@@ -58,23 +58,19 @@ ob_start(); // Start get HTML code
 
 <body>
 
-    <div class="container" >
+    <div class="container">
         <p align="right">ใบแจ้งเลขที่ <?php echo $_SESSION['cid']; ?></p>
         <h1 align="center">ใบแจ้งซ่อม</h1>
         <p align="center">งานสาธารณูปโภคและซ่อมบำรุง งานอาคารสถานที่</p>
-        <p align="right">วันที่ เดือน พ.ศ. </p>
-        <br>
+        <p align="right">วันที่ เดือน พ.ศ. <?php echo $_SESSION['dat']; ?></p>
+        <div align="center">
+            <p>ผู้แจ้ง.......<?php echo $_SESSION['user']; ?></p>
+            <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
+        </div>
         <div align="right">
-            <p>ผู้แจ้ง
-            </p>
-            <p>ห้อง</p>
+            <p>เวลาที่แจ้ง น. <?php echo $_SESSION['tim']; ?></p>
         </div>
-        <div class="d-flex justify-content-evenly">
-
-            <p>เวลาที่แจ้ง น. </p>
-        </div>
-        <br>
-        <table class="table table-bordered border-secondary">
+        <table align="center">
             <thead>
                 <tr>
                     <th>ประเภทงาน</th>
@@ -83,19 +79,18 @@ ob_start(); // Start get HTML code
             </thead>
             <tbody>
                 <tr>
-                    <th>ปัญหา</th>
-                    <th>รายละเอียด</th>
+                    <td> <?php echo $_SESSION['pro']; ?></td>
+                    <td> <?php echo $_SESSION['des']; ?></td>
                 </tr>
             </tbody>
         </table>
         <br>
-        <div class="d-flex justify-content-evenly">
-            <p>(......................................)</p>
-            <p>(......................................)</p>
-        </div>;
-        <div class="d-flex justify-content-evenly">
-            <P>ผู้รับ </P>
-            <p>ผู้แจ้ง </p>
+        <div align="center">
+            <p>(....................................) (....................................)</p>
+        </div>
+        <div align="center">
+            <P>ผู้รับ.................................... ผู้แจ้ง.................................... </P>
+            <p></p>
         </div>
 
 </body>
