@@ -68,9 +68,10 @@ ob_start(); // Start get HTML code
             <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
         </div>
         <div align="right">
-            <p>เวลาที่แจ้ง น. <?php echo $_SESSION['tim']; ?></p>
+            <p>เวลาที่แจ้ง <?php echo $_SESSION['tim'];  ?>น.</p>
         </div>
-        <table align="center">
+        <div align="center" style="width:500px">
+        <table >
             <thead>
                 <tr>
                     <th>ประเภทงาน</th>
@@ -84,6 +85,7 @@ ob_start(); // Start get HTML code
                 </tr>
             </tbody>
         </table>
+        </div>
         <br>
         <div align="center">
             <p>(....................................) (....................................)</p>
