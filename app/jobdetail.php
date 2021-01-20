@@ -18,7 +18,7 @@ $_SESSION['target'] = $target;
   <div class="container">
     <div class="wrap-form">
       <br>
-      <form action="../components/print.php" target="_blank"method="post" name="F1">
+      <form action="printtest.php" target="_blank"method="post" name="F1">
         <fieldset>
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <legend>

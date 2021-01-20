@@ -61,12 +61,12 @@ $target = $_SESSION['target'];
         echo"</table>";
         echo"<br>";
         echo"<div class='d-flex justify-content-evenly'>";
-        echo    "<p>(....................)</p>";
-        echo    "<p>(................)</p>";
+        echo    "<p>(......................................)</p>";
+        echo    "<p>(......................................)</p>";
         echo"</div>";
         echo"<div class='d-flex justify-content-evenly'>";
-        echo    "<P>ผู้รับ</P>";
-        echo    "<p>ผู้แจ้ง</p>";
+        echo    "<P>ผู้รับ      </P>";
+        echo    "<p>ผู้แจ้ง      </p>";
         echo"</div>";
                     }
                 }
