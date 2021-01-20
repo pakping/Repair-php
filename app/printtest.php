@@ -1,6 +1,6 @@
 <?php
 // Require composer autoload
-require_once '../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 // เพิ่ม Font ให้กับ mPDF
 $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
