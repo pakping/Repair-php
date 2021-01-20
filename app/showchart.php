@@ -5,7 +5,7 @@ require "../auth/sessionpersist.php"
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-    <title>สถิต</title>
+    <title>สถิติ</title>
     <link rel="stylesheet" href="../css/Chart.css">
     
     <?php
@@ -34,9 +34,9 @@ require "../auth/sessionpersist.php"
                         <p></p>
                         <h4 class="my-3">รายละเอียด</h3>
                             <ul>
-                                <li>computer</li>
-                                <li>printer</li>
-                                <li>Other</li>
+                                <li>คอมพิวเตอร์</li>
+                                <li>ปริ้นเตอร์</li>
+                                <li>อื่นๆ</li>
 
                             </ul>
                 </div>
@@ -63,7 +63,7 @@ require "../auth/sessionpersist.php"
             data: {
                 labels: <?= json_encode($label) ?>,
                 datasets: [{
-                    label: 'อุปรกรณ์ที่แจ้งเสีย',
+                    label: 'อุปกรณ์ที่แจ้งเสีย',
                     data: <?= json_encode($datax) ?>,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
