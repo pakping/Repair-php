@@ -30,7 +30,7 @@ require "../auth/sessionpersist.php"
               <div class="mb-3">
                 <label class="p-3">อุปกรณ์ที่เสีย</label>
                 <select name="type" class="form-select" aria-label="Default select example" required>
-                  <option selected value="">Choose...</option>
+                  <option selected value="">โปรดเลือก...</option>
                   <option value="Computer">1 : คอมพิวเตอร์</option>
                   <option value="Printer">2 : เครื่องพิมพ์</option>
                   <option value="Other">3 : อื่นๆ</option>
@@ -42,7 +42,7 @@ require "../auth/sessionpersist.php"
               </div>
               <label class="p-3">ห้อง</label>
               <select name="room" class="form-select" aria-label="Default select example" required>
-                <option selected value="">Choose...</option>
+                <option selected value="">โปรดเลือก...</option>
                 <option value="OPD1">1 : OPD1</option>
                 <option value="OPD2">2 : OPD2</option>
                 <option value="IPD1">3 : IPD1</option>
