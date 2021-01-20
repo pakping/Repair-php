@@ -7,14 +7,13 @@ $_SESSION['target'] = $target;
 <!doctype html>
 <html lang="en" class="h-100">
 <head>
+<title>รายละเอียด</title>
   <?php
   include '../components/meta-title.php'
   ?>
 </head>
 <body class="d-flex flex-column h-100">
-  <?php
-  include '../components/navbar.php'
-  ?>
+
   <div class="container">
     <div class="wrap-form">
       <br>
