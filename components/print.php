@@ -1,6 +1,7 @@
 <?php
 session_start();
 $target = $_SESSION['target'];
+require '../DB/connect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,10 +25,9 @@ $target = $_SESSION['target'];
 <body>
     <div class="container">
     <?php
-                  require '../DB/connect.php';
-                  $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");                
-                  if ($result) {                 
-                    while ($row = mysqli_fetch_array($result)) {
+        $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");                
+            if ($result) {                 
+                 while ($row = mysqli_fetch_array($result)) {
         echo "<div class=''>";
         echo    "<p class='d-flex justify-content-end'>ใบแจ้งเลขที่  " . $row["Case_ID"] . "</p><br>";
         echo    "<h1 class='d-flex justify-content-center'>ใบแจ้งซ่อม</h1><br>";

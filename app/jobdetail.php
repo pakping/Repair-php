@@ -40,7 +40,7 @@ $_SESSION['target'] = $target;
                       echo "<br>สถานะ   " . $row["Stat"] . "</br>";
                     }
                   }
-              ?>
+                ?>
               </div>
             <button type="print" class="btn btn-primary">print</button>
           </div>

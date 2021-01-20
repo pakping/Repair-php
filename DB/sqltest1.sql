@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2021 at 10:34 AM
+-- Generation Time: Jan 20, 2021 at 07:59 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -74,36 +74,34 @@ CREATE TABLE `report` (
   `Time` time NOT NULL,
   `Date` date NOT NULL,
   `Editby` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Stat` char(10) CHARACTER SET utf8 NOT NULL,
+  `Stat` char(20) CHARACTER SET utf8 NOT NULL,
   `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `noted` char(10) COLLATE utf32_thai_520_w2 NOT NULL
+  `Worker` char(23) COLLATE utf32_thai_520_w2 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
 
 --
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`Case_ID`, `Location`, `Problem`, `Description`, `Time`, `Date`, `Editby`, `Stat`, `Username`, `noted`) VALUES
-(27, 'Pharmacy', 'Printer', '                aqq    ', '14:14:08', '2021-01-14', '0', 'Done', 'Sirichai', ''),
-(28, 'Surgical', 'Other', '              tttttttt      ', '14:14:20', '2021-01-14', '0', 'Done', 'Sirichai', ''),
-(29, 'Lab', 'Other', '                    ', '14:14:31', '2021-01-14', '0', 'Done', 'Jeerachon', ''),
-(30, 'Surgical', 'Computer', '                    sadsad', '14:14:42', '2021-01-14', '0', 'Done', 'Jeerachon', ''),
-(49, 'OPD1', 'Printer', 'aaac', '11:35:55', '2021-01-15', '', 'Done', 'Sirichai', ''),
-(51, 'OPD1', 'Printer', '                    sdds', '11:44:37', '2021-01-15', '', 'Done', 'Sirichai', ''),
-(52, 'OPD1', 'Computer', '                    jghj', '11:48:21', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
-(53, 'IPD1', 'Printer', '                      sadsad', '11:54:17', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
-(54, 'IPD1', 'Printer', '                      sadsad', '11:55:32', '2021-01-15', '', 'Working', 'Sirichai', ''),
-(55, 'IPD1', 'Printer', ' asfaf', '11:56:51', '2021-01-15', '', 'Waiting', 'Sirichai', ''),
-(57, 'Lab', 'Computer', 'คอมลุ๊', '13:08:50', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(58, 'OPD2', 'Printer', 'cxz', '13:39:19', '2021-01-15', '', 'Working', 'Jeerachon', ''),
-(59, 'OPD2', 'Printer', 'cxz', '13:39:37', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(60, 'OPD1', 'Printer', 'sdad', '13:40:48', '2021-01-15', '', 'Done', 'Jeerachon', ''),
-(62, 'OPD1', 'Printer', 'dsa', '13:41:23', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(63, 'IPD1', 'Printer', 'dsa', '13:41:35', '2021-01-15', '', 'Working', 'Jeerachon', ''),
-(64, 'IPD1', 'Printer', 'dsa', '13:41:45', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(65, 'IPD1', 'Printer', 'dsa', '13:42:01', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(66, 'OPD2', 'Printer', 'dsdsadasdasdas', '14:59:47', '2021-01-15', '', 'Waiting', 'Jeerachon', ''),
-(67, 'OPD1', 'Computer', 'fass', '08:47:40', '2021-01-18', '', 'Waiting', 'Jeerachon', '');
+INSERT INTO `report` (`Case_ID`, `Location`, `Problem`, `Description`, `Time`, `Date`, `Editby`, `Stat`, `Username`, `Worker`) VALUES
+(27, 'Pharmacy', 'Printer', '                aqq    ', '14:14:08', '2021-01-14', '0', 'สำเร็จ', 'Sirichai', ''),
+(28, 'Surgical', 'Other', '              tttttttt      ', '14:14:20', '2021-01-14', '0', 'สำเร็จ', 'Sirichai', ''),
+(29, 'Lab', 'Other', '                    ', '14:14:31', '2021-01-14', '0', 'สำเร็จ', 'Jeerachon', ''),
+(30, 'Surgical', 'Computer', '                    sadsad', '14:14:42', '2021-01-14', '0', 'สำเร็จ', 'Jeerachon', ''),
+(49, 'OPD1', 'Printer', 'aaac', '11:35:55', '2021-01-15', '', 'สำเร็จ', 'Sirichai', ''),
+(51, 'OPD1', 'Printer', '                    sdds', '11:44:37', '2021-01-15', '', 'สำเร็จ', 'Sirichai', ''),
+(52, 'OPD1', 'Computer', '                    jghj', '11:48:21', '2021-01-15', '', 'สำเร็จ', 'Sirichai', ''),
+(53, 'IPD1', 'Printer', '                      sadsad', '11:54:17', '2021-01-15', '', 'สำเร็จ', 'Sirichai', ''),
+(54, 'IPD1', 'Printer', '                      sadsad', '11:55:32', '2021-01-15', '', 'สำเร็จ', 'Sirichai', ''),
+(60, 'OPD1', 'Printer', 'sdad', '13:40:48', '2021-01-15', '', 'สำเร็จ', 'Jeerachon', ''),
+(63, 'IPD1', 'Printer', 'dsa', '13:41:35', '2021-01-15', '', 'สำเร็จ', 'Jeerachon', ''),
+(69, 'OPD2', 'Printer', 'giik', '10:08:46', '2021-01-19', '', 'สำเร็จ', 'Jeerachon', ''),
+(71, 'Office 5', 'Printer', 'หมึงเสีย', '11:24:45', '2021-01-19', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
+(72, 'Pharmacy', 'Printer', 'พังอะมาแก้ด่วนเลยยย', '11:45:40', '2021-01-19', '', 'สำเร็จ', 'teerat', 'Sirichai'),
+(73, 'OPD2', 'Printer', 'หมึกหมด', '13:12:25', '2021-01-19', '', 'สำเร็จ', 'Jeerachon', ''),
+(74, 'IPD2', 'Computer', 'เม้าไม่มี', '13:13:01', '2021-01-19', '', 'สำเร็จ', 'teerat', 'Sirichai'),
+(75, 'Surgical', 'Printer', 'hum', '13:41:52', '2021-01-19', '', 'สำเร็จ', 'teerat', 'teerat'),
+(76, 'Pharmacy', 'Other', 'บ่าจี', '13:42:05', '2021-01-19', '', 'สำเร็จ', 'Sirichai', 'Sirichai');
 
 -- --------------------------------------------------------
 
@@ -149,7 +147,9 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`Username`, `Password`, `Tels.`, `LoginStatus`, `LastUpdate`, `Access`) VALUES
 ('Jeerachon', '123456', 889943216, 0, '0000-00-00 00:00:00', 'user'),
-('Sirichai', '654321', 215148148, 1, '2021-01-18 16:31:53', 'admin');
+('phoomin', '456789', 1333333333, 0, '0000-00-00 00:00:00', 'user'),
+('Sirichai', '654321', 215148148, 1, '2021-01-20 13:58:07', 'admin'),
+('teerat', '987654', 11223344, 0, '0000-00-00 00:00:00', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -195,7 +195,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT for table `spare_request`
