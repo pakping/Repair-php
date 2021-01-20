@@ -38,7 +38,16 @@ $_SESSION['target'] = $target;
                       echo "<br>เวลา   " . $row["Time"] . "</br>";
                       echo "<br>วันที่    " . $row["Date"] . "</br>";
                       echo "<br>สถานะ   " . $row["Stat"] . "</br>";
+                      $_SESSION['cid'] = $row["Case_ID"];
+                      $_SESSION['loc'] = $row["Location"];
+                      $_SESSION['pro'] = $row["Problem"];
+                      $_SESSION['des'] = $row["Description"];
+                      $_SESSION['user'] = $row["Username"];
+                      $_SESSION['tim'] = $row["Time"];
+                      $_SESSION['dat'] = $row["Date"];
+                      
                     }
+
                   }
                 ?>
               </div>
