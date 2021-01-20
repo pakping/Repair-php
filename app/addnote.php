@@ -13,7 +13,7 @@ $_SESSION['ref'] = $_POST['ref'];
 <body class="d-flex flex-column h-100">
 
   <?php
-  include '../components/navbar.php'
+  include '../components/navbaradmin.php'
   ?>
   <div class="container">
     <div class="wrap-form">
