@@ -2,6 +2,7 @@
 session_start();
 require '../DB/connect.php';
     $header = "ระบบแจ้งซ่อม";
+    
     $desc = $_POST['desc'];
     $room = $_POST['room'];
     $type = $_POST['type'];
