@@ -11,7 +11,7 @@ require '../DB/connect.php';
 //line notify
 define('LINE_API',"https://notify-api.line.me/api/notify");
  //ใส่Token ที่copy เอาไว้
-$token = "RhzKwmuSpK0SXOhWDxaMiAtz2P2NDSx5vIPdQakHQIN"; 
+$token = "mWLUxFiNjmdgXKZu8oqef6H00OGi6ktec0ftBvhpTs7"; 
  //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
 $str = $message = $header.
         "\n".'ประเภท  : '.$type.
