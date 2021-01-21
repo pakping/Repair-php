@@ -53,7 +53,8 @@ require "../auth/sessionpersist.php"
           echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" ."<p class='text-break'>". $row["Description"] ."</p>". "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row["Username"] . "</td>";
-          echo "<td>" . $row["Date"] ."<br>" .  $row["Time"] . "</td>";
+          $date = date_create($row["Date"]); 
+              echo "<td>" .  date_format($date,"d/m/Y") . "<br>" . $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row[ "Stat"] . "</td>";
           echo "<td>" . $row["Worker"] . "</td>";
