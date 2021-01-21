@@ -69,9 +69,7 @@ require "../auth/sessionpersist.php"
       </div>
       </div>
       
-      <!-- <?php
-      include '../components/pagination.php'
-      ?> -->
+     
   
   </div>
 

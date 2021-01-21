@@ -20,13 +20,8 @@ require "../auth/sessionpersist.php"
   <div class="container">
       <br>
       <form action="../components/forminsert.php" method="post" >
-<<<<<<< HEAD
-=======
-        <fieldset>
->>>>>>> 0428e301f31b96b27ad09dd776aec7916ac3130d
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
           <h1>แจ้งซ่อม</h1>
-            
             <div class="form-group" class="mb-3">
               <div class="mb-3">
                 <label class="p-3">อุปกรณ์ที่เสีย</label>
@@ -66,8 +61,6 @@ require "../auth/sessionpersist.php"
           </div>
       </form>
     </div>
-  
-
   <?php
   include '../components/footer.php'
 ?>
