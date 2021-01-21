@@ -4,21 +4,26 @@ require "../auth/sessionpersist.php"
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
-<head>
 
+<head>
+  <title>หน้าหลัก</title>
   <?php
   include '../components/meta-title.php'
   ?>
-  <title>หน้าหลัก</title>
+
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
   <?php
   include '../components/navbar.php'
   ?>
   <div class="container">
       <br>
       <form action="../components/forminsert.php" method="post" >
+<<<<<<< HEAD
+=======
+        <fieldset>
+>>>>>>> 0428e301f31b96b27ad09dd776aec7916ac3130d
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
           <h1>แจ้งซ่อม</h1>
             
@@ -59,7 +64,6 @@ require "../auth/sessionpersist.php"
             <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
           </div>
-       
       </form>
     </div>
   
