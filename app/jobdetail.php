@@ -15,7 +15,7 @@ $_SESSION['target'] = $target;
   ?>
 </head>
 
-<body >
+<body>
   <div class="container">
     <div class="wrap-form">
       <br>
@@ -31,15 +31,46 @@ $_SESSION['target'] = $target;
               $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");
               if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
-                  echo "<br>งานที่  : " . $row["Case_ID"] . "</br>";
-                  echo "<br>สถานที่  : " . $row["Location"] . "</br>";
-                  echo "<br>ปัญหา   : " . $row["Problem"] . "</br>";
-                  echo "<br>รายละเอียด  :  " . $row["Description"] . "</br>";
-                  echo "<br>รายงานโดย  :  " . $row["Username"] . "</br>";
-                  echo "<br>เวลา :  " . $row["Time"] . "</br>";
-                  $date = date_create($row["Date"]); 
-                  echo "<br>วันที่ : " .  date_format($date,"d/m/Y") . "</br>";
-                  echo "<br>สถานะ  : " . $row["Stat"] . "</br>";
+                  $date = date_create($row["Date"]);
+                  echo "<table class='' style='width:100%'>
+                  <thead>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style='width:25%'><p class='fw-bold'>งานที่  : </p></td>
+                      <td style='width:25%'><p>" . $row["Case_ID"] . "</p></td>
+                      <td style='width:25%'><p class='fw-bold'>สถานที่  : </p></td>
+                      <td style='width:25%'><p>" .  $row["Location"] . "</p></td>
+                    </tr>
+                    <tr>
+                      <td style='width:25%'><p class='fw-bold'>รายงานโดย  : </p></td>
+                      <td style='width:25%'><p>" . $row["Username"] . "</p></td>
+                      <td style='width:25%'><p class='fw-bold'>เวลา  : </p></td>
+                      <td style='width:25%'><p>" .  $row["Time"] . "</p></td>
+                    </tr>
+                    <tr>
+                      <td style='width:25%'><p class='fw-bold'>วันที่ : </p></td>
+                      <td style='width:25%'><p>" . date_format($date,"d/m/Y") . "</p></td>
+                      <td style='width:25%'><p class='fw-bold'>สถานะ  : </p></td>
+                      <td style='width:25%'><p>" .  $row["Stat"] . "</p></td>
+                    </tr>
+                    <tr>
+                      <td style='width:25%'><p class='fw-bold'>ปัญหา  : </p></td>
+                      <td style='width:25%'><p>" . $row["Problem"] . "</p></td>
+                    </tr>
+                    <tr>
+                      <td style='width:25%'><p class='fw-bold'>รายละเอียด  : </p></td>
+                      <td colspan='3' class='text-break' style='width:25%'><p>" . $row["Description"] . "</p></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>";
                   $_SESSION['cid'] = $row["Case_ID"];
                   $_SESSION['loc'] = $row["Location"];
                   $_SESSION['pro'] = $row["Problem"];
@@ -61,7 +92,7 @@ $_SESSION['target'] = $target;
 
     <form action="../app/showdatahistory.php" method="post" name="F2">
       <fieldset>
-            <?php
+        <?php
             require '../DB/connect.php';
             $data = mysqli_query($con, "SELECT * FROM note Where Case_ID = '$target' ");
 
@@ -69,12 +100,12 @@ $_SESSION['target'] = $target;
                 $count = 1 ;
                 
               while ($zzz = mysqli_fetch_array($data)) {
-                if ($count ==1){
+                if ($count == 1){
                   echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>
                   <div class='mb-3'>";
                   echo "<h1>รายงานจากช่าง</h1>";
                   }
-                echo $count ;
+                echo "หมายเหตุ : " .$count ;
                 echo "<br></br>";
                 echo "<p class='text-break'> รายละเอียด " . $zzz["Note"] . "</p>";
                 echo "<br>เขียนโดย  " . $zzz["Username"] . "</br>";
@@ -86,7 +117,7 @@ $_SESSION['target'] = $target;
                 </div>";
             }
             ?>
-          
+
       </fieldset>
     </form>
 

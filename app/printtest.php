@@ -64,18 +64,18 @@ ob_start(); // Start get HTML code
         <p align="center">งานสาธารณูปโภคและซ่อมบำรุง งานอาคารสถานที่</p>
         <p align="right">วันที่ เดือน พ.ศ. <?php echo $_SESSION['dat']; ?></p>
         <div align="center">
-            <p>ผู้แจ้ง.......<?php echo $_SESSION['user']; ?></p>
+            <p>ผู้แจ้ง <?php echo $_SESSION['user']; ?></p>
             <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
         </div>
         <div align="right">
             <p>เวลาที่แจ้ง <?php echo $_SESSION['tim'];  ?>น.</p>
         </div>
-        <div align="center" style="width:500px">
-        <table >
+        <div align="center" style="width: 90%">
+        <table>
             <thead>
                 <tr>
-                    <th>ประเภทงาน</th>
-                    <th>รายละเอียดแจ้งซ่อม</th>
+                    <th style="width: 50%">ประเภทงาน</th>
+                    <th style="width: 50%">รายละเอียดแจ้งซ่อม</th>
                 </tr>
             </thead>
             <tbody>

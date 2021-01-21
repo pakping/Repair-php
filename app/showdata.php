@@ -22,11 +22,11 @@ require "../auth/sessionpersist.php"
 
   <br>
   <div class="container">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
       <div class="p-3 ">
-          <h1>รายการแจ้งซ่อม</h1>
+        <h1>รายการแจ้งซ่อม</h1>
       </div>
-          <div class="table-responsive">
+      <div class="table-responsive">
         <table class="table table-hover table-sm">
           <tr>
             <th scope="col">งานที่</th>
@@ -51,7 +51,11 @@ require "../auth/sessionpersist.php"
               echo "<tr>";
               echo "<td>" . $row["Case_ID"] . "</td>";
               echo "<td>" . $row["Location"] . "</td>";
-              echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" . "<p class='text-break'>" . $row["Description"]  . "</p>" . "</td>";
+              echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" . "<p class='text-break' style='text-decoration: none;
+              text-overflow: ellipsis; /* เพิ่ม ... จุดจุดจุดท้ายสุด */ 
+              display: block; overflow: hidden; 
+              white-space: nowrap; 
+              width: 150px; /* กำหนดความกว้าง */ '>" . $row["Description"]  . "</p>" . "</td>";
               // echo "<td>" . . "</td>";
               echo "<td>" . $row["Username"] . "</td>";
               $date = date_create($row["Date"]); 
@@ -73,8 +77,8 @@ require "../auth/sessionpersist.php"
           }
           ?>
         </table>
-          </div>
       </div>
+    </div>
   </div>
   <?php
   include '../components/footer.php'

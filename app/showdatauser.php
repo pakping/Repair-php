@@ -16,7 +16,7 @@ require "../auth/sessionpersist.php"
   $uname = $_SESSION["Username"];
   ?>
   <br>
-  <div class="container-fluid">
+  <div class="container">
       <div class="shadow-lg p-3 mb-5 bg-white rounded" >
       <div class="p-3 ">
         <h1 >รายการแจ้งซ่อม</h1>  
@@ -50,16 +50,19 @@ require "../auth/sessionpersist.php"
           echo "<tr>";
           echo "<td>" . $row["Case_ID"] . "</td>";
           echo "<td>" . $row["Location"] . "</td>";
-          echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" ."<p class='text-break'>". $row["Description"] ."</p>". "</td>";
+          echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" ."<p class='text-break' style='text-decoration: none;
+          text-overflow: ellipsis; /* เพิ่ม ... จุดจุดจุดท้ายสุด */ 
+          display: block; overflow: hidden; 
+          white-space: nowrap; 
+          width: 150px; /* กำหนดความกว้าง */ '>". $row["Description"] ."</p>". "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row["Username"] . "</td>";
           $date = date_create($row["Date"]); 
-              echo "<td>" .  date_format($date,"d/m/Y") . "<br>" . $row["Time"] . "</td>";
+          echo "<td>" .  date_format($date,"d/m/Y") . "<br>" . $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
           echo "<td>" . $row[ "Stat"] . "</td>";
           echo "<td>" . $row["Worker"] . "</td>";
-          echo "<td><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><form target='_blank' action='../app/jobdetail.php' method='POST'><input  type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></form></td>";       
-          
+          echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><form target='_blank' action='../app/jobdetail.php' method='POST'><input  type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></form></div></td>";
           echo "</tr>";
           
         }
