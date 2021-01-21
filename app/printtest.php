@@ -103,7 +103,8 @@ ob_start(); // Start get HTML code
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
 $mpdf->Output("MyPDF.pdf");
-ob_end_flush()
+ob_end_flush();
+header("location:MyPDF.pdf");
 ?>
 
-ดาวโหลดรายงานในรูปแบบ PDF <a href="MyPDF.pdf">คลิกที่นี้</a>
+<!-- ดาวโหลดรายงานในรูปแบบ PDF <a href="MyPDF.pdf">คลิกที่นี้</a> -->
