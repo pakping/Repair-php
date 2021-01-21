@@ -20,7 +20,7 @@ require "../auth/sessionpersist.php"
   <div class="container">
     <div class="wrap-form">
       <br>
-      <form action="../components/forminsert.php" method="post" name="F1">
+      <form action="../components/forminsert.php" method="post" >
         <fieldset>
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <legend>
@@ -63,7 +63,6 @@ require "../auth/sessionpersist.php"
             <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
           </div>
-        </fieldset>
       </form>
     </div>
   </div>
