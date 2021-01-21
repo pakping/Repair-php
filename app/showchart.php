@@ -9,7 +9,7 @@ require "../auth/sessionpersist.php"
     <?php
     include '../components/meta-title.php'
     ?>
-    <title>สถิติ</title>
+    <title>สถิติการแจ้งซ่อม</title>
     <link rel="stylesheet" href="../css/Chart.css">
 
 </head>

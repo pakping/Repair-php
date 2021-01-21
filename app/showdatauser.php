@@ -5,7 +5,7 @@ require "../auth/sessionpersist.php"
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-<title>หน้าแสดงข้อมูล</title>
+<title>รายการแจ้งซ่อม</title>
   <?php
   include '../components/meta-title.php'
   ?>
@@ -69,7 +69,7 @@ require "../auth/sessionpersist.php"
       </div>
       </div>
       
-     
+
   
   </div>
 

@@ -5,3 +5,10 @@
     
   </div>
 </footer>
+<style>
+footer{
+ position:fixed;
+ bottom:0;
+ 
+ width: 2000px;
+}</style>

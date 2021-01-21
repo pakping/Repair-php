@@ -11,7 +11,7 @@ $_SESSION['target'] = $target;
   <?php
   include '../components/meta-title.php'
   ?>
-  <title>รายละเอียด</title>
+  <title>รายละเอียดของงานที่ </title>
 
 </head>
 

@@ -10,7 +10,7 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/meta-title.php'
   ?>
-  <title>หน้าแสดงข้อมูล</title>
+  <title>แสดงคำร้องข้อมูลแจ้งซ่อม</title>
   <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
 
 </head>

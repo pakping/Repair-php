@@ -17,7 +17,7 @@ require_once("../DB/connect.php");
           <a class="nav-link active" aria-current="page" href="../app/showdata.php">แสดงคำร้องข้อมูลแจ้งซ่อม</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"href="../app/showdatahistory.php">แสดงประวัติการซ่อมแจ้งซ่อม</a>
+          <a class="nav-link"href="../app/showdatahistory.php">แสดงประวัติการแจ้งซ่อม</a>
         </li>
         <li class="nav-item"> 
         <a class="nav-link" href="../app/showchart.php">สถิติ</a>

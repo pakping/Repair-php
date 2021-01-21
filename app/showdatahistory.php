@@ -7,7 +7,7 @@ require "../auth/sessionpersist.php"
 
 <head>
   <meta charset="utf-8">
-  <title>หน้าแสดงข้อมูลรายการที่สำเร็จแล้ว</title>
+  <title>แสดงประวัติการแจ้งซ่อม</title>
   <link rel="stylesheet" type="text/css" href="../css/wrap-form.css">
   <?php
   include '../components/meta-title.php'
@@ -20,6 +20,7 @@ require "../auth/sessionpersist.php"
   ?>
   <br>
   <div class="container">
+    <div class="row">
     <fieldset>
       <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <div class="p-3 ">
@@ -61,7 +62,7 @@ require "../auth/sessionpersist.php"
               echo "<td>" . $row["Worker"] . "</td>";
               echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete.php' method='POST'><input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-danger' name='submit-btn' value='ลบ' /></form>";
               echo "<form target='_blank' action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด' /></form>";
-              echo "<form action='../app/addnote.php' method='POST'><input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' /></form> </div></td>";
+              echo "<form target='_blank' action='../app/addnote.php' method='POST'><input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' /></form> </div></td>";
 
               echo "</tr>";
             }
@@ -70,6 +71,7 @@ require "../auth/sessionpersist.php"
         </table>
       </div>
       </div>
+  </div>
   </div>
   <?php
   include '../components/footer.php'
