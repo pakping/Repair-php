@@ -4,7 +4,7 @@ require_once("../DB/connect.php");
 
 <nav class="navbar navbar-expand-lg navbar-dark"style="background-color: #6f42c1;" >
   <div class="container-fluid">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" >
       <img src="..\img\1200px-UPHosLogo.svg.png" alt="" width="30" height="24">
     </a>
   <a class="navbar-brand" href="#">ระบบแจ้งซ่อมออนไลน์</a>

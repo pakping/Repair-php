@@ -4,44 +4,44 @@ require "../auth/sessionpersist.php"
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
+
 <head>
-    <title>สถิติ</title>
-    <link rel="stylesheet" href="../css/Chart.css">
-    
     <?php
     include '../components/meta-title.php'
     ?>
+    <title>สถิติ</title>
+    <link rel="stylesheet" href="../css/Chart.css">
 
 </head>
 
-<body class="d-flex flex-column h-100">
+<body>
     <?php
     include '../components/navbaradmin.php'
     ?>
     <br>
-    
+
     <div class="container">
         <div class="shadow p-3 mb-5 bg-white rounded">
-        <div class="card-body p-5">
-            <h4 class="my-4">สถิติการแจ้งซ่อม</h4>
-            <div class="row">
-                <div class="col-md-4">
-                    <canvas id="myChart" width="200" height="200"></canvas>
-                </div>
-                <div class="col-md-4">
-                    <h4 class="my-3">
-                        </h3>
-                        <p></p>
-                        <h4 class="my-3">รายละเอียด</h3>
-                            <ul>
-                                <li>คอมพิวเตอร์</li>
-                                <li>ปริ้นเตอร์</li>
-                                <li>อื่นๆ</li>
+            <div class="card-body p-5">
+                <h4 class="my-4">สถิติการแจ้งซ่อม</h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <canvas id="myChart" width="200" height="200"></canvas>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="my-3">
+                            </h3>
+                            <p></p>
+                            <h4 class="my-3">รายละเอียด</h3>
+                                <ul>
+                                    <li>คอมพิวเตอร์</li>
+                                    <li>ปริ้นเตอร์</li>
+                                    <li>อื่นๆ</li>
 
-                            </ul>
+                                </ul>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
     <?php

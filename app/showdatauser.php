@@ -10,18 +10,19 @@ require "../auth/sessionpersist.php"
   include '../components/meta-title.php'
   ?>
 </head>
-<body class="d-flex flex-column h-100">
+<body>
   <?php
   include '../components/navbar.php';
   $uname = $_SESSION["Username"];
   ?>
   <br>
-  <div class="container">
-    <fieldset>
+  <div class="container-fluid">
       <div class="shadow-lg p-3 mb-5 bg-white rounded" >
-        <h1 class="p-3">รายการแจ้งซ่อม</h1>
-        <!-- <div class="wrap-form"> -->
-        <table class="table ">
+      <div class="p-3 ">
+        <h1 >รายการแจ้งซ่อม</h1>  
+        </div>
+      <div class="table-responsive">
+        <table class="table table-hover table-sm">
           <thead>
             <tr>
               <th scope="col">งานที่</th>
@@ -37,6 +38,7 @@ require "../auth/sessionpersist.php"
               
             </tr>
           </thead>
+
           <tbody>
             <?php
       require '../DB/connect.php';
@@ -65,10 +67,12 @@ require "../auth/sessionpersist.php"
         </table>
         <!-- </div> -->
       </div>
+      </div>
+      
       <!-- <?php
       include '../components/pagination.php'
       ?> -->
-    </fieldset>
+  
   </div>
 
   <?php

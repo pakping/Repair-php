@@ -1,15 +1,18 @@
 <?php
-$content ="admin";
+$content = "admin";
 require "../auth/sessionpersist.php";
 $_SESSION['ref'] = $_POST['ref'];
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
+
 <head>
+
   <?php
   include '../components/meta-title.php'
   ?>
 </head>
+
 <body class="d-flex flex-column h-100">
 
   <?php
@@ -24,11 +27,10 @@ $_SESSION['ref'] = $_POST['ref'];
             <legend>
               <h1>แจ้งซ่อม</h1>
             </legend>
-              <div class="mb-3">
-                <label class="p-3">กรอกบันทึก</label>
-                <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc"
-                  title="กรุณาระบุปัญหา" required></textarea>
-              </div>
+            <div class="mb-3">
+              <label class="p-3">กรอกบันทึก</label>
+              <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" title="กรุณาระบุปัญหา" required></textarea>
+            </div>
             <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
           </div>

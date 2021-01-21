@@ -4,16 +4,15 @@ require "../auth/sessionpersist.php"
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
-
 <head>
-  <title>หน้าหลัก</title>
+
   <?php
   include '../components/meta-title.php'
   ?>
-
+  <title>หน้าหลัก</title>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body>
   <?php
   include '../components/navbar.php'
   ?>
