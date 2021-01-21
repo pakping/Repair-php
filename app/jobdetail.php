@@ -46,7 +46,7 @@ $_SESSION['target'] = $target;
                   $_SESSION['des'] = $row["Description"];
                   $_SESSION['user'] = $row["Username"];
                   $_SESSION['tim'] = $row["Time"];
-                  $_SESSION['dat'] = $row["Date"];
+                  $_SESSION['dat'] = date_format($date,"d/m/Y");
                 }
               }
               ?>
