@@ -17,14 +17,11 @@ require "../auth/sessionpersist.php"
   include '../components/navbar.php'
   ?>
   <div class="container">
-    <div class="wrap-form">
       <br>
-      <form action="../components/forminsert.php" method="post" name="F1">
-        <fieldset>
+      <form action="../components/forminsert.php" method="post" >
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
-            <legend>
-              <h1>แจ้งซ่อม</h1>
-            </legend>
+          <h1>แจ้งซ่อม</h1>
+            
             <div class="form-group" class="mb-3">
               <div class="mb-3">
                 <label class="p-3">อุปกรณ์ที่เสีย</label>
@@ -62,14 +59,15 @@ require "../auth/sessionpersist.php"
             <button type="submit" class="btn btn-primary">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
           </div>
-        </fieldset>
+       
       </form>
     </div>
-  </div>
+  
 
   <?php
   include '../components/footer.php'
-  ?>
+?>
+
 </body>
 
 </html>
