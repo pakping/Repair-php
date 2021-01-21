@@ -102,9 +102,9 @@ ob_start(); // Start get HTML code
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
-$mpdf->Output("MyPDF.pdf");
+$mpdf->Output("ใบแจ้งซ่อมที่". $_SESSION['cid'] . ".pdf");
 ob_end_flush();
-header("location:MyPDF.pdf");
+header("location:ใบแจ้งซ่อมที่". $_SESSION['cid'] . ".pdf");
 ?>
 
 <!-- ดาวโหลดรายงานในรูปแบบ PDF <a href="MyPDF.pdf">คลิกที่นี้</a> -->
