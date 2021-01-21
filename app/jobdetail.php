@@ -9,10 +9,10 @@ $_SESSION['target'] = $target;
 
 <head>
   <?php
-  include '../components/meta-title.php'
+  include '../components/meta-title.php';
+  
+  echo "<title>รายละเอียดของงานที่ : " . $target . "</title>";
   ?>
-  <title>รายละเอียดของงานที่ </title>
-
 </head>
 
 <body >
