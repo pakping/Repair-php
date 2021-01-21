@@ -31,14 +31,14 @@ $_SESSION['target'] = $target;
               $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");
               if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
-                  echo "<br>งานที่  " . $row["Case_ID"] . "</br>";
-                  echo "<br>สถานที่  " . $row["Location"] . "</br>";
-                  echo "<br>ปัญหา   " . $row["Problem"] . "</br>";
-                  echo "<br>รายละเอียด    " . $row["Description"] . "</br>";
-                  echo "<br>รายงานโดย    " . $row["Username"] . "</br>";
-                  echo "<br>เวลา   " . $row["Time"] . "</br>";
-                  echo "<br>วันที่    " . $row["Date"] . "</br>";
-                  echo "<br>สถานะ   " . $row["Stat"] . "</br>";
+                  echo "<br>งานที่  : " . $row["Case_ID"] . "</br>";
+                  echo "<br>สถานที่  : " . $row["Location"] . "</br>";
+                  echo "<br>ปัญหา   : " . $row["Problem"] . "</br>";
+                  echo "<br>รายละเอียด  :  " . $row["Description"] . "</br>";
+                  echo "<br>รายงานโดย  :  " . $row["Username"] . "</br>";
+                  echo "<br>เวลา :  " . $row["Time"] . "</br>";
+                  echo "<br>วันที่   : " . $row["Date"] . "</br>";
+                  echo "<br>สถานะ  : " . $row["Stat"] . "</br>";
                   $_SESSION['cid'] = $row["Case_ID"];
                   $_SESSION['loc'] = $row["Location"];
                   $_SESSION['pro'] = $row["Problem"];
@@ -60,26 +60,32 @@ $_SESSION['target'] = $target;
 
     <form action="../app/showdatahistory.php" method="post" name="F2">
       <fieldset>
-        <div class="shadow-lg p-3 mb-5 bg-white rounded">
-          <legend>
-            <h1>รายงานจากช่าง</h1>
-          </legend>
-          <div class="mb-3">
             <?php
             require '../DB/connect.php';
             $data = mysqli_query($con, "SELECT * FROM note Where Case_ID = '$target' ");
 
             if ($data) {
-
+                $count = 1 ;
+                
               while ($zzz = mysqli_fetch_array($data)) {
-
+                if ($count ==1){
+                  echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>
+                  <div class='mb-3'>";
+                  echo "<h1>รายงานจากช่าง</h1>";
+                  }
+                echo $count ;
+                echo "<br></br>";
                 echo "<p class='text-break'> รายละเอียด " . $zzz["Note"] . "</p>";
                 echo "<br>เขียนโดย  " . $zzz["Username"] . "</br>";
+                echo "<br></br>";
+                echo "<br></br>";
+                $count = $count+1;
               }
+              echo "</div>
+                </div>";
             }
             ?>
-          </div>
-        </div>
+          
       </fieldset>
     </form>
 

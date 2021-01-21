@@ -8,7 +8,7 @@
     if (isset($ref)) {
       $result = mysqli_query($con, $upd);
       if ($result) {
-        header('Location:../app/showdatahistory.php');
+        echo "<script>window.close();</script>";
       } else {
         echo 'แก้ไขข้อมูลไม่สำเร็จ';
         
