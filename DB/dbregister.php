@@ -19,11 +19,12 @@
         else
         {
             echo "fail";
+
         }
     }
     else {
-       echo "<script>alert('incorrect password');</script>";
-       header("location:../app/register.php");}
-    
-
+        echo "<script>alert('incorrect password');
+        window.location.href='../app/register.php';
+        </script>";
+    }
 ?>
