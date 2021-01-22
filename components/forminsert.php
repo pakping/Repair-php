@@ -47,7 +47,7 @@ function notify_message($message,$token){
         echo "alert(\"เพิ่มข้อมูลสำเร็จ\");";
         echo "window.history.back();";
         echo "</script>";
-        header("Location: ../app/home.php"); 
+        /* header("Location: ../app/home.php");  */
     }
     else
     {

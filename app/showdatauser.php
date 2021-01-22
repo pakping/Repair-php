@@ -47,6 +47,14 @@ require "../auth/sessionpersist.php"
       if ($result) {
         
         while ($row = mysqli_fetch_array($result)) {
+          if ($row["Stat"] == 'รอดำเนินการ') {
+            $color = 'bg-primary text-white';
+          } elseif ($row["Stat"] == 'กำลังดำเนินการ') {
+            $color = 'bg-warning text-dark';
+          } else {
+            $color = 'bg-success text-white';
+          }
+
           echo "<tr>";
           echo "<td>" . $row["Case_ID"] . "</td>";
           echo "<td>" . $row["Location"] . "</td>";
@@ -60,9 +68,27 @@ require "../auth/sessionpersist.php"
           $date = date_create($row["Date"]); 
           echo "<td>" .  date_format($date,"d/m/Y") . "<br>" . $row["Time"] . "</td>";
           // echo "<td>" . "</td>";
-          echo "<td>" . $row[ "Stat"] . "</td>";
+          echo "<td><div class=' badge ". $color ."' style='width: 6rem;' >" . $row[ "Stat"] . "</div></td>";
           echo "<td>" . $row["Worker"] . "</td>";
-          echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-danger'name='submit-btn' value='ลบ' /></form><form target='_blank' action='../app/jobdetail.php' method='POST'><input  type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></form></div></td>";
+          echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete2.php' method='POST'><input  type='hidden' name='delete' value='".$row["Case_ID"]."'/><input type='button'class=' btn btn-danger'name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel'/>
+          <div class='modal fade' id='Modeldel' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
+          <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                  <h5 class='modal-title' id='modeldell'>ยืนยันการลบ</h5>
+                  <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                </div>
+                <div class='modal-body'>
+                  โปรดยืนยันการลบรายงาน
+                </div>
+                <div class='modal-footer'>
+                  <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>ยกเลิก</button>
+                  <button type='submit' class='btn btn-success'>ยืนยัน</button>
+                </div>
+              </div>
+            </div>
+          </div></form>
+          <form target='_blank' action='../app/jobdetail.php' method='POST'><input  type='hidden' name='job' value='".$row["Case_ID"]."'/><input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' /></form></div></td>";
           echo "</tr>";
           
         }

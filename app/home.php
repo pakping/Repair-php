@@ -56,8 +56,9 @@ require "../auth/sessionpersist.php"
               </select>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">ยืนยัน</button>
+            <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ยืนยัน</button>
             <button type="reset" class="btn btn-warning">รีเซ็ต</button>
+          
           </div>
       </form>
     </div>

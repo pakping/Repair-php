@@ -22,6 +22,9 @@ require_once("../DB/connect.php");
         <li class="nav-item"> 
         <a class="nav-link" href="../app/showchart.php">สถิติ</a>
         </li>
+        <li class="nav-item"> 
+        <a class="nav-link" href="../app/register.php">เพิ่มสมาชิก</a>
+        </li>
       </ul>
 
       <span class="dropdown" class="navbar-text " >
