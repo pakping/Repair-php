@@ -47,6 +47,11 @@ require "../auth/sessionpersist.php"
           if ($result) {
 
             while ($row = mysqli_fetch_array($result)) {
+              if ($row["Stat"] == 'รอดำเนินการ') {
+                $color = 'bg-primary text-white';
+              } elseif ($row["Stat"] == '') {
+                # code...
+              }
 
               echo "<tr>";
               echo "<td>" . $row["Case_ID"] . "</td>";
