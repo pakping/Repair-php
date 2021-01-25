@@ -55,6 +55,7 @@ function notify_message($message,$token){
         echo "<script type=\"text/javascript\">";
         echo "alert(\"เพิ่มข้อมูลไม่สำเร็จ\");";
         echo "window.history.back();";
+        
         echo "</script>";
         
     }

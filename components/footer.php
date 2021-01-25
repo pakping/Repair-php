@@ -10,5 +10,5 @@ footer{
  position:fixed;
  bottom:0;
  
- width: 2000px;
+ width: 100%;
 }</style>
