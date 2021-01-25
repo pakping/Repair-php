@@ -1,7 +1,7 @@
 <?php
 $content = "admin";
 require "../auth/sessionpersist.php";
-$_SESSION['lastpage'] = "location:../app/showdatahistory.php";
+$_SESSION['lastpage'] = "../app/showdatahistory.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -34,7 +34,7 @@ $_SESSION['lastpage'] = "location:../app/showdatahistory.php";
                 <th scope="col">งานที่</th>
                 <th scope="col">ห้อง</th>
                 <!-- <th scope="col">ประเภทของปัญหา</th> -->
-                <th scope="col">ปัญหา</th>
+                <th scope="col" >ปัญหา</th>
                 <th scope="col">ชื่อ</th>
                 <th scope="col">เวลา</th>
                 <!-- <th scope="col">วันที่</th> -->
@@ -70,7 +70,11 @@ $_SESSION['lastpage'] = "location:../app/showdatahistory.php";
                   echo "<td>" . $row["Worker"] . "</td>";
                   echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete.php' method='POST'>
               <input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-              <input type='button' class='btn btn-danger' name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+              <button type='button' class='btn btn-danger' name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+              <span class='material-icons'>
+              delete
+              </span>
+              </button>
               <div class='modal fade' id='Modeldel" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
               <div class='modal-dialog'>
                 <div class='modal-content'>
@@ -88,8 +92,23 @@ $_SESSION['lastpage'] = "location:../app/showdatahistory.php";
                   </div>
                 </div>
               </div></form>";
-                  echo "<form target='_blank' action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด' /></form>";
-                  echo "<form target='_blank' action='../app/addnote.php' method='POST'><input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/><input type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' /></form> </div></td>";
+                  echo "<form target='_blank' action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
+                  <button type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด'>
+                  <span class='material-icons'>
+                          assignment
+                          </span>
+                  </button>
+                  </form>";
+                  echo "<form target='_blank' action='../app/addnote.php' method='POST'>
+                  <input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/>
+                  <button type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' >
+                  <span class='material-icons'>
+                  note_add
+                  </span>
+                  </button>
+                  </form> 
+                  </div>
+                  </td>";
 
                   echo "</tr>";
                 }

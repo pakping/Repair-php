@@ -1,7 +1,7 @@
 <?php
 $content = "user";
 require "../auth/sessionpersist.php";
-$_SESSION['lastpage'] = "location:../app/showdatauser.php";
+$_SESSION['lastpage'] = "../app/showdatauser.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">

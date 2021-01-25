@@ -1,7 +1,7 @@
 <?php
 $content = "admin";
 require "../auth/sessionpersist.php";
-$_SESSION['lastpage'] = "location:../app/showdata.php";
+$_SESSION['lastpage'] = "../app/showdata.php";
 ?>
 
 <!DOCTYPE html>
@@ -83,15 +83,23 @@ $_SESSION['lastpage'] = "location:../app/showdata.php";
                 <div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                   <form action='../components/movetodone.php' method='POST'>
                     <input type='hidden' name='tempId2' value='" . $row["Case_ID"] . "'/>
-                    <input type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ' />
+                    <button type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ'>
+                    <span class='material-icons'>
+                    assignment_turned_in
+                    </span>
+                    </button>
                   </form>";
-                  // ปุ่มรับงาน 
                 } else {
+                  // ปุ่มรับงาน
                   echo "<td> 
                 <div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/accept.php' method='POST'>
                   <input type='hidden' name='tempId' value='" . $row["Case_ID"] . "'/>
-                  <input type='button' class='btn btn-success' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
+                  <button type='button' class='btn btn-primary' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
+                  <span class='material-icons'>
+                  done
+                  </span>
+                  </button>
                   <div class='modal fade' id='Modelsuc" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modelsuccess' aria-hidden='true'>
                     <div class='modal-dialog'>
                       <div class='modal-content'>
@@ -104,7 +112,7 @@ $_SESSION['lastpage'] = "location:../app/showdata.php";
                         </div>
                         <div class='modal-footer'>
                           <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>ยกเลิก</button>
-                          
+
                           <button type='submit' class='btn btn-success'>ยืนยัน</button>
                         </div>
                       </div>
@@ -112,13 +120,23 @@ $_SESSION['lastpage'] = "location:../app/showdata.php";
                   </div>
                 </form>";
                 }
+                // ปุ่มรายละเอียด
                 echo "<form target='_blank' action='../app/jobdetail.php' method='POST'>
                       <input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-                      <input type='submit' class='btn btn-warning' name='submit-btn' value='รายระเอียด' />
+                      <button type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด'>
+                      <span class='material-icons'>
+                          assignment
+                          </span>
+                          </button>
                     </form>";
+                // ปุ่มลบ 
                 echo "<form action='../components/delete.php' method='POST'>
                       <input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                      <input type='button' class='btn btn-danger' name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+                      <button type='button' class='btn btn-danger' name='submit-btn' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+                      <span class='material-icons'>
+                      delete
+                      </span>
+                      </button>
                       <div class='modal fade' id='Modeldel" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
                       <div class='modal-dialog'>
                         <div class='modal-content'>
