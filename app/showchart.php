@@ -19,17 +19,19 @@ require "../auth/sessionpersist.php"
     include '../components/navbaradmin.php'
     ?>
     <br>
-
+    <div style="width: 75%">
+		<canvas id="canvas"></canvas>
+	</div>
     <div class="container">
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="card-body p-5">
                 <h4 class="my-4">สถิติการแจ้งซ่อม</h4>
                 <div class="row">
                     <div class="col-md-4">
-                        <canvas id="myChart" width="200" height="200"></canvas>
+                        <canvas id="myChart" width="400" height="00"></canvas>
                     </div>
                     <div class="col-md-4">
-                        <h4 class="my-3">
+                        <h4 class="my-4">
                             </h3>
                             <p></p>
                             <h4 class="my-3">รายละเอียด</h3>
@@ -47,34 +49,25 @@ require "../auth/sessionpersist.php"
     <div class="container">
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="card-body p-5">
-                <h4 class="my-4">สถิติการแจ้งซ่อม</h4>
+                <h4 class="my-4">สถิตห้องที่แจ้งซ่อม</h4>
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-8">
+                    
                         <canvas id="myChart2" width="200" height="200"></canvas>
                     </div>
-                    <div class="col-md-4">
-                        <h4 class="my-3">
-                            </h3>
-                            <p></p>
-                            <h4 class="my-3">รายละเอียด</h3>
-                                <ul>
-                                    <li>คอมพิวเตอร์</li>
-                                    <li>ปริ้นเตอร์</li>
-                                    <li>อื่นๆ</li>
 
-                                </ul>
-                    </div>
+        
                 </div>
             </div>
         </div>
     </div>
     <?php
-    /* include '../components/footer.php'; */
+    include '../components/footer.php';
     ?>
     <?php
         require("../DB/connect.php");
-        $data = $con->query("select count(problem) as sum_problem, problem from report group by problem");
-        $data2 = $con->query("select count(Location) as sum_location, Location from report group by location");
+        $data = $con->query("select count(problem) as sum_problem, problem from report group by problem order by sum_problem DESC");
+        $data2 = $con->query(" select count(Location) as sum_location, Location from report group by location order by sum_location DESC");
         $label = [];
         $datax = [];
         $loc= [];
@@ -100,12 +93,8 @@ require "../auth/sessionpersist.php"
                     label: 'อุปกรณ์ที่แจ้งเสีย',
                     data: <?= json_encode($datax) ?>,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        '#FF99FF','#FF99CC','#FF9999','#FF9966',
+                        
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -113,9 +102,15 @@ require "../auth/sessionpersist.php"
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 159, 64, 1)',
+                        
                     ],
-                    borderWidth: 3
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'#000'
+                    
+                    
                 }]
             },
             options: {
@@ -131,20 +126,19 @@ require "../auth/sessionpersist.php"
     </script>
     <script>
         var cty = document.getElementById('myChart2').getContext('2d');
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 12;
+        Chart.defaults.global.defaultFontColor = '#000000';
         var myChart2 = new Chart(cty, {
-            type: 'bar',
+            type: 'horizontalBar',
             data: {
                 labels: <?= json_encode($loc) ?>,
                 datasets: [{
-                    label: 'อุปกรณ์ที่แจ้งเสีย',
+                    label: 'ห้องที่แจ้งเสีย',
                     data: <?= json_encode($locc) ?>,
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        '#FF99FF','#FF99CC','#FF9999','#FF9966','#FF9933','#FF9900','#CCCCFF','#CCCCCC','#CCCC99','#CCCC66','#CCCC33','#CCCC00','#9999FF','#9999CC','#999999',
+                     
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -154,20 +148,43 @@ require "../auth/sessionpersist.php"
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)'
                     ],
-                    borderWidth: 3
+                    borderWidth: 1,
+                    borderColor: '#000000',
+                    hoverBorderWidth:3,
+                    hoverBorderColor:'#000000'
+                    
                 }]
             },
             options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                title: {
+                    display: true,
+                    text: '',
+                    fontSzize:25
+                },
+                    legend:{
+                        display:true,
+                        position:'right',
+                        labels:{
+                            fontColor:'#000000'
                         }
-                    }]
-                }
+                    },
+                    layout:{
+                        padding:{
+                            lefi:50,
+                            right:0,
+                            bottom:0,
+                            top:0
+                        }
+                    },
+                    tooltips:{
+                        endbled:false
+                    }
+                  
+                
             }
         });
     </script>
+   
 
 </body>
 
