@@ -86,8 +86,8 @@ $_SESSION['lastpage'] = "../app/showdatahistory.php";
                       โปรดยืนยันการลบรายงาน
                     </div>
                     <div class='modal-footer'>
-                      <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>ยกเลิก</button>
-                      <button type='submit' class='btn btn-success'>ยืนยัน</button>
+                      <button type='button' class='btn btn-success' data-bs-dismiss='modal'>ยกเลิก</button>
+                      <button type='submit' class='btn btn-danger'>ลบ</button>
                     </div>
                   </div>
                 </div>

@@ -76,7 +76,11 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
                 echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/delete.php' method='POST'>
                 <input  type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                <input type='button'class=' btn btn-danger'name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+                <button type='button'class=' btn btn-danger'name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'>
+                <span class='material-icons'>
+              delete
+              </span>
+                </button>
           <div class='modal fade' id='Modeldel" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
           <div class='modal-dialog'>
             <div class='modal-content'>
@@ -97,7 +101,10 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           </form>
           <form target='_blank' action='../app/jobdetail.php' method='POST'>
           <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-          <input type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' />
+          <button type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' >
+          <span class='material-icons'>
+          assignment
+          </span></button>
           </form>
           </div>
           </td>";

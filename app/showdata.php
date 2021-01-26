@@ -85,7 +85,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                     <input type='hidden' name='tempId2' value='" . $row["Case_ID"] . "'/>
                     <button type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ'>
                     <span class='material-icons'>
-                    assignment_turned_in
+                    done
                     </span>
                     </button>
                   </form>";
@@ -97,7 +97,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                   <input type='hidden' name='tempId' value='" . $row["Case_ID"] . "'/>
                   <button type='button' class='btn btn-primary' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
                   <span class='material-icons'>
-                  done
+                  build
                   </span>
                   </button>
                   <div class='modal fade' id='Modelsuc" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modelsuccess' aria-hidden='true'>

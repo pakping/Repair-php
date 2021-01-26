@@ -9,7 +9,7 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/meta-title.php'
   ?>
-  <title>register</title>
+  <title>เพิ่มสมาชิก</title>
 </head>
 
 <body>
