@@ -4,7 +4,5 @@
 <link href="../css/body.css" rel="stylesheet" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="../bootstrap-5/js/bootstrap.min.js" crossorigin="anonymous"></script>
-
 <!-- datatables -->
 <link rel="stylesheet" type="text/css" href="../DataTables/datatables.css">
-

@@ -14,4 +14,3 @@ $xx = [
     'data' => $datax
 ];
 echo json_encode($xx);
-?>

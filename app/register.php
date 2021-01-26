@@ -1,6 +1,6 @@
 <?php
 $content = "admin";
-require "../auth/sessionpersist.php" 
+require "../auth/sessionpersist.php"
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,8 +36,7 @@ require "../auth/sessionpersist.php"
               </div>
               <div class="mb-3">
                 <label for="psw-repeat" class="form-label"><b>รหัสผ่านอีกครั้ง</b></label>
-                <input type="password" class="form-control" placeholder="ระบุรหัสผ่านอีกครั้ง" name="psw-repeat"
-                  id="psw-repeat" required>
+                <input type="password" class="form-control" placeholder="ระบุรหัสผ่านอีกครั้ง" name="psw-repeat" id="psw-repeat" required>
               </div>
             </td>
             <td>
@@ -51,8 +50,7 @@ require "../auth/sessionpersist.php"
               </div>
               <div class="mb-3">
                 <label for="Telnum" class="form-label"><b>เบอร์โทรศัพท์</b></label>
-                <input type="text" class="form-control" placeholder="ระบุเบอร์โทรศัพท์" name="telnum" id="telnum"
-                  required>
+                <input type="text" class="form-control" placeholder="ระบุเบอร์โทรศัพท์" name="telnum" id="telnum" required>
               </div>
             </td>
           </tr>

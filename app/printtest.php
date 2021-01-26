@@ -7,15 +7,16 @@ require '../DB/connect.php';
 // เพิ่ม Font ให้กับ mPDF
 $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
 $fontData = $defaultFontConfig['fontdata'];
-$mpdf = new \Mpdf\Mpdf(['tempDir' => __DIR__ . '/tmp',
+$mpdf = new \Mpdf\Mpdf([
+    'tempDir' => __DIR__ . '/tmp',
     'fontdata' => $fontData + [
-            'sarabun' => [ // ส่วนที่ต้องเป็น lower case ครับ
-                'R' => 'THSarabunNew.ttf',
-                'I' => 'THSarabunNewItalic.ttf',
-                'B' =>  'THSarabunNewBold.ttf',
-                'BI' => "THSarabunNewBoldItalic.ttf",
-            ]
-        ],
+        'sarabun' => [ // ส่วนที่ต้องเป็น lower case ครับ
+            'R' => 'THSarabunNew.ttf',
+            'I' => 'THSarabunNewItalic.ttf',
+            'B' =>  'THSarabunNewBold.ttf',
+            'BI' => "THSarabunNewBoldItalic.ttf",
+        ]
+    ],
 ]);
 
 ob_start(); // Start get HTML code
@@ -71,20 +72,20 @@ ob_start(); // Start get HTML code
             <p>เวลาที่แจ้ง <?php echo $_SESSION['tim'];  ?>น.</p>
         </div>
         <div align="center" style="width: 90%">
-        <table>
-            <thead>
-                <tr>
-                    <th style="width: 50%">ประเภทงาน</th>
-                    <th style="width: 50%">รายละเอียดแจ้งซ่อม</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> <?php echo $_SESSION['pro']; ?></td>
-                    <td> <?php echo $_SESSION['des']; ?></td>
-                </tr>
-            </tbody>
-        </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 50%">ประเภทงาน</th>
+                        <th style="width: 50%">รายละเอียดแจ้งซ่อม</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <?php echo $_SESSION['pro']; ?></td>
+                        <td> <?php echo $_SESSION['des']; ?></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <br>
         <div align="center">
@@ -102,9 +103,9 @@ ob_start(); // Start get HTML code
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
-$mpdf->Output("ใบแจ้งซ่อมที่". $_SESSION['cid'] . ".pdf");
+$mpdf->Output("ใบแจ้งซ่อมที่" . $_SESSION['cid'] . ".pdf");
 ob_end_flush();
-header("location:ใบแจ้งซ่อมที่". $_SESSION['cid'] . ".pdf");
+header("location:ใบแจ้งซ่อมที่" . $_SESSION['cid'] . ".pdf");
 ?>
 
 <!-- ดาวโหลดรายงานในรูปแบบ PDF <a href="MyPDF.pdf">คลิกที่นี้</a> -->

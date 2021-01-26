@@ -10,7 +10,7 @@ $_SESSION['target'] = $target;
 <head>
   <?php
   include '../components/meta-title.php';
-  
+
   echo "<title>รายละเอียดของงานที่ : " . $target . "</title>";
   ?>
 </head>
@@ -56,7 +56,7 @@ $_SESSION['target'] = $target;
                     </tr>
                     <tr>
                       <td style='width:25%'><p class='fw-bold'>วันที่ : </p></td>
-                      <td style='width:25%'><p>" . date_format($date,"d/m/Y") . "</p></td>
+                      <td style='width:25%'><p>" . date_format($date, "d/m/Y") . "</p></td>
                       <td style='width:25%'><p class='fw-bold'>สถานะ  : </p></td>
                       <td style='width:25%'><p>" .  $row["Stat"] . "</p></td>
                     </tr>
@@ -77,7 +77,7 @@ $_SESSION['target'] = $target;
                   $_SESSION['des'] = $row["Description"];
                   $_SESSION['user'] = $row["Username"];
                   $_SESSION['tim'] = $row["Time"];
-                  $_SESSION['dat'] = date_format($date,"d/m/Y");
+                  $_SESSION['dat'] = date_format($date, "d/m/Y");
                 }
               }
               ?>
@@ -93,30 +93,30 @@ $_SESSION['target'] = $target;
     <form action="../app/showdatahistory.php" method="post" name="F2">
       <fieldset>
         <?php
-            require '../DB/connect.php';
-            $data = mysqli_query($con, "SELECT * FROM note Where Case_ID = '$target' ");
+        require '../DB/connect.php';
+        $data = mysqli_query($con, "SELECT * FROM note Where Case_ID = '$target' ");
 
-            if ($data) {
-                $count = 1 ;
-                
-              while ($zzz = mysqli_fetch_array($data)) {
-                if ($count == 1){
-                  echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>
+        if ($data) {
+          $count = 1;
+
+          while ($zzz = mysqli_fetch_array($data)) {
+            if ($count == 1) {
+              echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>
                   <div class='mb-3'>";
-                  echo "<h1>รายงานจากช่าง</h1>";
-                  }
-                echo "หมายเหตุ : " .$count ;
-                echo "<br></br>";
-                echo "<p class='text-break'> รายละเอียด " . $zzz["Note"] . "</p>";
-                echo "<br>เขียนโดย  " . $zzz["Username"] . "</br>";
-                echo "<br></br>";
-                echo "<br></br>";
-                $count = $count+1;
-              }
-              echo "</div>
-                </div>";
+              echo "<h1>รายงานจากช่าง</h1>";
             }
-            ?>
+            echo "หมายเหตุ : " . $count;
+            echo "<br></br>";
+            echo "<p class='text-break'> รายละเอียด " . $zzz["Note"] . "</p>";
+            echo "<br>เขียนโดย  " . $zzz["Username"] . "</br>";
+            echo "<br></br>";
+            echo "<br></br>";
+            $count = $count + 1;
+          }
+          echo "</div>
+                </div>";
+        }
+        ?>
 
       </fieldset>
     </form>

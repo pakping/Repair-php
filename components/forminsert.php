@@ -60,5 +60,3 @@ function notify_message($message,$token){
         echo "</script>";
         
     }
-?>
-

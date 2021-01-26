@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Register</title>
-    <?php
-  include '../css/bootstrap.php';
-  ?>
+	<?php
+	include '../css/bootstrap.php';
+	?>
 </head>
+
 <body class="font-mali vh-100 d-flex justify-content-center align-items-center">
 	<div class="card mb-3">
 		<div class="card-header bg-primary text-white">
@@ -33,4 +35,5 @@
 		</div>
 	</div>
 </body>
+
 </html>
