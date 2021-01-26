@@ -76,7 +76,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
                 echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/delete.php' method='POST'>
                 <input  type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                <button type='button'class=' btn btn-danger'name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'>
+                <button type='button'class=' btn btn-danger'name='submit-btn' title='ลบรายการแจ้งซ่อม'  value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'>
                 <span class='material-icons'>
               delete
               </span>
@@ -101,7 +101,9 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           </form>
           <form target='_blank' action='../app/jobdetail.php' method='POST'>
           <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-          <button type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' >
+
+          <button type='submit'class=' btn btn-warning'name='submit-btn'   title='รายละเอียดการแจ้งซ่อม'  value='รายละเอียด' >
+
           <span class='material-icons'>
           assignment
           </span></button>
@@ -113,7 +115,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
             }
             ?></tbody>
         </table>
-        <!-- </div> -->
+       
       </div>
     </div>
 
@@ -132,6 +134,11 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
       $('#myTable').DataTable();
     });
   </script>
+  <script>
+
+  </script>
+
+  
 </body>
 
 </html>
