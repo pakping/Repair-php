@@ -70,7 +70,7 @@ $_SESSION['lastpage'] = "../app/showdatahistory.php";
                   echo "<td>" . $row["Worker"] . "</td>";
                   echo "<td> <div class='btn-group' role='group' aria-label='Basic mixed styles example'><form action='../components/delete.php' method='POST'>
               <input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-              <button type='button' class='btn btn-danger' name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+              <button type='button' class='btn btn-danger' name='submit-btn' title='ลบประวัติแจ้งซ่อม'value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
               <span class='material-icons'>
               delete
               </span>
@@ -93,7 +93,7 @@ $_SESSION['lastpage'] = "../app/showdatahistory.php";
                 </div>
               </div></form>";
                   echo "<form target='_blank' action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-                  <button type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด'>
+                  <button type='submit' class='btn btn-warning' name='submit-btn' title='รายละเอียดประวัติแจ้งซ่อม'value='รายละเอียด'>
                   <span class='material-icons'>
                           assignment
                           </span>
@@ -101,7 +101,7 @@ $_SESSION['lastpage'] = "../app/showdatahistory.php";
                   </form>";
                   echo "<form target='_blank' action='../app/addnote.php' method='POST'>
                   <input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/>
-                  <button type='submit' class='btn btn-success' name='submit-btn' value='หมายเหตุ' >
+                  <button type='submit' class='btn btn-success' name='submit-btn'title='เพิ่มหมายเหตุ' value='หมายเหตุ' >
                   <span class='material-icons'>
                   note_add
                   </span>

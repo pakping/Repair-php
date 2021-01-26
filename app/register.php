@@ -57,7 +57,7 @@ require "../auth/sessionpersist.php"
             </td>
           </tr>
         </table>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">สมัคร</button>
       </div>
 
     </form>
