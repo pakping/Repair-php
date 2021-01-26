@@ -12,7 +12,6 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
   include '../components/meta-title.php'
   ?>
 </head>
-
 <body>
   <?php
   include '../components/navbar.php';
@@ -38,7 +37,6 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
               <th scope="col">สถานะ</th>
               <th scope="col">ผู้รับงาน</th>
               <th scope="col">คำสั่ง</th>
-
             </tr>
           </thead>
 
@@ -101,8 +99,8 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           </form>
           <form target='_blank' action='../app/jobdetail.php' method='POST'>
           <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-
-          <button type='submit'class=' btn btn-warning'name='submit-btn'   title='รายละเอียดการแจ้งซ่อม'  value='รายละเอียด' >
+                
+          <button type='submit'class=' btn btn-warning'name='submit-btn'title='รายละเอียดการแจ้งซ่อม'    value='รายละเอียด' >
 
           <span class='material-icons'>
           assignment
@@ -115,14 +113,10 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
             }
             ?></tbody>
         </table>
-       
+
       </div>
     </div>
-
-
-
   </div>
-
   <?php
   include '../components/footer.php'
   ?>
@@ -134,11 +128,6 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
       $('#myTable').DataTable();
     });
   </script>
-  <script>
-
-  </script>
-
-  
 </body>
 
 </html>
