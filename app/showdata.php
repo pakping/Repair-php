@@ -1,6 +1,7 @@
 <?php
 $content = "admin";
-require "../auth/sessionpersist.php"
+require "../auth/sessionpersist.php";
+$_SESSION['lastpage'] = "../app/showdata.php";
 ?>
 
 <!DOCTYPE html>
@@ -20,18 +21,6 @@ require "../auth/sessionpersist.php"
   <?php
   include '../components/navbaradmin.php'
   ?>
-  <script>
-    function myFunction() {
-      var txt;
-      var r = confirm("ยืนยันการรับงาน");
-      if (r == true) {
-        txt = "You pressed OK!";
-      } else {
-        txt = "You pressed Cancel!";
-      }
-
-    }
-  </script>
   <br>
   <div class="container">
     <div class="shadow-lg p-3 mb-5 bg-white rounded">
@@ -39,71 +28,83 @@ require "../auth/sessionpersist.php"
         <h1>รายการแจ้งซ่อม</h1>
       </div>
       <div class="table-responsive">
-        <table class="table table-hover table-sm">
-          <tr>
-            <th scope="col">งานที่</th>
-            <th scope="col">ห้อง</th>
-            <!-- <th scope="col">ประเภทของปัญหา</th> -->
-            <th scope="col">ปัญหา</th>
-            <th scope="col">ชื่อ</th>
-            <th scope="col">เวลา</th>
-            <!-- <th scope="col">วันที่</th> -->
-            <th scope="col">สถานะ</th>
-            <th scope="col">ผู้รับงาน</th>
-            <th scope="col">คำสั่ง</th>
-          </tr>
-          <?php
-          require '../DB/connect.php';
-          $result = mysqli_query($con, "SELECT * FROM report Where stat != 'สำเร็จ'");
+        <table id="myTable" class="table table-hover table-sm">
+          <thead>
+            <tr>
+              <th scope="col">งานที่</th>
+              <th scope="col">ห้อง</th>
+              <!-- <th scope="col">ประเภทของปัญหา</th> -->
+              <th scope="col">ปัญหา</th>
+              <th scope="col">ชื่อ</th>
+              <th scope="col">เวลา</th>
+              <!-- <th scope="col">วันที่</th> -->
+              <th scope="col">สถานะ</th>
+              <th scope="col">ผู้รับงาน</th>
+              <th scope="col">คำสั่ง</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            require '../DB/connect.php';
+            $result = mysqli_query($con, "SELECT * FROM report Where stat != 'สำเร็จ'");
 
-          if ($result) {
+            if ($result) {
 
-            while ($row = mysqli_fetch_array($result)) {
-                
-              if ($row["Stat"] == 'รอดำเนินการ') {
-                $color = 'bg-primary text-white';
-              } elseif ($row["Stat"] == 'กำลังดำเนินการ') {
-                $color = 'bg-warning text-dark';
-              } else {
-                $color = 'bg-success text-white';
-              }
+              while ($row = mysqli_fetch_array($result)) {
 
-              echo "<tr>";
-              echo "<td>" . $row["Case_ID"] . "</td>";
-              echo "<td>" . $row["Location"] . "</td>";
-              echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" . "<p class='text-break' style='text-decoration: none;
+                if ($row["Stat"] == 'รอดำเนินการ') {
+                  $color = 'bg-primary text-white';
+                } elseif ($row["Stat"] == 'กำลังดำเนินการ') {
+                  $color = 'bg-warning text-dark';
+                } else {
+                  $color = 'bg-success text-white';
+                }
+
+                echo "<tr>";
+                echo "<td>" . $row["Case_ID"] . "</td>";
+                echo "<td>" . $row["Location"] . "</td>";
+                echo "<td>" . "<p class='fw-bold'>" . $row["Problem"] . "</p>" . "<p class='text-break' style='text-decoration: none;
               text-overflow: ellipsis; /* เพิ่ม ... จุดจุดจุดท้ายสุด */ 
               display: block; overflow: hidden; 
               white-space: nowrap; 
               width: 150px; /* กำหนดความกว้าง */ '>" . $row["Description"]  . "</p>" . "</td>";
-              // echo "<td>" . . "</td>";
-              echo "<td>" . $row["Username"] . "</td>";
-              $date = date_create($row["Date"]); 
-              echo "<td>" .  date_format($date,"d/m/Y") . "<br>" . $row["Time"] . "</td>";
-              // echo "<td>" . "</td>";
-              echo "<td><div class=' badge ". $color ."' style='width: 6rem;' >"  . $row["Stat"] . "</div></td>";
-              //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
-              echo "<td>" . $row["Worker"] . "</td>";
-              if ($row["Stat"] == 'กำลังดำเนินการ') {
-                // ปุ่มสำเร็จ
-                echo "<td> 
+                // echo "<td>" . . "</td>";
+                echo "<td>" . $row["Username"] . "</td>";
+                $date = date_create($row["Date"]);
+                echo "<td>" .  date_format($date, "d/m/Y") . "<br>" . $row["Time"] . "</td>";
+                // echo "<td>" . "</td>";
+                echo "<td><div class=' badge " . $color . "' style='width: 6rem;' >"  . $row["Stat"] . "</div></td>";
+                //echo "<td><button id='" . $row['Case_ID'] . "' onclick = >Accept</button></td>" ;
+                echo "<td>" . $row["Worker"] . "</td>";
+
+                if ($row["Stat"] == 'กำลังดำเนินการ') {
+                  // ปุ่มสำเร็จ
+                  echo "<td> 
                 <div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                   <form action='../components/movetodone.php' method='POST'>
                     <input type='hidden' name='tempId2' value='" . $row["Case_ID"] . "'/>
-                    <input type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ' />
+                    <button type='submit' class='btn btn-success' name='submit-btn' value='สำเร็จ'>
+                    <span class='material-icons'>
+                    assignment_turned_in
+                    </span>
+                    </button>
                   </form>";
-                // ปุ่มรับงาน 
-              } else { 
-                echo "<td> 
+                } else {
+                  // ปุ่มรับงาน
+                  echo "<td> 
                 <div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/accept.php' method='POST'>
                   <input type='hidden' name='tempId' value='" . $row["Case_ID"] . "'/>
-                  <input type='button' class='btn btn-success' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc'/>
-                  <div class='modal fade' id='Modelsuc' tabindex='-1' aria-labelledby='modelsuccess' aria-hidden='true'>
+                  <button type='button' class='btn btn-primary' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
+                  <span class='material-icons'>
+                  done
+                  </span>
+                  </button>
+                  <div class='modal fade' id='Modelsuc" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modelsuccess' aria-hidden='true'>
                     <div class='modal-dialog'>
                       <div class='modal-content'>
                         <div class='modal-header'>
-                          <h5 class='modal-title' id='modelsuccess'>ยืนยันการรับงาน</h5>
+                          <h5 class='modal-title' id=''" . $row["Case_ID"] . "''>ยืนยันการรับงาน</h5>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </div>
                         <div class='modal-body'>
@@ -111,21 +112,32 @@ require "../auth/sessionpersist.php"
                         </div>
                         <div class='modal-footer'>
                           <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>ยกเลิก</button>
+
                           <button type='submit' class='btn btn-success'>ยืนยัน</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </form>";
-              }
-              echo "<form target='_blank' action='../app/jobdetail.php' method='POST'>
+                }
+                // ปุ่มรายละเอียด
+                echo "<form target='_blank' action='../app/jobdetail.php' method='POST'>
                       <input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-                      <input type='submit' class='btn btn-warning' name='submit-btn' value='รายระเอียด' />
+                      <button type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด'>
+                      <span class='material-icons'>
+                          assignment
+                          </span>
+                          </button>
                     </form>";
-              echo "<form action='../components/delete.php' method='POST'>
+                // ปุ่มลบ 
+                echo "<form action='../components/delete.php' method='POST'>
                       <input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                      <input type='button' class='btn btn-danger' name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel'/>
-                      <div class='modal fade' id='Modeldel' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
+                      <button type='button' class='btn btn-danger' name='submit-btn' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+                      <span class='material-icons'>
+                      delete
+                      </span>
+                      </button>
+                      <div class='modal fade' id='Modeldel" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
                       <div class='modal-dialog'>
                         <div class='modal-content'>
                             <div class='modal-header'>
@@ -146,21 +158,28 @@ require "../auth/sessionpersist.php"
                     </div>
               </td>";
 
-              echo "</tr>";
+                echo "</tr>";
+              }
             }
-          }
-          ?>
+            ?>
+          </tbody>
         </table>
 
       </div>
     </div>
   </div>
+  <br>
   <?php
   include '../components/footer.php'
   ?>
-</body>
-<script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="//cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 
-</script>
+  <script>
+    $(document).ready(function() {
+      $('#myTable').DataTable();
+    });
+  </script>
+</body>
 
 </html>

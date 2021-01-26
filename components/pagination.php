@@ -7,7 +7,7 @@
     <li class="page-item"><a class="page-link" href="#">2</a></li>
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item">
-      <a class="page-link" href="#">ต่อไปt</a>
+      <a class="page-link" href="#">ต่อไป</a>
     </li>
   </ul>
 </nav>

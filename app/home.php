@@ -1,6 +1,6 @@
 <?php
 $content = "user";
-require "../auth/sessionpersist.php"
+require "../auth/sessionpersist.php";
 ?>
 <!doctype html>
 <html lang="en" class="h-100">

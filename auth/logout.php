@@ -9,6 +9,6 @@
 
 	
 	session_destroy();
-	//setcookie($_SESSION["username"], time() = 0);
+	
     header("location:../index.php");
 ?>
