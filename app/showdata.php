@@ -95,7 +95,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                 <div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/accept.php' method='POST'>
                   <input type='hidden' name='tempId' value='" . $row["Case_ID"] . "'/>
-                  <button type='button' class='btn btn-primary' name='submit-btn' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
+                  <button type='button' class='btn btn-primary' name='submit-btn' title='รับงานแจ้งซ่อม' value='รับงาน' data-bs-toggle='modal' data-bs-target='#Modelsuc" . $row["Case_ID"] . "'/>
                   <span class='material-icons'>
                   build
                   </span>
@@ -123,7 +123,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                 // ปุ่มรายละเอียด
                 echo "<form target='_blank' action='../app/jobdetail.php' method='POST'>
                       <input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
-                      <button type='submit' class='btn btn-warning' name='submit-btn' value='รายละเอียด'>
+                      <button type='submit' class='btn btn-warning' name='submit-btn' title='รายละเอียดแจ้งซ่อม'value='รายละเอียด'>
                       <span class='material-icons'>
                           assignment
                           </span>
@@ -132,7 +132,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                 // ปุ่มลบ 
                 echo "<form action='../components/delete.php' method='POST'>
                       <input type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                      <button type='button' class='btn btn-danger' name='submit-btn' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+                      <button type='button' class='btn btn-danger' name='submit-btn' title='ลบรายการแจ้งซ่อม' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
                       <span class='material-icons'>
                       delete
                       </span>

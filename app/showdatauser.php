@@ -76,11 +76,15 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
                 echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'>
                 <form action='../components/delete.php' method='POST'>
                 <input  type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
+<<<<<<< HEAD
                 <button type='button'class=' btn btn-danger'name='submit-btn' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'>
                 <span class='material-icons'>
               delete
               </span>
                 </button>
+=======
+                <input type='button'class=' btn btn-danger'name='submit-btn'title='ลบ' value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'/>
+>>>>>>> 81a79ce4fa34cf189081525f1b4bd2987052af02
           <div class='modal fade' id='Modeldel" . $row["Case_ID"] . "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
           <div class='modal-dialog'>
             <div class='modal-content'>
@@ -101,10 +105,14 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           </form>
           <form target='_blank' action='../app/jobdetail.php' method='POST'>
           <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
+<<<<<<< HEAD
           <button type='submit'class=' btn btn-warning'name='submit-btn' value='รายละเอียด' >
           <span class='material-icons'>
           assignment
           </span></button>
+=======
+          <input type='submit'class=' btn btn-warning'name='submit-btn'title='รายละเอียด' value='รายละเอียด' />
+>>>>>>> 81a79ce4fa34cf189081525f1b4bd2987052af02
           </form>
           </div>
           </td>";

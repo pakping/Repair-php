@@ -5,7 +5,7 @@ require_once("../DB/connect.php");
 <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6f42c1;">
   <div class="container-fluid">
     <a class="navbar-brand">
-      <img src="..\img\1200px-UPHosLogo.svg.png" alt="" width="30" height="24">
+      <img src="..\img\1200px-UPHosLogo.svg.png" class="rounded-circle"  width="35" height="35">
     </a>
     <a class="navbar-brand" href="#">ระบบแจ้งซ่อมออนไลน์</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

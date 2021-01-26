@@ -20,9 +20,7 @@ $_SESSION['lastpage'] = "../app/showchart.php";
     include '../components/navbaradmin.php'
     ?>
     <br>
-    <div style="width: 75%">
-		<canvas id="canvas"></canvas>
-	</div>
+
     <div class="container">
         <div class="shadow p-3 mb-5 bg-white rounded">
             <div class="card-body p-5">
@@ -40,7 +38,6 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                                     <li>คอมพิวเตอร์</li>
                                     <li>ปริ้นเตอร์</li>
                                     <li>อื่นๆ</li>
-
                                 </ul>
                     </div>
                 </div>
@@ -53,11 +50,11 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                 <h4 class="my-4">สถิตห้องที่แจ้งซ่อม</h4>
                 <div class="row">
                     <div class="col-md-8">
-                    
+
                         <canvas id="myChart2" width="200" height="200"></canvas>
                     </div>
 
-        
+
                 </div>
             </div>
         </div>
@@ -66,22 +63,22 @@ $_SESSION['lastpage'] = "../app/showchart.php";
     include '../components/footer.php';
     ?>
     <?php
-        require("../DB/connect.php");
-        $data = $con->query("select count(problem) as sum_problem, problem from report group by problem order by sum_problem DESC");
-        $data2 = $con->query(" select count(Location) as sum_location, Location from report group by location order by sum_location DESC");
-        $label = [];
-        $datax = [];
-        $loc= [];
-        $locc= [];
-        // print_r($data);
-        while($result = $data->fetch_object()){
-            $label[] = $result->problem;
-            $datax[] = $result->sum_problem;
-        }
-        while($result = $data2->fetch_object()){
-            $loc[] = $result->Location;
-            $locc[] = $result->sum_location;
-        }
+    require("../DB/connect.php");
+    $data = $con->query("select count(problem) as sum_problem, problem from report group by problem order by sum_problem DESC");
+    $data2 = $con->query(" select count(Location) as sum_location, Location from report group by location order by sum_location DESC");
+    $label = [];
+    $datax = [];
+    $loc = [];
+    $locc = [];
+    // print_r($data);
+    while ($result = $data->fetch_object()) {
+        $label[] = $result->problem;
+        $datax[] = $result->sum_problem;
+    }
+    while ($result = $data2->fetch_object()) {
+        $loc[] = $result->Location;
+        $locc[] = $result->sum_location;
+    }
     ?>
     <script src="../js/Chart.js"></script>
     <script>
@@ -94,8 +91,8 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                     label: 'อุปกรณ์ที่แจ้งเสีย',
                     data: <?= json_encode($datax) ?>,
                     backgroundColor: [
-                        '#FF99FF','#FF99CC','#FF9999','#FF9966',
-                        
+                        '#FF99FF', '#FF99CC', '#FF9999', '#FF9966',
+
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -104,14 +101,14 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
                         'rgba(255, 159, 64, 1)',
-                        
+
                     ],
                     borderWidth: 1,
                     borderColor: '#777',
-                    hoverBorderWidth:3,
-                    hoverBorderColor:'#000'
-                    
-                    
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+
+
                 }]
             },
             options: {
@@ -127,7 +124,7 @@ $_SESSION['lastpage'] = "../app/showchart.php";
     </script>
     <script>
         var cty = document.getElementById('myChart2').getContext('2d');
-        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontFamily = '';
         Chart.defaults.global.defaultFontSize = 12;
         Chart.defaults.global.defaultFontColor = '#000000';
         var myChart2 = new Chart(cty, {
@@ -138,8 +135,8 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                     label: 'ห้องที่แจ้งเสีย',
                     data: <?= json_encode($locc) ?>,
                     backgroundColor: [
-                        '#FF99FF','#FF99CC','#FF9999','#FF9966','#FF9933','#FF9900','#CCCCFF','#CCCCCC','#CCCC99','#CCCC66','#CCCC33','#CCCC00','#9999FF','#9999CC','#999999',
-                     
+                        '#FF99FF', '#FF99CC', '#FF9999', '#FF9966', '#FF9933', '#FF9900', '#CCCCFF', '#CCCCCC', '#CCCC99', '#CCCC66', '#CCCC33', '#CCCC00', '#9999FF', '#9999CC', '#999999',
+
                     ],
                     borderColor: [
                         'rgba(255, 99, 132, 1)',
@@ -151,41 +148,39 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                     ],
                     borderWidth: 1,
                     borderColor: '#000000',
-                    hoverBorderWidth:3,
-                    hoverBorderColor:'#000000'
-                    
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000000'
+
                 }]
             },
             options: {
                 title: {
                     display: true,
                     text: '',
-                    fontSzize:25
+                    fontSzize: 25
                 },
-                    legend:{
-                        display:true,
-                        position:'right',
-                        labels:{
-                            fontColor:'#000000'
-                        }
-                    },
-                    layout:{
-                        padding:{
-                            lefi:50,
-                            right:0,
-                            bottom:0,
-                            top:0
-                        }
-                    },
-                    tooltips:{
-                        endbled:false
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000000'
                     }
-                  
-                
+                },
+                layout: {
+                    padding: {
+                        lefi: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    endbled: false
+                }
             }
         });
     </script>
-   
+
 
 </body>
 
