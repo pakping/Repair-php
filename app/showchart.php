@@ -65,7 +65,7 @@ $_SESSION['lastpage'] = "../app/showchart.php";
     <?php
     require("../DB/connect.php");
     $data = $con->query("select count(problem) as sum_problem, problem from report group by problem order by sum_problem DESC");
-    $data2 = $con->query(" select count(Location) as sum_location, Location from report group by location order by sum_location DESC");
+    $data2 = $con->query("select count(Location) as sum_location, Location from report group by location order by sum_location DESC");
     $label = [];
     $datax = [];
     $loc = [];
@@ -154,6 +154,13 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                 }]
             },
             options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
                 title: {
                     display: true,
                     text: '',
