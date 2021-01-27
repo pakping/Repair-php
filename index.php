@@ -24,9 +24,11 @@ if ($_SESSION['type'] == 'user') {
 
 <body>
   <form class="container" action="auth/checkLogin.php" method="post" style="margin-top: 5%;">
-    <div class="card col-md-6 offset-md-3">
+  
+    
+    <div class="main col-md-6 offset-md-3" >
       <div class="text-center" style="margin-top: 5%;">
-        <img src="https://upload.wikimedia.org/wikipedia/th/thumb/a/a4/UPHosLogo.svg/1024px-UPHosLogo.svg.png" class="img-fluid w-25 p-3" alt="Responsive image">
+        <img src="https://upload.wikimedia.org/wikipedia/th/thumb/a/a4/UPHosLogo.svg/1024px-UPHosLogo.svg.png"  class="img-fluid w-25 p-3" alt="Responsive image">
         <h2>ลงชื่อเข้าใช้</h2>
         <h6>ระบบ Maintenance Report โรงพยาบาลมหาวิทยาลัยพะเยา</h6>
       </div>
@@ -39,6 +41,7 @@ if ($_SESSION['type'] == 'user') {
 
         <button type="submit" class="btn btn-primary mt-2">Login</button>
       </div>
+    
   </form>
 
   <script src="./bootstrap-5/js/bootstrap.min.js" crossorigin="anonymous"></script>

@@ -118,7 +118,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
             </div>
         </div>
     </div>
-    <br>
+    <br><br>
     <?php
     include '../components/footer.php'
     ?>

@@ -20,7 +20,8 @@ require "../auth/sessionpersist.php";
   <div class="container">
     <br>
     <form action="../components/forminsert.php" method="post">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div  class="main-1">
+      <div class="shadow-lg p-3 ">
         <h1>แจ้งซ่อม</h1>
         <div class="form-group" class="mb-3">
           <div class="mb-3">
@@ -54,18 +55,18 @@ require "../auth/sessionpersist.php";
             <option value="Surgical">13 : Surgical</option>
             <option value="Lab">14 : Lab</option>
           </select>
+
         </div>
         <br>
         <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ยืนยัน</button>
         <button type="reset" class="btn btn-warning">รีเซ็ต</button>
 
       </div>
+    </div>
     </form>
   </div>
   <?php
   include '../components/footer.php'
   ?>
-
 </body>
-
 </html>
