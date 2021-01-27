@@ -23,7 +23,8 @@ $_SESSION['lastpage'] = "../app/showdata.php";
   ?>
   <br>
   <div class="container">
-    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+  <div  class="main-1">
+        <div class="shadow-lg p-3">
       <div class="p-3 ">
         <h1>รายการแจ้งซ่อม</h1>
       </div>
@@ -164,10 +165,10 @@ $_SESSION['lastpage'] = "../app/showdata.php";
             ?>
           </tbody>
         </table>
-
       </div>
     </div>
-  </div>
+      </div>
+    </div>
   <br>
   <?php
   include '../components/footer.php'

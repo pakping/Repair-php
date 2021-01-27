@@ -20,9 +20,9 @@ $_SESSION['lastpage'] = "../app/showchart.php";
     include '../components/navbaradmin.php'
     ?>
     <br>
-
     <div class="container">
-        <div class="shadow p-3 mb-5 bg-white rounded">
+    <div  class="main-1">
+        <div class="shadow p-3  bg-white rounded">
             <div class="card-body p-5">
                 <h4 class="my-4">สถิติการแจ้งซ่อม</h4>
                 <div class="row">
@@ -44,8 +44,10 @@ $_SESSION['lastpage'] = "../app/showchart.php";
             </div>
         </div>
     </div>
+    </div>
     <div class="container">
-        <div class="shadow p-3 mb-5 bg-white rounded">
+    <div  class="main-1">
+        <div class="shadow p-3  bg-white rounded">
             <div class="card-body p-5">
                 <h4 class="my-4">สถิตห้องที่แจ้งซ่อม</h4>
                 <div class="row">
@@ -54,11 +56,12 @@ $_SESSION['lastpage'] = "../app/showchart.php";
                         <canvas id="myChart2" width="200" height="200"></canvas>
                     </div>
 
-
+                </div>
                 </div>
             </div>
         </div>
     </div>
+    <br>
     <?php
     include '../components/footer.php';
     ?>

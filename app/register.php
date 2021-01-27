@@ -19,7 +19,8 @@ require "../auth/sessionpersist.php"
   <div class="container">
     <br>
     <form action="../DB/dbregister.php" method="post">
-      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div  class="main-1">
+        <div class="shadow-lg p-3">
         <h1>ลงทะเบียน</h1>
         <p>กรอกข้อมูลเพื่อสร้างบัญชีใหม่</p>
         <hr>
@@ -57,7 +58,7 @@ require "../auth/sessionpersist.php"
         </table>
         <button type="submit" class="btn btn-primary">สมัคร</button>
       </div>
-
+    </div>
     </form>
   </div>
 </body>
