@@ -11469,7 +11469,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "ต่อไป",
 	
 	
 				/**
@@ -11492,7 +11492,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "ก่อนหน้า"
 			},
 	
 			/**
@@ -11547,7 +11547,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "หน้า_START_ จาก _END_ ของทั้งหมด _TOTAL_ รายการ",
 	
 	
 			/**
@@ -11568,7 +11568,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Showing 0 to 0 of 0 entries",
+			"sInfoEmpty": "หน้า 0 to 0 of 0 รายการ",
 	
 	
 			/**
@@ -11708,7 +11708,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "แสดงรายการ _MENU_ หน้า",
 	
 	
 			/**
@@ -11788,7 +11788,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sSearch": "Search:",
+			"sSearch": "ค้นหา:",
 	
 	
 			/**
