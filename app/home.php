@@ -18,7 +18,7 @@ require "../auth/sessionpersist.php";
   <div class="container">
     <br>
     <form action="../components/forminsert.php" method="post">
-    <div  class="main-1">
+    <div class="main-1">
       <div class="shadow-lg p-3 ">
         <h1>แจ้งซ่อม</h1>
         <div class="form-group" class="mb-3">
