@@ -6,13 +6,11 @@ require "../auth/sessionpersist.php";
 <html lang="en" class="h-100">
 
 <head>
-  <title>หน้าหลัก</title>
+  <title> หน้าหลัก</title> 
   <?php
   include '../components/meta-title.php'
   ?>
-
 </head>
-
 <body class="d-flex flex-column h-100">
   <?php
   include '../components/navbar.php'
@@ -65,6 +63,7 @@ require "../auth/sessionpersist.php";
     </div>
     </form>
   </div>
+  <br>
   <?php
   include '../components/footer.php'
   ?>

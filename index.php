@@ -19,7 +19,7 @@ if ($_SESSION['type'] == 'user') {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="./bootstrap-5/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <link href="./css/body.css" rel="stylesheet" crossorigin="anonymous">
-  <link rel="icon" href="./img/1200px-UPHosLogo.svg.png" type="image/gif" sizes="16x16">
+ <!--  <link rel="icon" href="./img/1200px-UPHosLogo.svg.png" type="image/gif" sizes="16x16"> -->
 </head>
 
 <body>
