@@ -1,14 +1,17 @@
 <?php
-  session_start();
-  $target = $_SESSION['target'];
-  require_once 'vendor/autoload.php';
-  require '../DB/connect.php';
-  $mpdf = new \Mpdf\Mpdf();
-  $pagecount = $mpdf->SetSourceFile('Realform.pdf');
-          $import_page = $mpdf->ImportPage(1);
-          $mpdf->UseTemplate($import_page);
+session_start();
+$target = $_SESSION['target'];
+require_once 'vendor/autoload.php';
+require '../DB/connect.php';
+$mpdf = new \Mpdf\Mpdf();
+$pagecount = $mpdf->SetSourceFile('Realform.pdf');
+for ($i = 1; $i <= $pagecount; $i++) {
+    $import_page = $mpdf->ImportPage($i);
+    $mpdf->UseTemplate($import_page);
 
-      
+    if ($i < $pagecount)
+        $mpdf->AddPage();
+}
 ob_start();
 ?>
 
@@ -16,36 +19,27 @@ ob_start();
 
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
-<title></title>
-<style>
-body {
-    font-family: 'Niramit', sans-serif;
-    font-size: 20px;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
+    <title></title>
+    <style>
+        body {
+            font-family: 'Niramit', sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+<body>
+    <div align="center">
+        <p>ผู้แจ้ง <?php echo $_SESSION['user']; ?></p>
+        <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
+    </div>
+</body>
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
-
-<div align="center">
-            <p>ผู้แจ้ง <?php echo $_SESSION['user']; ?></p>
-            <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
-</div>
-
+</html>
 
 
 
@@ -93,9 +87,9 @@ tr:nth-child(even) {
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
-          
+
 $mpdf->Output("Newpdf.pdf");
 ob_end_flush();
-header('location:addpage.php');
+header('location:Newpdf.pdf');
 
 ?>

@@ -18,6 +18,10 @@ $mpdf = new \Mpdf\Mpdf([
         ]
     ],
 ]);
+$pagecount = $mpdf->SetSourceFile('Realform.pdf');
+    $import_page = $mpdf->ImportPage(1);
+    $mpdf->UseTemplate($import_page);
+
 
 ob_start(); // Start get HTML code
 ?>
@@ -98,6 +102,9 @@ ob_start(); // Start get HTML code
 <?php
 $html = ob_get_contents();
 $mpdf->WriteHTML($html);
+$mpdf->AddPage();
+$import_page = $mpdf->ImportPage(2);
+$mpdf->UseTemplate($import_page);
 $mpdf->Output("ใบแจ้งซ่อมที่" . $_SESSION['cid'] . ".pdf");
 ob_end_flush();
 header("location:ใบแจ้งซ่อมที่" . $_SESSION['cid'] . ".pdf");
