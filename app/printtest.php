@@ -10,7 +10,7 @@ $fontData = $defaultFontConfig['fontdata'];
 $mpdf = new \Mpdf\Mpdf([
     'tempDir' => __DIR__ . '/tmp',
     'fontdata' => $fontData + [
-        'sarabun' => [ // ส่วนที่ต้องเป็น lower case ครับ
+        'niramit' => [ // ส่วนที่ต้องเป็น lower case ครับ
             'R' => 'Niramit-Medium.ttf',
             'I' => 'Niramit-Italic.ttf',
             'B' =>  'Niramit-SemiBold.ttf',
@@ -19,8 +19,8 @@ $mpdf = new \Mpdf\Mpdf([
     ],
 ]);
 $pagecount = $mpdf->SetSourceFile('Realform.pdf');
-    $import_page = $mpdf->ImportPage(1);
-    $mpdf->UseTemplate($import_page);
+$import_page = $mpdf->ImportPage(1);
+$mpdf->UseTemplate($import_page);
 
 
 ob_start(); // Start get HTML code
@@ -32,72 +32,47 @@ ob_start(); // Start get HTML code
 
 <head>
     <title>PDF</title>
-
     <style>
         body {
-            font-family: sarabun;
+            font-family: niramit;
         }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
+        .cas {
+            position: absolute;
+            text-align: center;
+            top:10px;
+            right:100px; 
         }
-
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
+        .dat {
+            position: absolute;
+            text-align: center;
+            top:10px;
+            right:100px; 
         }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+        .location {
+            position: absolute;
+            text-align: center;
+            top:120px;
+            right: 550px; 
+        }  
     </style>
+    
 </head>
 
 <body>
-
-    <div class="container">
-        <p align="right">ใบแจ้งเลขที่ <?php echo $_SESSION['cid']; ?></p>
-        <h1 align="center">ใบแจ้งซ่อม</h1>
-        <p align="center">งานสาธารณูปโภคและซ่อมบำรุง งานอาคารสถานที่</p>
-        <p align="right">วันที่ เดือน พ.ศ. <?php echo $_SESSION['dat']; ?></p>
-        <div align="center">
-            <p>ผู้แจ้ง <?php echo $_SESSION['user']; ?></p>
-            <p>ห้อง <?php echo $_SESSION['loc']; ?></p>
-        </div>
-        <div align="right">
-            <p>เวลาที่แจ้ง <?php echo $_SESSION['tim'];  ?>น.</p>
-        </div>
-        <div align="center" style="width: 90%">
-            <table>
-                <thead>
-                    <tr>
-                        <th style="width: 50%">ประเภทงาน</th>
-                        <th style="width: 50%">รายละเอียดแจ้งซ่อม</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td> <?php echo $_SESSION['pro']; ?></td>
-                        <td> <?php echo $_SESSION['des']; ?></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <br>
-        <div align="center">
-            <p>(....................................) (....................................)</p>
-        </div>
-        <div align="center">
-            <P>ผู้รับ.................................... ผู้แจ้ง.................................... </P>
-            <p></p>
-        </div>
-
+    <div class="cas">
+        <p> <?php echo "0" . $_SESSION['cid']; ?></p>
+    </div>
+    <div class="dat">
+        <p> <?php echo $_SESSION['dat']; ?></p>
+    </div>
+    <div class="location">
+        <p> <?php echo $_SESSION['loc']; ?></p>
+    </div>
 </body>
 
 </html>
+
+
 
 <?php
 $html = ob_get_contents();
