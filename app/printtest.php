@@ -11,10 +11,10 @@ $mpdf = new \Mpdf\Mpdf([
     'tempDir' => __DIR__ . '/tmp',
     'fontdata' => $fontData + [
         'sarabun' => [ // ส่วนที่ต้องเป็น lower case ครับ
-            'R' => 'THSarabunNew.ttf',
-            'I' => 'THSarabunNewItalic.ttf',
-            'B' =>  'THSarabunNewBold.ttf',
-            'BI' => "THSarabunNewBoldItalic.ttf",
+            'R' => 'Niramit-Medium.ttf',
+            'I' => 'Niramit-Italic.ttf',
+            'B' =>  'Niramit-SemiBold.ttf',
+            'BI' => "Niramit-SemiBoldItalic.ttf",
         ]
     ],
 ]);
@@ -29,11 +29,6 @@ ob_start(); // Start get HTML code
 <head>
     <title>PDF</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Sarabun&display=swap" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Niramit:wght@200&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: sarabun;
