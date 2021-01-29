@@ -36,26 +36,51 @@ ob_start(); // Start get HTML code
         body {
             font-family: niramit;
         }
+        /* head */
         .cas {
             position: absolute;
             text-align: center;
-            top:10px;
-            right:100px; 
+            top: 10px;
+            right: 100px;
         }
+
         .dat {
             position: absolute;
             text-align: center;
-            top:10px;
-            right:100px; 
+            top: 35px;
+            right: 100px;
         }
-        .location {
+
+        .loc {
             position: absolute;
             text-align: center;
-            top:120px;
-            right: 550px; 
-        }  
+            top: 120px;
+            right: 550px;
+        }
+
+        .num {
+            position: absolute;
+            text-align: center;
+            top: 120px;
+            right: 245px;
+        }
+
+        .tim {
+            position: absolute;
+            text-align: center;
+            top: 120px;
+            right: 100px;
+        }
+
+        /* body */
+        .kp {
+            position: absolute;
+            text-align: center;
+            top: 130px;
+            right: 555px;
+        }
     </style>
-    
+
 </head>
 
 <body>
@@ -65,9 +90,25 @@ ob_start(); // Start get HTML code
     <div class="dat">
         <p> <?php echo $_SESSION['dat']; ?></p>
     </div>
-    <div class="location">
+    <div class="loc">
         <p> <?php echo $_SESSION['loc']; ?></p>
     </div>
+    <div class="num">
+        <p>055555555</p>
+    </div>
+    <div class="tim">
+        <p><?php echo $_SESSION['tim']; ?></p>
+    </div>
+    <?php
+    $kp = "1";
+    if ($kp == "1") {
+        echo "<div class='kp'>
+        <h1>". "/" ."</h1>
+             </div>";
+    }
+
+
+    ?>
 </body>
 
 </html>
