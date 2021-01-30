@@ -36,6 +36,7 @@ ob_start(); // Start get HTML code
         body {
             font-family: niramit;
         }
+
         /* head */
         .cas {
             position: absolute;
@@ -72,12 +73,98 @@ ob_start(); // Start get HTML code
             right: 100px;
         }
 
-        /* body */
+        /* checkbox */
         .kp {
             position: absolute;
             text-align: center;
             top: 130px;
             right: 555px;
+        }
+
+        .ks {
+            position: absolute;
+            text-align: center;
+            top: 130px;
+            right: 435px;
+        }
+
+        .kc {
+            position: absolute;
+            text-align: center;
+            top: 130px;
+            right: 315px;
+        }
+
+        .ac {
+            position: absolute;
+            text-align: center;
+            top: 130px;
+            right: 180px;
+        }
+
+        .el {
+            position: absolute;
+            text-align: center;
+            top: 150px;
+            right: 720px;
+        }
+
+        .sa {
+            position: absolute;
+            text-align: center;
+            top: 150px;
+            right: 635px;
+        }
+
+        .all {
+            position: absolute;
+            text-align: center;
+            top: 150px;
+            right: 520px;
+        }
+
+        .comment {
+            position: absolute;
+            text-align: center;
+            top: 170px;
+            right: 350px;
+        }
+
+        /*  text ชื่อครุภัณฑ์ */
+
+        .namek {
+            position: absolute;
+            text-align: center;
+            top: 190px;
+            right: 550px;
+        }
+
+        .numk {
+            position: absolute;
+            text-align: center;
+            top: 190px;
+            right: 200px;
+        }
+
+        .yeark {
+            position: absolute;
+            text-align: center;
+            top: 213px;
+            right: 590px;
+        }
+
+        .pricek {
+            position: absolute;
+            text-align: center;
+            top: 213px;
+            right: 430px;
+        }
+
+        .y {
+            position: absolute;
+            text-align: center;
+            top: 213px;
+            right: 200px;
         }
     </style>
 
@@ -101,14 +188,68 @@ ob_start(); // Start get HTML code
     </div>
     <?php
     $kp = "1";
+    $ks = "1";
+    $kc = "1";
+    $ac = "1";
+    $el = "1";
+    $sa = "1";
+    $all = "1";
     if ($kp == "1") {
         echo "<div class='kp'>
-        <h1>". "/" ."</h1>
+        <h1>" . "/" . "</h1>
              </div>";
     }
-
-
+    if ($ks == "1") {
+        echo "<div class='ks'>
+        <h1>" . "/" . "</h1>
+             </div>";
+    }
+    if ($kc == "1") {
+        echo "<div class='kc'>
+        <h1>" . "/" . "</h1>
+             </div>";
+    }
+    if ($ac == "1") {
+        echo "<div class='ac'>
+        <h1>" . "/" . "</h1>
+             </div>";
+    }
+    if ($el == "1") {
+        echo "<div class='el'>
+        <h1>" . "/" . "</h1>
+             </div>";
+    }
+    if ($sa == "1") {
+        echo "<div class='sa'>
+        <h1>" . "/" . "</h1>
+             </div>";
+    }
+    if ($all == "1") {
+        echo "<div class='all'>
+        <h1>" . "/" . "</h1>
+             </div>
+             <div class='comment'>
+             <p>รายละเอียดอื่นๆ</p>
+             </div>";
+    }
     ?>
+
+    <div class="namek">
+        <p><?php echo "ชื่อของ"; ?></p>
+    </div>
+    <div class="numk">
+        <p><?php echo "เลขของ"; ?></p>
+    </div>
+    <div class="yeark">
+        <p><?php echo "ปีของ"; ?></p>
+    </div>
+    <div class="pricek">
+        <p><?php echo "ราคา"; ?></p>
+    </div>
+    <div class="y">
+        <p><?php echo "ปีล่าสุด"; ?></p>
+    </div>
+    
 </body>
 
 </html>
