@@ -82,7 +82,7 @@ ob_start(); // Start get HTML code
             position: absolute;
             text-align: center;
             top: 297px;
-            right: 570px;
+            right: 535px;
         }
         .userM {
             position: absolute;
@@ -116,7 +116,8 @@ ob_start(); // Start get HTML code
     </div>
     <!-- ชื่อผู้แจ้ง -->
     <div class="user">
-        <p><?php echo "ผู้แจ้ง"; ?></p>
+        <p><?php echo $_SESSION['fname'] ."  ". $_SESSION['lname'];?></p>
+       
     </div>
     <div class="userM">
         <p><?php echo "ผู้รับ"; ?></p>
