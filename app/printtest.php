@@ -70,7 +70,7 @@ ob_start(); // Start get HTML code
             position: absolute;
             text-align: center;
             top: 120px;
-            right: 100px;
+            right: 90px;
         }
 
         .des {

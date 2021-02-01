@@ -44,7 +44,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
               <th scope="col">คำสั่ง</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody> 
             <?php
             require '../DB/connect.php';
             $result = mysqli_query($con, "SELECT * FROM report Where stat != 'สำเร็จ'");
@@ -162,6 +162,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                 echo "</tr>";
               }
             }
+            
             ?>
           </tbody>
         </table>
