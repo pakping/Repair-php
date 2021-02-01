@@ -75,9 +75,8 @@ ob_start(); // Start get HTML code
 
         .des {
             position: absolute;
-            text-align: center;
             top: 235px;
-            right: 290px;
+            left: 190px;
         }
         .user {
             position: absolute;
@@ -89,7 +88,7 @@ ob_start(); // Start get HTML code
             position: absolute;
             text-align: center;
             top: 297px;
-            right: 250px;
+            right: 220px;
         }
     </style>
 
