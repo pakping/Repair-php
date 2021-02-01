@@ -25,7 +25,7 @@ $_SESSION['target'] = $target;
             <legend>
               <h1>แจ้งซ่อม</h1>
             </legend>
-            <div class="mb-3">
+            <div class="mb-3 p-3" style="background-color: #F3F3F3;">
               <?php
               require '../DB/connect.php';
               $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");
@@ -102,7 +102,7 @@ $_SESSION['target'] = $target;
           while ($zzz = mysqli_fetch_array($data)) {
             if ($count == 1) {
               echo "<div class='shadow-lg p-3 mb-5 bg-white rounded'>
-                  <div class='mb-3'>";
+                  <div class='mb-3 p-3' style='background-color: #F3F3F3;'>";
               echo "<h1>รายงานจากช่าง</h1>";
             }
             echo "หมายเหตุ : " . $count;
