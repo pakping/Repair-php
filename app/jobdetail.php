@@ -28,7 +28,7 @@ $_SESSION['target'] = $target;
             <div class="mb-3">
               <?php
               require '../DB/connect.php';
-              $result = mysqli_query($con, "SELECT * FROM report Where Case_ID = '$target' ");
+              $result = mysqli_query($con, "SELECT * FROM report inner join user on report.Username=user.Username Where Case_ID = '$target' ");
               if ($result) {
                 while ($row = mysqli_fetch_array($result)) {
                   $date = date_create($row["Date"]);
@@ -78,6 +78,8 @@ $_SESSION['target'] = $target;
                   $_SESSION['user'] = $row["Username"];
                   $_SESSION['tim'] = $row["Time"];
                   $_SESSION['dat'] = date_format($date, "d/m/Y");
+                  $_SESSION['fname'] = $row["firstname"];
+                  $_SESSION['lname'] = $row["lastname"];
                 }
               }
               ?>
