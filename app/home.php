@@ -33,7 +33,7 @@ require "../auth/sessionpersist.php";
           </div>
           <div class="mb-3">
             <label class="p-3">ระบุปัญหา</label>
-            <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" title="กรุณาระบุปัญหา" required></textarea>
+            <textarea class="form-control" aria-label="With textarea" rows="3" type="text" name="desc" maxlength="170" title="กรุณาระบุปัญหา" required></textarea>
           </div>
           <label class="p-3">ห้อง</label>
           <select name="room" class="form-select" aria-label="Default select example" required>

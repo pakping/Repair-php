@@ -11,7 +11,7 @@ $mpdf = new \Mpdf\Mpdf([
     'tempDir' => __DIR__ . '/tmp',
     'fontdata' => $fontData + [
         'niramit' => [ // ส่วนที่ต้องเป็น lower case ครับ
-            'R' => 'Niramit-Medium.ttf',
+            'R' => 'Niramit-Light.ttf',
             'I' => 'Niramit-Italic.ttf',
             'B' =>  'Niramit-SemiBold.ttf',
             'BI' => "Niramit-SemiBoldItalic.ttf",
@@ -35,9 +35,9 @@ ob_start(); // Start get HTML code
     <style>
         body {
             font-family: niramit;
+            font-size: 14px;
         }
 
-        /* head */
         .cas {
             position: absolute;
             text-align: center;
@@ -81,7 +81,7 @@ ob_start(); // Start get HTML code
         .user {
             position: absolute;
             text-align: center;
-            top: 297px;
+            top: 320px;
             right: 535px;
         }
         .userM {
@@ -118,9 +118,6 @@ ob_start(); // Start get HTML code
     <div class="user">
         <p><?php echo $_SESSION['fname'] ."  ". $_SESSION['lname'];?></p>
        
-    </div>
-    <div class="userM">
-        <p><?php echo "ผู้รับ"; ?></p>
     </div>
     
 </body>
