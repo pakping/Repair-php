@@ -31,7 +31,7 @@ if (!$objResult) {
 			header("location:../app/home.php");
 		} elseif ($objResult["Access"] == "admin") {
 			$_SESSION['type'] = 'admin';
-			header("location:../app/showdata.php");
+			header("location:../admin/showdata.php");
 		}
 	}
 }

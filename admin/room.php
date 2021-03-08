@@ -38,27 +38,28 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
                         <tbody>
                             <?php
                             require '../DB/connect.php';
-                            $result = mysqli_query($con, "SELECT * FROM report Where Username = '$uname' and stat != 'Done' ");
+                            $result = mysqli_query($con, "SELECT * FROM room");
 
                             if ($result) {
-
+                                $x = 1;
                                 while ($row = mysqli_fetch_array($result)) {
 
                                     echo "<tr>";
-                                    echo "<td>" . $row["Case_ID"] . "</td>";
-                                    echo "<td>" . $row["Location"] . "</td>";
+                                    echo "<td>" . $x . "</td>";
+                                    echo "<td>" . $row["roomname"] . "</td>";
 
                                     echo "<td><div class='btn-group' role='group' aria-label='Basic mixed styles example'>
 
 
-                <form action='../components/delete.php' method='POST'>
-                <input  type='hidden' name='delete' value='" . $row["Case_ID"] . "'/>
-                <button type='button'class=' btn btn-danger'name='submit-btn' title='ลบห้อง'  value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["Case_ID"] . "'>
+                <form action='../Function/delete_del.php' method='POST'>
+                <input  type='hidden' name='delete' value='" . $row["roomid"] . "'/>
+                <input type='hidden' name='target' value='room'/>
+                <button type='button'class=' btn btn-danger'name='submit-btn' title='ลบห้อง'  value='ลบ' data-bs-toggle='modal' data-bs-target='#Modeldel" . $row["roomid"] . "'>
                 <span class='material-icons'>
               delete
               </span>
                 </button>
-          <div class='modal fade' id='Modeldel" . $row["Case_ID"] .
+          <div class='modal fade' id='Modeldel" . $row["roomid"] .
                                     "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
           <div class='modal-dialog'>
             <div class='modal-content'>
@@ -79,16 +80,11 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           </form>
 
           
-          <form target='_blank' action='../app/jobdetail.php' method='POST'>
-          <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>    
-          <button type='submit'class=' btn btn-warning'name='submit-btn'title='เพิ่มห้อง'   value='เพิ่ม' >
-          <span class='material-icons'>
-          assignment
-          </span></button>
-          </form>
-          </div>
+          
+          
           </td>";
                                     echo "</tr>";
+                                    $x =$x+1;
                                 }
                             }
                             ?></tbody>
