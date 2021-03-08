@@ -7,7 +7,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
 <html lang="en" class="h-100">
 
 <head>
-    <title>ห้อง</title>
+    <title>อุปกรณ์</title>
     <?php
     include '../components/meta-title.php'
     ?>
@@ -23,14 +23,14 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
         <div class="main-1">
             <div class="shadow-lg p-3">
                 <div class="p-3 ">
-                    <h1>รายการห้อง</h1>
+                    <h1>รายการอุปกรณ์</h1>
                 </div>
                 <div class="table-responsive">
                     <table id="myTable" class="table table-hover table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">รหัสห้อง</th>
-                                <th scope="col">ห้อง</th>
+                                <th scope="col">รหัสอุปกรณ</th>
+                                <th scope="col">ชื่ออุปกรณ์</th>
                                 <th scope="col">คำสั่งจัดการ</th>
                             </tr>
                         </thead>
