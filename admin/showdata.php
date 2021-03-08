@@ -1,7 +1,7 @@
 <?php
 $content = "admin";
 require "../auth/sessionpersist.php";
-$_SESSION['lastpage'] = "../app/showdata.php";
+$_SESSION['lastpage'] = "../admin/showdata.php";
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +122,7 @@ $_SESSION['lastpage'] = "../app/showdata.php";
                 </form>";
                 }
                 // ปุ่มรายละเอียด
-                echo "<form target='_blank' action='../app/jobdetail.php' method='POST'>
+                echo "<form target='_blank' action='../admin/jobdetail.php' method='POST'>
                       <input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
                       <button type='submit' class='btn btn-warning' name='submit-btn' title='รายละเอียดแจ้งซ่อม'value='รายละเอียด'>
                       <span class='material-icons'>

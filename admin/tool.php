@@ -59,7 +59,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
               </span>
                 </button>
           <div class='modal fade' id='Modeldel" . $row["Case_ID"] .
-                                    "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
+                                        "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
           <div class='modal-dialog'>
             <div class='modal-content'>
                 <div class='modal-header'>

@@ -1,7 +1,7 @@
 <?php
 $content = "admin";
 require "../auth/sessionpersist.php";
-$_SESSION['lastpage'] = "../app/showdatahistory.php";
+$_SESSION['lastpage'] = "../admin/showdatahistory.php";
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
@@ -91,14 +91,14 @@ $_SESSION['lastpage'] = "../app/showdatahistory.php";
                   </div>
                 </div>
               </div></form>";
-                    echo "<form target='_blank' action='../app/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
+                    echo "<form target='_blank' action='../admin/jobdetail.php' method='POST'><input type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
                   <button type='submit' class='btn btn-warning' name='submit-btn' title='รายละเอียดประวัติแจ้งซ่อม'value='รายละเอียด'>
                   <span class='material-icons'>
                           assignment
                           </span>
                   </button>
                   </form>";
-                    echo "<form target='_blank' action='../app/addnote.php' method='POST'>
+                    echo "<form target='_blank' action='../admin/addnote.php' method='POST'>
                   <input type='hidden' name='ref' value='" . $row["Case_ID"] . "'/>
                   <button type='submit' class='btn btn-success' name='submit-btn'title='เพิ่มหมายเหตุ' value='หมายเหตุ' >
                   <span class='material-icons'>
