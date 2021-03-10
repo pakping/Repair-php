@@ -5,7 +5,7 @@ $_SESSION['ref'] = $_POST['ref'];
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
-
+<title>Admin-addnote</title>
 <head>
 
   <?php

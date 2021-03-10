@@ -19,7 +19,7 @@ $_SESSION['target'] = $target;
   <div class="container">
     <div class="wrap-form">
       <br>
-      <form action="printtest.php" target="_blank" method="post" name="F1">
+      <form action="../app/printtest.php" target="_blank" method="post" name="F1">
         <fieldset>
           <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <legend>
@@ -92,7 +92,7 @@ $_SESSION['target'] = $target;
 
 
 
-    <form action="../app/showdatahistory.php" method="post" name="F2">
+    <form action="../admin/showdatahistory.php" method="post" name="F2">
       <fieldset>
         <?php
         require '../DB/connect.php';
