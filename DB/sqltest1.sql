@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2021 at 10:43 AM
+-- Generation Time: Mar 10, 2021 at 08:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -29,16 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `note` (
   `Case_ID` int(8) NOT NULL,
-  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Note` varchar(300) COLLATE utf32_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
-
---
--- Dumping data for table `note`
---
-
-INSERT INTO `note` (`Case_ID`, `Username`, `Note`) VALUES
-(100, 'Sirichai', 'มยสสย');
+  `Username` char(20) NOT NULL,
+  `Note` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -48,34 +41,67 @@ INSERT INTO `note` (`Case_ID`, `Username`, `Note`) VALUES
 
 CREATE TABLE `report` (
   `Case_ID` int(8) NOT NULL,
-  `Location` char(10) CHARACTER SET utf8 NOT NULL,
-  `Problem` char(13) CHARACTER SET utf8 NOT NULL,
-  `Description` text CHARACTER SET utf8 NOT NULL,
+  `Location` char(10) NOT NULL,
+  `Problem` char(13) NOT NULL,
+  `Description` text NOT NULL,
   `Time` time NOT NULL,
   `Date` date NOT NULL,
-  `Editby` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Stat` char(20) CHARACTER SET utf8 NOT NULL,
-  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Worker` char(23) COLLATE utf32_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
+  `Editby` char(20) NOT NULL,
+  `Stat` char(20) NOT NULL,
+  `Username` char(20) NOT NULL,
+  `Worker` char(23) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `report`
 --
 
 INSERT INTO `report` (`Case_ID`, `Location`, `Problem`, `Description`, `Time`, `Date`, `Editby`, `Stat`, `Username`, `Worker`) VALUES
-(100, 'Office 8', 'Other', 'gfgg', '09:55:58', '2021-01-25', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
-(108, 'Emergency', 'Computer', '2', '12:10:04', '2021-01-25', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
-(109, 'Emergency', 'Computer', '3', '12:10:09', '2021-01-25', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
-(111, 'Emergency', 'Computer', '5', '12:10:20', '2021-01-25', '', 'กำลังดำเนินการ', 'Jeerachon', 'Sirichai'),
-(112, 'IPD1', 'Computer', 'gfhhtr', '12:26:58', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
-(113, 'OPD1', 'Other', 'l;;l', '12:29:27', '2021-01-25', '', 'กำลังดำเนินการ', 'Jeerachon', 'Sirichai'),
-(114, 'IPD1', 'Printer', 'edsgsggdsgsdgdsgsdgs', '12:32:23', '2021-01-25', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
-(115, 'IPD1', 'Other', 'hh', '12:39:51', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
-(116, 'OPD1', 'Printer', 'jnn', '12:40:06', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
-(118, 'OPD1', 'Computer', 'fhbfhfcghcvhvcbvcbcvbvcbvcbcvbvcbvcbcvbcvbcv', '12:52:42', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
-(119, 'Office 5', 'Other', 'sadsadsadsadsa', '13:04:21', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
-(120, 'OPD2', 'Printer', 'safdasfdsaf', '16:27:17', '2021-01-25', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี');
+(124, 'Surgical', 'Printer', 'asfasf', '16:22:21', '2021-01-28', '', 'กำลังดำเนินการ', 'phoomin', 'Sirichai'),
+(138, 'OPD1', 'Computer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นหาสาเหตุเป็นการเฉพาะ ไม่ว่าจะเป็นคีย์บอร์ด เมาส์ ลำ', '11:12:44', '2021-02-02', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
+(139, 'OPD2', 'Computer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นห', '11:13:09', '2021-02-02', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
+(141, 'OPD2', 'Computer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นหาสาเหตุเป็นการเฉพาะ ไม่ว่าจะเป็นคีย์บอร์ด เมาส์ ลำโพง เสียงหาย หน้าจอแ', '11:15:07', '2021-02-02', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
+(142, 'Labor', 'Computer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นหาสาเหตุเป็นการเฉพาะ ไม่ว่าจะเป็นคีย์บอร์ด เมาส์ ลำโพง เสียงหาย หน้าจอแ', '11:15:13', '2021-02-02', '', 'รอดำเนินการ', 'Jeerachon', 'ไม่มี'),
+(143, 'Office 7', 'Printer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นหาสาเหตุเป็นการเฉพาะ ไม่ว่าจะเป็นคีย์บอร์ด เมาส์ ลำโพง เสียงหาย หน้าจอแ', '11:15:18', '2021-02-02', '', 'สำเร็จ', 'Jeerachon', 'Sirichai'),
+(144, 'Office 8', 'Printer', '	\r\nอุปกรณ์ต่าง ๆ ในคอมมีปัญหาทำงานบกพร่องหรือไม่ทำงานอาจเกิดขึ้นจากหลากหลายสาเหตุ จำเป็นที่จะต้องค้นหาสาเหตุเป็นการเฉพาะ ไม่ว่าจะเป็นคีย์บอร์ด เมาส์ ลำโพง เสียงหาย หน้าจอแ', '11:15:23', '2021-02-02', '', 'กำลังดำเนินการ', 'Jeerachon', 'Sirichai');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `roomid` int(3) NOT NULL,
+  `roomname` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`roomid`, `roomname`) VALUES
+(2, 'OPD1'),
+(3, 'OPD2'),
+(4, 'OPD3'),
+(5, 'OPD4'),
+(6, 'IPD1'),
+(7, 'IPD2'),
+(8, 'IPD3'),
+(9, 'Pharmacy'),
+(10, 'Cashier'),
+(11, 'Office 1'),
+(12, 'Office 2'),
+(13, 'Office 3'),
+(14, 'Office 4'),
+(15, 'Office 5'),
+(16, 'Office 6'),
+(17, 'Office 7'),
+(18, 'Office 8'),
+(19, 'Emergency Room'),
+(20, 'Labor Room'),
+(21, 'Surgical Room'),
+(22, 'Laboratory');
 
 -- --------------------------------------------------------
 
@@ -87,10 +113,10 @@ CREATE TABLE `spare_request` (
   `Request_ID` int(5) NOT NULL,
   `Case_ID` int(5) NOT NULL,
   `Engineer_ID` int(3) NOT NULL,
-  `Req.Description` char(200) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Target_Item` char(100) COLLATE utf32_thai_520_w2 NOT NULL,
+  `Req.Description` char(200) NOT NULL,
+  `Target_Item` char(100) NOT NULL,
   `Request_Date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `spare_request`
@@ -108,7 +134,7 @@ INSERT INTO `spare_request` (`Request_ID`, `Case_ID`, `Engineer_ID`, `Req.Descri
 
 CREATE TABLE `token_line` (
   `api` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `token_line`
@@ -120,19 +146,39 @@ INSERT INTO `token_line` (`api`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tool`
+--
+
+CREATE TABLE `tool` (
+  `toolid` int(3) NOT NULL,
+  `toolname` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tool`
+--
+
+INSERT INTO `tool` (`toolid`, `toolname`) VALUES
+(1, 'คอมพิวเตอร์'),
+(2, 'เครื่องปริ้น'),
+(3, 'โทรศัพท์');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `Username` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `Password` char(20) COLLATE utf32_thai_520_w2 NOT NULL,
-  `firstname` char(30) COLLATE utf32_thai_520_w2 NOT NULL,
-  `lastname` char(30) COLLATE utf32_thai_520_w2 NOT NULL,
+  `Username` char(20) NOT NULL,
+  `Password` char(20) NOT NULL,
+  `firstname` char(30) NOT NULL,
+  `lastname` char(30) NOT NULL,
   `Tel` int(10) NOT NULL,
   `LoginStatus` int(1) NOT NULL,
   `LastUpdate` datetime NOT NULL,
-  `Access` char(5) COLLATE utf32_thai_520_w2 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COLLATE=utf32_thai_520_w2;
+  `Access` char(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
@@ -141,8 +187,9 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`Username`, `Password`, `firstname`, `lastname`, `Tel`, `LoginStatus`, `LastUpdate`, `Access`) VALUES
 ('Jeerachon', '123456', 'จีราชล', 'ธรรมศร', 889943216, 0, '0000-00-00 00:00:00', 'user'),
 ('phoomin', '456789', 'ภูมินทร์', 'บุญอนันต์', 1333333333, 0, '0000-00-00 00:00:00', 'user'),
-('Sirichai', '654321', 'ศิริชัย', 'เบ็ญจมาคม', 215148148, 1, '2021-01-25 16:29:18', 'admin'),
-('teerat', '987654', 'ธีรัช', 'กิจเจริญ', 11223344, 0, '0000-00-00 00:00:00', 'admin');
+('Sirichai', '654321', 'ศิริชัย', 'เบ็ญจมาคม', 215148148, 0, '0000-00-00 00:00:00', 'admin'),
+('teerat', '987654', 'ธีรัช', 'กิจเจริญ', 11223344, 0, '0000-00-00 00:00:00', 'admin'),
+('teerut.ru', '123456', 'ธีรัช', 'รวยจัง', 55555555, 0, '0000-00-00 00:00:00', 'user');
 
 --
 -- Indexes for dumped tables
@@ -160,13 +207,25 @@ ALTER TABLE `note`
 --
 ALTER TABLE `report`
   ADD PRIMARY KEY (`Case_ID`),
-  ADD KEY `Username` (`Username`) USING BTREE;
+  ADD KEY `fk_username` (`Username`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`roomid`);
 
 --
 -- Indexes for table `spare_request`
 --
 ALTER TABLE `spare_request`
   ADD PRIMARY KEY (`Request_ID`);
+
+--
+-- Indexes for table `tool`
+--
+ALTER TABLE `tool`
+  ADD PRIMARY KEY (`toolid`);
 
 --
 -- Indexes for table `user`
@@ -182,13 +241,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `report`
 --
 ALTER TABLE `report`
-  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+  MODIFY `Case_ID` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
+
+--
+-- AUTO_INCREMENT for table `room`
+--
+ALTER TABLE `room`
+  MODIFY `roomid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `spare_request`
 --
 ALTER TABLE `spare_request`
   MODIFY `Request_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `tool`
+--
+ALTER TABLE `tool`
+  MODIFY `toolid` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
