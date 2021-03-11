@@ -34,7 +34,11 @@ require "../auth/sessionpersist.php"
             </td>
           </tr>
         </table>
-        <button type="submit" class="btn btn-primary">เพิ่ม</button>
+        <div class="d-flex bd-highlight mb-3">
+            <div class="p-2 bd-highlight"> <button type="submit" class="btn btn-primary">เพิ่ม</button></div>
+
+            <div class="ms-auto p-2 bd-highlight"><button class="btn btn-danger" type="button" onclick="back()">กลับ</button></div>
+          </div>
       </div>
     </div>
     </form>
@@ -42,3 +46,14 @@ require "../auth/sessionpersist.php"
 </body>
 
 </html>
+<script>
+  function back() {
+    user = '<?php echo $_SESSION['type']; ?>';
+    if (user == "admin") {
+      window.location.href = "tool.php"
+    } else {
+      window.location.href = "tool.php"
+    }
+
+  }
+</script>

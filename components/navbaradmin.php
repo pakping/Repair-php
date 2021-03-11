@@ -26,12 +26,6 @@ require_once("../DB/connect.php");
           <a class="nav-link" href="../admin/register.php">เพิ่มสมาชิก</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../admin/createroom.php">เพิ่มห้อง</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../admin/createtool.php">เพิ่มอุปกรณ์</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="../admin/room.php">ห้อง</a>
         </li>
         <li class="nav-item">

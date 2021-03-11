@@ -22,8 +22,15 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
     <div class="container">
         <div class="main-1">
             <div class="shadow-lg p-3">
-                <div class="p-3 ">
-                    <h1>รายการห้อง</h1>
+
+
+
+                <div class="d-flex bd-highlight">
+                    <div class="p-2 flex-grow-1 bd-highlight">
+                        <h1>รายการห้อง</h1>
+                    </div>
+
+                    <div class="p-2 bd-highlight"> <a  class="link-success" href="../admin/createroom.php">เพิ่มห้อง</a></div>
                 </div>
                 <div class="table-responsive">
                     <table id="myTable" class="table table-hover table-sm">
@@ -60,7 +67,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
               </span>
                 </button>
           <div class='modal fade' id='Modeldel" . $row["roomid"] .
-                                    "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
+                                        "' tabindex='-1' aria-labelledby='modeldell' aria-hidden='true'>
           <div class='modal-dialog'>
             <div class='modal-content'>
                 <div class='modal-header'>
@@ -84,7 +91,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
           
           </td>";
                                     echo "</tr>";
-                                    $x =$x+1;
+                                    $x = $x + 1;
                                 }
                             }
                             ?></tbody>

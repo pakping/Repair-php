@@ -22,9 +22,18 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
     <div class="container">
         <div class="main-1">
             <div class="shadow-lg p-3">
-                <div class="p-3 ">
+
+
+
+                <div class="d-flex bd-highlight">
+                    <div class="p-2 flex-grow-1 bd-highlight">
                     <h1>รายการอุปกรณ์</h1>
+                    </div>
+
+                    <div class="p-2 bd-highlight"> <a  class="link-success" href="../admin/createtool.php">เพิ่มอุปกรณ์</a></div>
                 </div>
+
+
                 <div class="table-responsive">
                     <table id="myTable" class="table table-hover table-sm">
                         <thead>
