@@ -6,7 +6,7 @@ if (!isset($_SESSION['type'])) {
 if ($_SESSION['type'] == 'user') {
   header("location:app/home.php");
 } elseif ($_SESSION['type'] == 'admin') {
-  header("location:app/showdata.php");
+  header("location:admin/showdata.php");
 }
 ?>
 

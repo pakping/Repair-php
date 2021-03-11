@@ -34,7 +34,8 @@ require "../auth/sessionpersist.php";
                   $x = 1;
                   while ($tool = mysqli_fetch_array($result)) {
                 ?> <option value="<?php echo $tool['toolname']; ?>"><?php echo $x . ' : ' . $tool['toolname']; ?></option>
-                <?php $x=$x+1;}
+                <?php $x = $x + 1;
+                  }
                 }
                 ?>
               </select>
@@ -47,16 +48,17 @@ require "../auth/sessionpersist.php";
             <select name="room" class="form-select" aria-label="Default select example" required>
               <option selected value="">โปรดเลือก...</option>
               <?php
-                require "../DB/connect.php";
-                $Squery = "SELECT * FROM room";
-                if ($result = mysqli_query($con, $Squery)) {
-                  $y = 1;
-                  while ($room = mysqli_fetch_array($result)) {
-                ?> <option value="<?php echo $room['roomname']; ?>"><?php echo $y . ' : ' . $room['roomname']; ?></option>
-                <?php $y=$y+1;}
+              require "../DB/connect.php";
+              $Squery = "SELECT * FROM room";
+              if ($result = mysqli_query($con, $Squery)) {
+                $y = 1;
+                while ($room = mysqli_fetch_array($result)) {
+              ?> <option value="<?php echo $room['roomname']; ?>"><?php echo $y . ' : ' . $room['roomname']; ?></option>
+              <?php $y = $y + 1;
                 }
-                ?>
-          </select>
+              }
+              ?>
+            </select>
           </div>
           <br>
           <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">ยืนยัน</button>

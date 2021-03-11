@@ -99,7 +99,7 @@ $_SESSION['lastpage'] = "../app/showdatauser.php";
             </div>
           </div>
           </form>
-          <form target='_blank' action='../app/jobdetail.php' method='POST'>
+          <form target='_blank' action='../admin/jobdetail.php' method='POST'>
           <input  type='hidden' name='job' value='" . $row["Case_ID"] . "'/>
                 
           <button type='submit'class=' btn btn-warning'name='submit-btn'title='รายละเอียดการแจ้งซ่อม'    value='รายละเอียด' >
